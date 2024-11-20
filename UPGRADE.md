@@ -2,6 +2,13 @@
 
 This file includes notes on major changes that might affect your application and require changes from you to update.
 
+### November 20, 2024
+
+* Removed .nav-link class
+
+  The `.nav-link` class is no longer required on links placed within the `_left_nav` or `_right_nav` partials.
+  If you are using this class on any links in your navbar you can remove them as the CSS to handle nav links has been updated to style these links appropriately.
+
 ### November 18, 2024
 
 * Refactored to use Hotwire Native.
