@@ -127,7 +127,7 @@ module Jumpstart
       end
 
       def self.credentials_for(integration)
-        Jumpstart.credentials.dig(Rails.env, integration.to_sym) || Jumpstart.credentials.dig(integration.to_sym) || {}
+        Rails.application.credentials.dig(Rails.env, integration.to_sym) || Rails.application.credentials.dig(integration.to_sym) || {}
       end
     end
 

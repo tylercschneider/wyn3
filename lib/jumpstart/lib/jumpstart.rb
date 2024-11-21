@@ -34,10 +34,6 @@ module Jumpstart
     find_plan(id)[interval]["#{processor}_id"]
   end
 
-  def self.credentials
-    Rails.application.credentials
-  end
-
   # Commands to be run after bundle install
   def self.post_install
     if config.gems.include?("refer") && !Dir[Rails.root.join("db/migrate/**/*refer*.refer.rb")].any?
