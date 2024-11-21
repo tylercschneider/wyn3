@@ -352,6 +352,7 @@ section nav form button {
 
     >span:last-of-type {
       display: none;
+      font-size: 14px;
 
       @media (min-width: 1024px) {
         display: block;
