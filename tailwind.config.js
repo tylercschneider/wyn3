@@ -11,6 +11,10 @@ module.exports = {
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
+    ({ addVariant }) => {
+      addVariant("hotwire-native", "html.hotwire-native &"),
+      addVariant("not-hotwire-native", "html:not(.hotwire-native) &")
+    }
   ],
 
   content: [
@@ -111,16 +115,5 @@ module.exports = {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
     },
-  },
-
-  plugins: [
-    ({ addVariant }) => {
-      addVariant("hotwire-native", "html.hotwire-native &"),
-      addVariant("not-hotwire-native", "html:not(.hotwire-native) &")
-    }
-  ],
-
-  // Opt-in to TailwindCSS future changes
-  future: {
-  },
+  }
 }
