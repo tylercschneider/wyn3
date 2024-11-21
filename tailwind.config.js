@@ -113,6 +113,13 @@ module.exports = {
     },
   },
 
+  plugins: [
+    ({ addVariant }) => {
+      addVariant("hotwire-native", "html.hotwire-native &"),
+      addVariant("not-hotwire-native", "html:not(.hotwire-native) &")
+    }
+  ],
+
   // Opt-in to TailwindCSS future changes
   future: {
   },

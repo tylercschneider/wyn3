@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="<%= class_names("dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
+<html class="<%= class_names(dark: current_user&.dark_theme?, "hotwire-native": hotwire_native_app?) %>" lang="<%= I18n.locale %>">
   <head>
     <%= render "head" %>
   </head>
