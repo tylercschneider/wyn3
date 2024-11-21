@@ -8,57 +8,57 @@ module Jumpstart
 
     def settings
       case config.email_provider
-      when :mailgun
+      when "mailgun"
         {
           address: "smtp.mailgun.org",
           user_name: get_credential(:mailgun, :username),
           password: get_credential(:mailgun, :password)
         }.merge(shared_settings)
-      when :mailjet
+      when "mailjet"
         {
           address: "in.mailjet.com",
           user_name: get_credential(:mailjet, :username),
           password: get_credential(:mailjet, :password)
         }.merge(shared_settings)
-      when :mandrill
+      when "mandrill"
         {
           address: "smtp.mandrillapp.com",
           user_name: get_credential(:mandrill, :username),
           password: get_credential(:mandrill, :password)
         }.merge(shared_settings)
-      when :ohmysmtp
+      when "ohmysmtp"
         {
           address: "smtp.ohmysmtp.com",
           user_name: get_credential(:ohmysmtp, :username),
           password: get_credential(:ohmysmtp, :password)
         }.merge(shared_settings)
-      when :postmark
+      when "postmark"
         {
           address: "smtp.postmarkapp.com",
           user_name: get_credential(:postmark, :username),
           password: get_credential(:postmark, :password)
         }.merge(shared_settings)
-      when :sendgrid
+      when "sendgrid"
         {
           address: "smtp.sendgrid.net",
           domain: get_credential(:sendgrid, :domain),
           user_name: get_credential(:sendgrid, :username),
           password: get_credential(:sendgrid, :password)
         }.merge(shared_settings)
-      when :sendinblue
+      when "sendinblue"
         shared_settings.merge({
           address: "smtp-relay.sendinblue.com",
           authentication: "login",
           user_name: get_credential(:sendinblue, :username),
           password: get_credential(:sendinblue, :password)
         })
-      when :ses
+      when "ses"
         {
           address: get_credential(:ses, :address),
           user_name: get_credential(:ses, :username),
           password: get_credential(:ses, :password)
         }.merge(shared_settings)
-      when :sparkpost
+      when "sparkpost"
         {
           address: "smtp.sparkpostmail.com",
           user_name: "SMTP_Injection",
