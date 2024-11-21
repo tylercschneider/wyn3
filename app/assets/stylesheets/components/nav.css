@@ -1,40 +1,7 @@
-.nav-link {
-  white-space: nowrap;
-  padding: 4px 8px;
-  color: var(--base-text);
-  display: block;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 24px;
-  text-decoration: none;
-
-  &.active {
-    border-bottom: 4px solid var(--border-primary);
-    color: var(--text-primary);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-  }
-
-  &:focus {
-    color: var(--base-text-secondary);
-  }
-}
-
-@media (min-width: 1024px) {
-  .nav-link {
-    display: inline-flex;
-    margin: 0px 16px 0px 0px;
-    line-height: 40px;
-  }
-}
-
 .dropdown-menu {
   min-width: 100%;
-}
 
-@media (min-width: 1024px) {
-  .dropdown-menu {
+  @media (min-width: 1024px) {
     min-width: 200px;
   }
 }
@@ -48,6 +15,10 @@ nav.menu-component {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
+
+  @media (min-width: 1024px) {
+    min-width: 240px;
+  }
 
   /* Main list */
   > ul.menu-list {
@@ -114,6 +85,7 @@ nav.menu-component {
             font-size: 14px;
             font-weight: 400;
             line-height: 24px;
+            text-wrap: wrap;
 
             &:hover {
               background-color: var(--base-bg-high);
@@ -159,12 +131,6 @@ nav.menu-component {
         }
       }
     }
-  }
-}
-
-@media (min-width: 1024px) {
-  nav.menu-component {
-    min-width: 240px;
   }
 }
 

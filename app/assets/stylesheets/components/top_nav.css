@@ -1,431 +1,431 @@
 .top-nav {
-    background: var(--base-bg-low);
+  background: var(--base-bg-low);
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 16px;
+  border-bottom: 1px solid var(--base-border-tertiary);
+  background: var(--base-bg-low);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 1024px) {
+    padding: 0px 32px;
+  }
+
+  .logo {
     display: flex;
-    justify-content: space-between;
-    position: relative;
-    padding: 16px;
-    border-bottom: 1px solid var(--base-border-tertiary);
-    background: var(--base-bg-low);
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+    align-items: center;
 
     @media (min-width: 1024px) {
-        padding: 0px 32px;
+      padding: 15px 0px;
     }
 
-    .logo {
-        display: flex;
-        align-items: center;
+    a {
+      color: var(--base-text);
+      display: flex;
+      align-items: center;
+
+      /* Hide logo text on mobile */
+      svg .text {
+        display: none;
 
         @media (min-width: 1024px) {
-            padding: 16px 0px;
+          display: block;
         }
-
-        a {
-            color: var(--base-text);
-            display: flex;
-            align-items: center;
-
-            /* Hide logo text on mobile */
-            svg .text {
-                display: none;
-
-                @media (min-width: 1024px) {
-                    display: block;
-                }
-            }
-        }
+      }
     }
+  }
 
-    &:not(:has(> .nav-container > nav a)) #sidebar-open {
-        display: none;
-    }
+  &:not(:has(> .nav-container > nav a)) #sidebar-open {
+    display: none;
+  }
 
 }
 
 .nav-container {
-    background: var(--base-bg-low);
-    box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    width: 100%;
+  background: var(--base-bg-low);
+  box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    box-shadow: none;
+    padding: 0px;
+    position: static;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 8px 0px 40px;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0;
 
     @media (min-width: 1024px) {
-        box-shadow: none;
+      flex-direction: row;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .btn-container {
+      width: 100%;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      @media (min-width: 1024px) {
         padding: 0px;
-        position: static;
-        flex: 1;
-        justify-content: space-between;
-        align-items: center;
-        margin: 0px 8px 0px 40px;
+        flex-direction: row;
+      }
     }
-
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        gap: 0;
-
-        @media (min-width: 1024px) {
-            flex-direction: row;
-            align-items: center;
-            gap: 24px;
-        }
-
-        .btn-container {
-            width: 100%;
-            padding: 12px 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-
-            @media (min-width: 1024px) {
-                padding: 0px;
-                flex-direction: row;
-            }
-        }
-    }
+  }
 }
 
 section nav form {
-    width: 100%;
+  width: 100%;
 
-    button {
-        text-align: start;
-    }
+  button {
+    text-align: start;
+  }
 }
 
 section nav a,
 section nav form button {
+  color: var(--base-text);
+  font-size: 14px;
+  padding: 12px 16px;
+  width: 100%;
+  text-wrap: nowrap;
+
+  @media (min-width: 1024px) {
     color: var(--base-text);
-    font-size: 16px;
-    padding: 12px 16px;
-    width: 100%;
-    text-wrap: nowrap;
+    padding: 16px 8px;
+  }
+
+  &:hover {
+    color: var(--base-text-secondary);
+  }
+
+  &.active {
+    background: var(--base-bg-hover);
+    box-shadow: inset 4px 0 0 0 var(--border-primary);
+    color: var(--text-primary);
+    font-weight: 600;
+    padding: 12px;
 
     @media (min-width: 1024px) {
-        color: var(--base-text);
-        padding: 16px 8px;
+      background: transparent;
+      box-shadow: inset 0 -4px 0 0 var(--border-primary);
+      padding: 16px 8px;
     }
-
-    &:hover {
-        color: var(--base-text-secondary);
-    }
-
-    &.active {
-        background: var(--base-bg-hover);
-        box-shadow: inset 4px 0 0 0 var(--border-primary);
-        color: var(--text-primary);
-        font-weight: 600;
-        padding: 12px;
-
-        @media (min-width: 1024px) {
-            background: transparent;
-            box-shadow: inset 0 -4px 0 0 var(--border-primary);
-            padding: 16px 8px;
-        }
-    }
+  }
 }
 
 .top-nav__sub-nav {
+  width: 100%;
+
+  >button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
+    padding: 12px 16px;
 
-    > button {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 12px 16px;
+    @media (min-width: 1024px) {
+      border-radius: 4px;
+      color: var(--base-text-secondary);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      padding: 8px;
 
-        @media (min-width: 1024px) {
-            border-radius: 4px;
-            color: var(--base-text-secondary);
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 24px;
-            padding: 8px;
-
-            &:hover {
-                background: var(--base-bg-hover);
-            }
-        }
-
-        &:focus {
-            @media (min-width: 1024px) {
-                background: var(--base-bg-hover);
-                outline: 2px solid transparent;
-                outline-offset: 2px;
-            }
-
-            > svg {
-                transform: rotate(180deg);
-            }
-        }
-
-        > svg {
-            height: 20px;
-            width: 20px;
-            margin-left: 4px;
-        }
+      &:hover {
+        background: var(--base-bg-hover);
+      }
     }
+
+    &:focus {
+      @media (min-width: 1024px) {
+        background: var(--base-bg-hover);
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+
+      >svg {
+        transform: rotate(180deg);
+      }
+    }
+
+    >svg {
+      height: 20px;
+      width: 20px;
+      margin-left: 4px;
+    }
+  }
 }
 
 .top-nav__sub-nav-dropdown {
+  @media (min-width: 1024px) {
+    box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
+    margin-top: 12px;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transform-origin: top right;
+    width: 100%;
+    z-index: 50;
+  }
+
+  .top-nav__sub-nav-dropdown-card {
+    background: var(--base-bg-low);
+
     @media (min-width: 1024px) {
-        box-shadow: 0px 4px 6px -1px rgba(16, 24, 40, 0.10), 0px 2px 4px -2px rgba(16, 24, 40, 0.10);
-        margin-top: 12px;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        transform-origin: top right;
-        width: 100%;
-        z-index: 50;
+      display: flex;
     }
 
-    .top-nav__sub-nav-dropdown-card {
-        background: var(--base-bg-low);
+    section {
+      width: 100%;
+      padding: 8px 16px 8px 24px;
+
+      @media (min-width: 1024px) {
+        width: 50%;
+
+        &:first-of-type {
+          padding: 32px 32px 32px 48px;
+        }
+
+        &:last-of-type {
+          padding: 32px 48px 32px 32px;
+        }
+
+        >*+* {
+          margin-top: 4px;
+        }
+      }
+
+      >h6 {
+        text-transform: capitalize;
+        color: var(--base-text-secondary);
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 20px;
+        margin-bottom: 4px;
 
         @media (min-width: 1024px) {
-            display: flex;
+          margin-bottom: 16px;
+        }
+      }
+
+      >h6:not(:first-child) {
+        margin-top: 16px;
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: 12px 12px 12px 0px;
+
+        @media (min-width: 1024px) {
+          align-items: start;
+          padding: 12px;
+
+          &:hover {
+            background: var(--base-bg-highest);
+          }
         }
 
-        section {
-            width: 100%;
-            padding: 8px 16px 8px 24px;
+        img,
+        svg {
+          border-radius: 4px;
+          color: var(--base-icon);
+          height: 32px;
+          width: 32px;
+          flex-shrink: 0;
+
+          @media (min-width: 1024px) {
+            padding: 6px;
+          }
+        }
+
+        >div {
+          margin-left: 16px;
+
+          h6 {
+            color: var(--base-text);
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 24px;
 
             @media (min-width: 1024px) {
-                width: 50%;
-
-                &:first-of-type {
-                    padding: 32px 32px 32px 48px;
-                }
-
-                &:last-of-type {
-                    padding: 32px 48px 32px 32px;
-                }
-
-                > * + * {
-                    margin-top: 4px;
-                }
+              font-weight: 600;
             }
+          }
 
-            > h6 {
-                text-transform: capitalize;
-                color: var(--base-text-secondary);
-                font-size: 14px;
-                font-weight: 600;
-                line-height: 20px;
-                margin-bottom: 4px;
+          p {
+            display: none;
 
-                @media (min-width: 1024px) {
-                    margin-bottom: 16px;
-                }
+            @media (min-width: 1024px) {
+              display: block;
+              color: var(--base-text-secondary);
+              font-size: 14px;
+              font-weight: 400;
+              line-height: 20px;
+              text-wrap: wrap;
             }
-
-            > h6:not(:first-child) {
-                margin-top: 16px;
-            }
-
-            a {
-                display: flex;
-                align-items: center;
-                padding: 12px 12px 12px 0px;
-
-                @media (min-width: 1024px) {
-                    align-items: start;
-                    padding: 12px;
-
-                    &:hover {
-                        background: var(--base-bg-highest);
-                    }
-                }
-
-                img,
-                svg {
-                    border-radius: 4px;
-                    color: var(--base-icon);
-                    height: 32px;
-                    width: 32px;
-                    flex-shrink: 0;
-
-                    @media (min-width: 1024px) {
-                        padding: 6px;
-                    }
-                }
-
-                > div {
-                    margin-left: 16px;
-
-                    h6 {
-                        color: var(--base-text);
-                        font-size: 16px;
-                        font-weight: 400;
-                        line-height: 24px;
-
-                        @media (min-width: 1024px) {
-                            font-weight: 600;
-                        }
-                    }
-
-                    p {
-                        display: none;
-
-                        @media (min-width: 1024px) {
-                            display: block;
-                            color: var(--base-text-secondary);
-                            font-size: 14px;
-                            font-weight: 400;
-                            line-height: 20px;
-                            text-wrap: wrap;
-                        }
-                    }
-                }
-            }
+          }
         }
+      }
     }
+  }
 }
 
 .dev-nav,
 .account-menu {
-    display: flex;
-    align-items: center;
-    position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  @media (min-width: 1024px) {
+    >button {
+
+      border-radius: 4px;
+      padding: 8px;
+
+      &:hover {
+        background: var(--base-bg-hover);
+      }
+
+      &:focus {
+        background: var(--base-bg-hover);
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+
+        svg {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  .menu-component {
+    position: absolute;
+    top: 16px;
+    right: 20px;
 
     @media (min-width: 1024px) {
-        > button {
+      right: 0px;
+    }
+  }
 
-            border-radius: 4px;
-            padding: 8px;
-
-            &:hover {
-                background: var(--base-bg-hover);
-            }
-
-            &:focus {
-                background: var(--base-bg-hover);
-                outline: 2px solid transparent;
-                outline-offset: 2px;
-
-                svg {
-                    transform: rotate(180deg);
-                }
-            }
-        }
+  button[aria-label="Dev Nav"] span {
+    span {
+      display: block;
     }
 
-    .menu-component {
-        position: absolute;
-        top: 16px;
-        right: 20px;
+    svg {
+      color: var(--base-icon);
+      display: block;
+      height: 24px;
+    }
+  }
 
-        @media (min-width: 1024px) {
-            right: 0px;
-        }
+  button[aria-label="Profile Menu"]>span {
+    color: var(--base-text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    img {
+      border-radius: 50%;
+      width: 24px;
+      max-width: none;
+      height: 24px;
+      border: 1px solid var(--base-border-tertiary);
     }
 
-    button[aria-label="Dev Nav"] span {
-        span {
-            display: block;
-        }
+    >span:last-of-type {
+      display: none;
 
-        svg {
-            color: var(--base-icon);
-            display: block;
-            height: 24px;
-        }
+      @media (min-width: 1024px) {
+        display: block;
+      }
     }
 
-    button[aria-label="Profile Menu"] > span {
-        color: var(--base-text);
-        display: flex;
-        align-items: center;
-        gap: 8px;
+    svg {
+      color: var(--base-icon);
+      display: none;
+      height: 20px;
 
-        img {
-            border-radius: 50%;
-            width: 24px;
-            max-width: none;
-            height: 24px;
-            border: 1px solid var(--base-border-tertiary);
-        }
-
-        > span:last-of-type {
-            display: none;
-
-            @media (min-width: 1024px) {
-                display: block;
-            }
-        }
-
-        svg {
-            color: var(--base-icon);
-            display: none;
-            height: 20px;
-
-            @media (min-width: 1024px) {
-                display: block;
-            }
-        }
+      @media (min-width: 1024px) {
+        display: block;
+      }
     }
+  }
 }
 
 .dev-nav {
-    display: none;
+  display: none;
 
-    @media (min-width: 640px) {
-        display: flex;
-    }
+  @media (min-width: 640px) {
+    display: flex;
+  }
 }
 
 button[aria-label="Notifications"] svg {
-    color: var(--base-icon);
+  color: var(--base-icon);
 }
 
 .nav-user-controls {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
 
-    @media (min-width: 1024px) {
-        gap: 8px;
-    }
+  @media (min-width: 1024px) {
+    gap: 8px;
+  }
 
-    button {
-        color: var(--base-icon);
-    }
+  button {
+    color: var(--base-icon);
+  }
 }
 
 @media (min-width: 1024px) {
-    #sidebar-open {
-        display: none;
-    }
+  #sidebar-open {
+    display: none;
+  }
 }
 
 .minimal-top-nav {
-    background: var(--base-bg-low);
-    padding: 16px;
-    border-bottom: 1px solid var(--base-border-tertiary);
-    background: var(--base-bg-low);
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  background: var(--base-bg-low);
+  padding: 16px;
+  border-bottom: 1px solid var(--base-border-tertiary);
+  background: var(--base-bg-low);
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+
+  @media (min-width: 1024px) {
+    padding: 0px 32px;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
 
     @media (min-width: 1024px) {
-        padding: 0px 32px;
+      padding: 16px 0px;
     }
 
-    a {
-        display: flex;
-        align-items: center;
-
-        @media (min-width: 1024px) {
-            padding: 16px 0px;
-        }
-
-        svg {
-            color: var(--base-text);
-            display: flex;
-            align-items: center;
-        }
+    svg {
+      color: var(--base-text);
+      display: flex;
+      align-items: center;
     }
+  }
 }
