@@ -4,7 +4,6 @@ module Jumpstart
   autoload :AccountMiddleware, "jumpstart/account_middleware"
   autoload :AdministrateHelpers, "jumpstart/administrate_helpers"
   autoload :Configuration, "jumpstart/configuration"
-  autoload :Mailer, "jumpstart/mailer"
   autoload :Mentions, "jumpstart/mentions"
   autoload :Multitenancy, "jumpstart/multitenancy"
   autoload :Omniauth, "jumpstart/omniauth"
