@@ -1,9 +1,7 @@
 <div class="account-menu" data-controller="dropdown">
   <button data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" aria-label="Profile Menu">
-    <span>
       <%= account_avatar current_account %>
       <span><%= current_account.name %></span>
-    </span>
   </button>
   <div data-dropdown-target="menu"
     data-transition-enter="transition ease-out duration-200"
