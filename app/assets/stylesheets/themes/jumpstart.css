@@ -8,6 +8,7 @@
   --border-primary-hover: theme('colors.avocado.300');
   --text-primary: theme('colors.avocado.800');
   --text-primary-hover: theme('colors.avocado.700');
+  --logo-primary: theme('colors.smoke.950');
 
   /*Secondary*/
   --bg-secondary: theme('colors.smoke.50');

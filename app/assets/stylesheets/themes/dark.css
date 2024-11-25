@@ -11,6 +11,7 @@
   --border-primary-hover: theme('colors.primary.400');
   --text-primary: theme('colors.primary.300');
   --text-primary-hover: theme('colors.primary.400');
+  --logo-primary: theme('colors.gray.100');
 
   /*Secondary*/
   --bg-secondary: theme('colors.secondary.900');
