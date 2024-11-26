@@ -1,6 +1,5 @@
 @layer components {
   .pill {
-    font-family: Inter;
     border-radius: 9999px;
     padding: 4px 16px;
     font-size: 12px;

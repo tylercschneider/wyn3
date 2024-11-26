@@ -23,7 +23,6 @@
     font-weight: 500;
     border-color: transparent;
     color: var(--base-text-tertiary);
-    font-family: Inter;
     font-style: normal;
 
     &:hover {

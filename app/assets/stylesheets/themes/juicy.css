@@ -8,6 +8,7 @@
   --border-primary-hover: theme('colors.indigo.500');
   --text-primary: theme('colors.indigo.700');
   --text-primary-hover: theme('colors.indigo.600');
+  --logo-primary: theme('colors.slate.800');
 
   /*Secondary*/
   --bg-secondary: theme('colors.teal.400');

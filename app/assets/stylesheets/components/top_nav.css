@@ -21,7 +21,7 @@
     }
 
     a {
-      color: var(--base-text);
+      color: var(--logo-primary);
       display: flex;
       align-items: center;
 
@@ -50,6 +50,7 @@
   left: 0;
   right: 0;
   width: 100%;
+  z-index: 10;
 
   @media (min-width: 1024px) {
     box-shadow: none;
@@ -336,7 +337,7 @@ section nav form button {
     }
   }
 
-  button[aria-label="Profile Menu"]>span {
+  button[aria-label="Profile Menu"] {
     color: var(--base-text);
     display: flex;
     align-items: center;
@@ -356,6 +357,10 @@ section nav form button {
 
       @media (min-width: 1024px) {
         display: block;
+        max-width: 8rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-wrap: nowrap;
       }
     }
 
