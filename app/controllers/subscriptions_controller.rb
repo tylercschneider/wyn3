@@ -24,11 +24,13 @@ class SubscriptionsController < ApplicationController
       current_account.set_payment_processor(:stripe)
       set_checkout_session
     elsif Jumpstart.config.lemon_squeezy?
-      current_account.set_payment_processor(:lemon_squeezy)
+      payment_processor = current_account.set_payment_processor(:lemon_squeezy)
       checkout = payment_processor.checkout(variant_id: @plan.id_for_processor(:lemon_squeezy))
       redirect_to checkout.url, allow_other_host: true
     else
-      current_account.set_payment_processor(Jumpstart.config.payment_processors.first)
+      # Set the payment processor and try to create a Customer if supported to tie the checkout
+      payment_processor = current_account.set_payment_processor(Jumpstart.config.payment_processors.first)
+      payment_processor.api_record
     end
   rescue Pay::Error => e
     flash[:alert] = e.message
