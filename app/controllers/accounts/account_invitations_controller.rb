@@ -1,4 +1,5 @@
 class Accounts::AccountInvitationsController < Accounts::BaseController
+  before_action :authenticate_user!
   before_action :set_account
   before_action :require_account_admin
   before_action :set_account_invitation, only: [:edit, :update, :destroy, :resend]
