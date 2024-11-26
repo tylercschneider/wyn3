@@ -76,11 +76,4 @@ class Hotwire::Android::PathConfigurationsController < ApplicationController
       ]
     }
   end
-
-  private
-
-  # Provide the name of the icon
-  def svg_icon_path(icon)
-    ActionController::Base.helpers.asset_path("icons/#{icon}.svg")
-  end
 end

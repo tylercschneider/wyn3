@@ -1,4 +1,4 @@
-class Turbo::Ios::PathConfigurationsController < ApplicationController
+class Hotwire::Ios::PathConfigurationsController < ApplicationController
   # Defines the tabs and rules for the mobile app views
   # To customize this, you can edit the JSON here
   def show
@@ -27,7 +27,12 @@ class Turbo::Ios::PathConfigurationsController < ApplicationController
       },
       rules: [
         {
-          patterns: ["/new$", "/edit$"],
+          patterns: [
+            "/new$",
+            "/edit$",
+            "/users/sign_up",
+            "/users/sign_in"
+          ],
           properties: {
             context: "modal"
           }
@@ -36,20 +41,6 @@ class Turbo::Ios::PathConfigurationsController < ApplicationController
           patterns: ["^/unauthorized"],
           properties: {
             view_controller: "unauthorized"
-          }
-        },
-        {
-          patterns: ["/users/sign_up"],
-          properties: {
-            view_controller: "registration",
-            context: "modal"
-          }
-        },
-        {
-          patterns: ["/users/sign_in"],
-          properties: {
-            view_controller: "authentication",
-            context: "modal"
           }
         },
         {
