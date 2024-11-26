@@ -2,6 +2,17 @@
 
 This file includes notes on major changes that might affect your application and require changes from you to update.
 
+### November 26, 2024
+
+Turbo Native routes have been moved to `/hotwire` now that Jumpstart iOS and Android are using Hotwire Native.
+
+### November 20, 2024
+
+* Removed .nav-link class
+
+  The `.nav-link` class is no longer required on links placed within the `_left_nav` or `_right_nav` partials.
+  If you are using this class on any links in your navbar you can remove them as the CSS to handle nav links has been updated to style these links appropriately.
+
 ### November 18, 2024
 
 * Refactored to use Hotwire Native.
@@ -14,7 +25,7 @@ This file includes notes on major changes that might affect your application and
 * Added a "configure your own" option for Active Job queue adapter and simplified the supported list to Async, SolidQueue and Sidekiq.
 
   To use another queue adapter, select the "configure your own" option and add the queue adapter to your environments.
-  
+
   If you're using one of the removed queue adapters, be sure to remove it from `config/jumpstart.yml` and set it in your environments.
 
 ### September 23, 2024
