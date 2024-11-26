@@ -76,6 +76,29 @@ test:
   <<: *default
   database: jumpstart_test
 
+staging:
+  primary: &primary_staging
+    <<: *default
+    database: jumpstart_staging
+    username: jumpstart
+    password: <%= ENV["POSTGRES_PASSWORD"] %>
+
+  cache:
+    <<: *primary_staging
+    database: jumpstart_staging_cache
+    migrations_paths: db/cache_migrate
+    # url: <%= ENV["CACHE_DATABASE_URL"] %>
+  queue:
+    <<: *primary_staging
+    database: jumpstart_staging_queue
+    migrations_paths: db/queue_migrate
+    # url: <%= ENV["QUEUE_DATABASE_URL"] %>
+  cable:
+    <<: *primary_staging
+    database: jumpstart_staging_cable
+    migrations_paths: db/cable_migrate
+    # url: <%= ENV["CABLE_DATABASE_URL"] %>
+
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
 # ever seen by anyone, they now have access to your database.
