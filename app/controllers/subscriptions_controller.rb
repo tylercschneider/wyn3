@@ -21,7 +21,6 @@ class SubscriptionsController < ApplicationController
 
   def new
     if Jumpstart.config.stripe?
-      current_account.set_payment_processor(:stripe)
       set_checkout_session
     elsif Jumpstart.config.lemon_squeezy?
       payment_processor = current_account.set_payment_processor(:lemon_squeezy)
