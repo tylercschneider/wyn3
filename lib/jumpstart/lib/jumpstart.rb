@@ -2,7 +2,6 @@ require "jumpstart/engine"
 
 module Jumpstart
   autoload :AccountMiddleware, "jumpstart/account_middleware"
-  autoload :AdministrateHelpers, "jumpstart/administrate_helpers"
   autoload :Configuration, "jumpstart/configuration"
   autoload :Mentions, "jumpstart/mentions"
   autoload :Multitenancy, "jumpstart/multitenancy"
