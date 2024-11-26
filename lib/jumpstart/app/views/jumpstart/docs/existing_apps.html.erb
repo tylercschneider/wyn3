@@ -21,34 +21,12 @@ end</code></pre>
 </div>
 
 <%= h2_with_anchor "Navbar" %>
-<p>The iOS / Android app uses a native header so it feels native. We add a hamburger button to this which triggers a Javascript event using the Turbo Bridge.</p>
+<p>The iOS / Android app uses a native header so it feels native. We add a hamburger button to this which triggers a Javascript event using the Hotwire Native Bridge.</p>
 <p>In Rails, you&#39;ll want to hide your navbar on Hotwire Native requests. Use a request variant template for this so you can minimize the HTML used for mobile.</p>
 <p>The menu should be hidden, but toggles when the <code>toggle-nav-bar</code> event fires. You can create a simple Stimulus Controller to listen to that event and toggle the navbar visibility.</p>
 
-<%= h2_with_anchor "Turbo Bridge" %>
-<p>The Turbo Bridge is how your iOS / Android app and Javascript talk to each other. Add this to your Javascript. We&#39;re using Webpacker, but you can probably use this in the asset pipeline as well, it just might take a few small tweaks.</p>
-<div class="not-prose">
-  <pre><code class="lang-javascript">class Bridge {
-  // Toggles navbar visibility in browser from Hotwire Native
-  static toggleNavBar() {
-    const event = new CustomEvent("toggle-nav-bar")
-    window.dispatchEvent(event)
-  }
-
-  // Sends a message to the native app, if active.
-  static postMessage(name, data = {}) {
-    // iOS
-    window.webkit?.messageHandlers?.nativeApp?.postMessage({name, ...data})
-
-    // Android
-    window.nativeApp?.postMessage(JSON.stringify({name, ...data}))
-  }
-}
-
-// Expose this on the window object so TurboNative can interact with it</span>
-window</span>.TurboNativeBridge = Bridge
-export</span> <span class="hljs-keyword">default</span> Bridge</code></pre>
-</div>
+<%= h2_with_anchor "Hotwire Native Bridge" %>
+<p>Bridge components are how your iOS / Android app and JavaScript talk to each other. Bridge components are Stimulus controllers that can be used to do things like add native submit buttons on mobile apps so they feel more integrated. Learn more in the <%= link_to "Hotwire Native docs", "https://native.hotwired.dev/overview/bridge-components", target: :_blank %>.</p>
 
 <%= h2_with_anchor "Authentication" %>
 <p>Authentication requires an API endpoint that accepts <code>email</code> and <code>password</code> params.</p>
@@ -58,30 +36,29 @@ export</span> <span class="hljs-keyword">default</span> Bridge</code></pre>
   <li>Validate the email and password</li>
   <li>Sign the user in (with cookies)</li>
   <li>Find or create an API token for the user</li>
-  <li>Return a 200 OK JSON response with:<ul>
-      <li><code>token</code> - the API token for the iOS / Android device to make API requests</li>
-    </ul>
-  </li>
+  <li>Return a 200 OK JSON response with cookies</li>
 </ul>
 <p>Successful authentication will refresh the currently visible page.</p>
 
 <%= h2_with_anchor "Sign out" %>
-<p>Sign out must happen on the iOS / Android app side. That way we can delete the API token, make an API request to remove the NotificationToken, and clear cookies in the WebView.</p>
-<p>To intercept the Sign out link in the HTML, use the following Javascript:</p>
+<p>Sign out must happen on the iOS / Android app side. That way we can make an API request to remove the NotificationToken and clear cookies in the WebView.</p>
+<p>To intercept the Sign out link in the HTML, use the following Bridge component:</p>
 <div class="not-prose">
-  <pre><code class="lang-javascript">import { Controller } from "stimulus"
+  <pre><code class="lang-javascript">import { BridgeComponent } from "@hotwired/hotwire-native-bridge"
 
-export default class extends Controller {
-  signOut(event) {
-    if (this._isTurboNativeApp) {
-      event.preventDefault()
-      event.stopImmediatePropagation()
-      window.TurboNativeBridge.postMessage("signOut")
-    }
+export default class extends BridgeComponent {
+  static component = "sign-out"
+
+  static values = {
+    path: String
   }
 
-  get _isTurboNativeApp() {
-    return navigator.userAgent.indexOf("Hotwire Native") !== -1
+  signOut(event) {
+    event.preventDefault()
+    event.stopImmediatePropagation()
+
+    const path = this.pathValue
+    this.send("signOut", {path}, () => {})
   }
 }</code></pre>
 </div>
@@ -99,7 +76,7 @@ export default class extends Controller {
 <p><code>PATCH /api/v1/password</code></p>
 <p>Headers:</p>
 <ul>
-  <li><code>Authorization</code> - The user&#39;s API token</li>
+  <li><code>Cookie</code> - The user&#39;s session cookie</li>
 </ul>
 <p>Params:</p>
 <ul>
@@ -127,7 +104,7 @@ export default class extends Controller {
 <p>An API endpoint for notification tokens should:</p>
 <ul>
   <li>Respond to <code>POST /api/v1/notification_tokens</code></li>
-  <li>Use <code>Authorization</code> header to authenticate user with API token</li>
+  <li>Use <code>Cookie</code> header to authenticate user with their session cookie</li>
   <li>Accept params:<ul>
       <li><code>token</code> - device notification token</li>
       <li><code>platform</code> - platform of device (iOS, fcm). "fcm" is Firebase Cloud Messaging which is used for Android.</li>
@@ -136,3 +113,6 @@ export default class extends Controller {
   <li>Find or create NotificationToken record for user with params</li>
   <li>Return 200 OK if successful</li>
 </ul>
+
+<%= h2_with_anchor "CSS" %>
+<p>We also recommend adding <code>class="hotwire-native"</code> to the html or body element in your layout <code>if hotwire_native_app?</code> to implement styling for native apps. This is already implemented in Jumpstart Pro Rails and ready to use.</p>
