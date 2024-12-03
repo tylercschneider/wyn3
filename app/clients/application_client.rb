@@ -317,7 +317,7 @@ class ApplicationClient
     def content_type = headers[:content_type].split(";").first
 
     def parsed_body
-      @parsed_body ||= PARSER.fetch(content_type, FALLBACK_PARSER).call(self)
+      @parsed_body ||= self.class::PARSER.fetch(content_type, FALLBACK_PARSER).call(self)
     end
   end
 end
