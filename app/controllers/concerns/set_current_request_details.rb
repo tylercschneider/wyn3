@@ -22,7 +22,7 @@ module SetCurrentRequestDetails
 
   def account_from_domain
     return unless Jumpstart::Multitenancy.domain?
-    Account.includes(:payment_processor, :users).find_by(domain: request.domain)
+    Account.includes(:payment_processor, :users).find_by(domain: request.host)
   end
 
   def account_from_subdomain
