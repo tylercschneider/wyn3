@@ -14,5 +14,4 @@ class ApplicationController < ActionController::Base
   include Users::AgreementUpdates
   include Users::NavbarNotifications
   include Users::Sudo
-  include Users::TimeZone
 end

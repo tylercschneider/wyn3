@@ -18,8 +18,6 @@
     "esbuild": "^0.24.0",
     "esbuild-rails": "^1.0.7",
     "flatpickr": "^4.6.10",
-    "js-cookie": "^3.0.1",
-    "jstz": "^2.1.1",
     "local-time": "^3.0.0",
     "postcss": "^8.4.33",
     "postcss-import": "^16.0.1",
