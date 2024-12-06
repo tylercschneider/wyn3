@@ -356,22 +356,3 @@
     </div>
   </form>
 <% end %>
-
-<%= h3_with_anchor "Date & Time Fields" %>
-<p class="mb-3">We're using <%= link_to "stimulus-flatpickr", "https://github.com/adrienpoly/stimulus-flatpickr", target: :_blank %> to enable this functionality. You can customize this to whatever you need as it supports everything Flatpickr does.</p>
-
-<div class="form-group">
-  <label for="name">Date</label>
-  <input type="text" placeholder="Select a date" name="date" class="form-control" data-controller="flatpickr">
-  <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"> 
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.90039 2.39999C7.39745 2.39999 7.80039 2.80294 7.80039 3.29999V4.79999H16.2004V3.29999C16.2004 2.80294 16.6033 2.39999 17.1004 2.39999C17.5974 2.39999 18.0004 2.80294 18.0004 3.29999V4.79999H18.3004C20.1229 4.79999 21.6004 6.27745 21.6004 8.09999V18.3C21.6004 20.1225 20.1229 21.6 18.3004 21.6H5.70039C3.87785 21.6 2.40039 20.1225 2.40039 18.3V8.09999C2.40039 6.27745 3.87785 4.79999 5.70039 4.79999H6.00039V3.29999C6.00039 2.80294 6.40333 2.39999 6.90039 2.39999ZM5.70039 8.99999C4.87196 8.99999 4.20039 9.67157 4.20039 10.5V18.3C4.20039 19.1284 4.87196 19.8 5.70039 19.8H18.3004C19.1288 19.8 19.8004 19.1284 19.8004 18.3V10.5C19.8004 9.67157 19.1288 8.99999 18.3004 8.99999H5.70039Z" fill="#6B7280"/>
-  </svg>
-</div>
-
-<div class="form-group">
-  <label for="name">Date &amp; Time</label>
-  <input type="text" placeholder="Select a date and time" name="datetime" class="form-control" data-controller="flatpickr" data-flatpickr-enable-time="true">
-  <svg class="calendar-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M6.90039 2.39999C7.39745 2.39999 7.80039 2.80294 7.80039 3.29999V4.79999H16.2004V3.29999C16.2004 2.80294 16.6033 2.39999 17.1004 2.39999C17.5974 2.39999 18.0004 2.80294 18.0004 3.29999V4.79999H18.3004C20.1229 4.79999 21.6004 6.27745 21.6004 8.09999V18.3C21.6004 20.1225 20.1229 21.6 18.3004 21.6H5.70039C3.87785 21.6 2.40039 20.1225 2.40039 18.3V8.09999C2.40039 6.27745 3.87785 4.79999 5.70039 4.79999H6.00039V3.29999C6.00039 2.80294 6.40333 2.39999 6.90039 2.39999ZM5.70039 8.99999C4.87196 8.99999 4.20039 9.67157 4.20039 10.5V18.3C4.20039 19.1284 4.87196 19.8 5.70039 19.8H18.3004C19.1288 19.8 19.8004 19.1284 19.8004 18.3V10.5C19.8004 9.67157 19.1288 8.99999 18.3004 8.99999H5.70039Z" fill="#6B7280"/>
-  </svg>
-</div>
