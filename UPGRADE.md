@@ -2,6 +2,10 @@
 
 This file includes notes on major changes that might affect your application and require changes from you to update.
 
+### December 6, 2024
+
+* [Breaking] Remove Flatpickr. Since Flatpickr isn't accessible to screen readers, we have decided to remove it in favor of the built-in `datetime_local` browser field.
+
 ### November 26, 2024
 
 Turbo Native routes have been moved to `/hotwire` now that Jumpstart iOS and Android are using Hotwire Native.

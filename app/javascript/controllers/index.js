@@ -17,6 +17,3 @@ application.register('tabs', Tabs)
 application.register('popover', Popover)
 application.register('toggle', Toggle)
 application.register('slideover', Slideover)
-
-import Flatpickr from 'stimulus-flatpickr'
-application.register('flatpickr', Flatpickr)

@@ -29,10 +29,6 @@
       color: var(--icon-on-danger-secondary);
     }
   }
-
-  &:has(> [data-controller="flatpickr"]) {
-    width: 33.33%;
-  }
 }
 
 /* non-input elements (like the Stripe card form) can be styled to look like an input */
@@ -92,39 +88,6 @@ div.form-control {
       border: 1px solid var(--border-disabled);
       color: var(--base-text-tertiary);
       cursor: not-allowed;
-    }
-
-    &[data-controller="flatpickr"] {
-      color: var(--base-text-secondary);
-
-      &:read-only {
-        background: var(--base-bg-low);
-
-        &:focus,
-        &:focus-visible {
-          box-shadow: inset 0 0 0 1px var(--border-primary-hover);
-          border: 1px solid var(--border-primary-hover);
-        }
-
-        &:disabled {
-          background: var(--bg-disabled);
-          border: 1px solid var(--border-disabled);
-          color: var(--base-text-tertiary);
-          cursor: not-allowed;
-        }
-
-        &.error {
-          background: var(--bg-danger-secondary);
-          box-shadow: inset 0 0 0 1px var(--border-danger);
-          border: 1px solid var(--border-danger);
-          color: var(--text-on-danger-secondary);
-
-          &:focus,
-          &:focus-visible {
-            background: var(--base-bg-low);
-          }
-        }
-      }
     }
   }
 }
@@ -272,39 +235,6 @@ form.inline {
 
   .form-group .label {
     width: 25%;
-  }
-}
-
-/* Fix flatpickr */
-.flatpickr-current-month .flatpickr-monthDropdown-months {
-  display: inline-block;
-}
-
-.dayContainer {
-  .flatpickr-day:hover,
-  .flatpickr-day.today:hover,
-  .flatpickr-day.selected:hover {
-    background: var(--base-bg-hover);
-    border-color: var(--base-bg-hover);
-    color: var(--text-primary-hover);
-  }
-
-  .flatpickr-day.today {
-    border-color: var(--base-border-focus);
-    color: var(--base-text);
-  }
-
-  .flatpickr-day.selected,
-  .flatpickr-day.selected:hover {
-    background: var(--bg-primary);
-    border-color: var(--bg-primary);
-    color: var(--text-on-primary);
-  }
-}
-
-.flatpickr-time {
-  .numInput.flatpickr-hour {
-    font-weight: 400;
   }
 }
 

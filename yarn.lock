@@ -132,7 +132,7 @@
   resolved "https://registry.yarnpkg.com/@hotwired/hotwire-native-bridge/-/hotwire-native-bridge-1.0.0.tgz#84579dda2a7980b25e26fb98b3cd0d86a101899c"
   integrity sha512-T8I93L+/U/iVNqLJpd0eHosL57Ay81iha7QcauwFakTDH6ZGT1tPCX4Ci2v3OtH3GFtLGd+iVUtNdKNaqm3cUw==
 
-"@hotwired/stimulus@^3.0.0", "@hotwired/stimulus@^3.2.2":
+"@hotwired/stimulus@^3.2.2":
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.2.2.tgz#071aab59c600fed95b97939e605ff261a4251608"
   integrity sha512-eGeIqNOQpXoPAIP7tC1+1Yc1yl1xnwYqg+3mzqxyrbE5pg5YFBZcA6YoTiByJB6DKAEsiWtl6tjTJS4IYtbB7A==
@@ -547,11 +547,6 @@ fill-range@^7.1.1:
   integrity sha512-YsGpe3WHLK8ZYi4tWDg2Jy3ebRz2rXowDxnld4bkQB00cc/1Zw9AWnC0i9ztDJitivtQvaI9KaLyKrc+hBW0yg==
   dependencies:
     to-regex-range "^5.0.1"
-
-flatpickr@^4.6.10:
-  version "4.6.13"
-  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.13.tgz#8a029548187fd6e0d670908471e43abe9ad18d94"
-  integrity sha512-97PMG/aywoYpB4IvbvUJi0RQi8vearvU0oov1WW3k0WZPBMrTQVqekSX5CjSG/M4Q3i6A/0FKXC7RyAoAUUSPw==
 
 foreground-child@^3.1.0:
   version "3.3.0"
@@ -969,13 +964,6 @@ spark-md5@^3.0.1:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/spark-md5/-/spark-md5-3.0.2.tgz#7952c4a30784347abcee73268e473b9c0167e3fc"
   integrity sha512-wcFzz9cDfbuqe0FZzfi2or1sgyIrsDwmPwfZC4hiNidPdPINjeUwNfv5kldczoEAcjl9Y1L3SM7Uz2PUEQzxQw==
-
-stimulus-flatpickr@^3.0.0-0:
-  version "3.0.0-0"
-  resolved "https://registry.yarnpkg.com/stimulus-flatpickr/-/stimulus-flatpickr-3.0.0-0.tgz#af9bfa70bd1b74654312580101387c9d13ee32f2"
-  integrity sha512-TLfxen1OS+3Jy594+VmYkJz/IRaH5wqxxdbVB1aalS1+3EJgy/shqB/Fd4ttKWC8EIOVd8Pzx22oVnjNep3mTA==
-  dependencies:
-    "@hotwired/stimulus" "^3.0.0"
 
 "string-width-cjs@npm:string-width@^4.2.0":
   version "4.2.3"
