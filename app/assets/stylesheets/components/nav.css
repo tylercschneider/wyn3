@@ -78,7 +78,7 @@ nav.menu-component {
           padding: 0px 0px;
 
           a {
-            display: flex;
+            display: block;
             align-items: center;
             gap: 8px;
             padding: 6px 14px 6px 24px;
@@ -89,11 +89,22 @@ nav.menu-component {
             line-height: 24px;
             text-overflow: ellipsis;
             overflow: hidden;
-            display: inline-block;
+            white-space: nowrap;
+
+            &:has(svg) {
+              display: flex;
+            }
 
             &:hover {
               background-color: var(--base-bg-high);
               color: var(--base-text-secondary);
+            }
+
+            span {
+              text-overflow: ellipsis;
+              overflow: hidden;
+              white-space: nowrap;
+              width: 90%;
             }
 
             svg {
