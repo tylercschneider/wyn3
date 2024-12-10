@@ -53,11 +53,11 @@ nav.menu-component {
 
         > a {
           color: var(--base-text-tertiary);
-          padding: 12px 24px 4px 24px;
-          display: inline-block;
-          width: 100%;
+          display: block;
+          padding: 12px 24px;
           overflow: hidden;
           text-overflow: ellipsis;
+          width: 100%;
 
           &:hover {
             color: var(--base-text-secondary);
@@ -77,18 +77,19 @@ nav.menu-component {
         li {
           padding: 0px 0px;
 
-          a {
-            display: block;
+          a,
+          form button {
             align-items: center;
-            gap: 8px;
-            padding: 6px 14px 6px 24px;
             color: var(--base-text);
-            text-decoration: none;
+            display: block;
             font-size: 14px;
             font-weight: 400;
+            gap: 8px;
             line-height: 24px;
-            text-overflow: ellipsis;
             overflow: hidden;
+            padding: 6px 14px 6px 24px;
+            text-decoration: none;
+            text-overflow: ellipsis;
             white-space: nowrap;
 
             &:has(svg) {
@@ -101,45 +102,16 @@ nav.menu-component {
             }
 
             span {
-              text-overflow: ellipsis;
               overflow: hidden;
+              text-overflow: ellipsis;
               white-space: nowrap;
               width: 90%;
             }
 
             svg {
               color: var(--base-icon);
+              height: 20px;
               width: 20px;
-              width: 20px;
-            }
-
-            * + svg {
-              margin-left: auto;
-            }
-          }
-
-          form button {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 14px 6px 24px;
-            color: var(--base-text);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 24px;
-            width: 100%;
-            text-overflow: ellipsis;
-            overflow: hidden;
-            display: inline-block;
-
-            &:hover {
-              background-color: var(--base-bg-high);
-              color: var(--base-text-secondary);
-            }
-
-            svg {
-              color: var(--base-icon);
             }
 
             * + svg {
