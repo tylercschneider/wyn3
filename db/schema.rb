@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_21_183620) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -124,7 +124,7 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_21_183620) do
     t.string "uid"
     t.string "refresh_token"
     t.datetime "expires_at", precision: nil
-    t.text "auth"
+    t.jsonb "auth"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.string "access_token"
