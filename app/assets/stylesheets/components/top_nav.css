@@ -56,7 +56,7 @@
     position: static;
   }
 
-  nav {
+  > nav {
     align-items: start;
     display: flex;
     flex-direction: column;
@@ -305,7 +305,7 @@ section nav form button {
         outline: 2px solid transparent;
         outline-offset: 2px;
 
-        svg {
+        svg.caret {
           transform: rotate(180deg);
         }
       }
