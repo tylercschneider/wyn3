@@ -35,7 +35,9 @@
     <%= form.button class: "btn btn-primary" %>
 
     <% if account.persisted? && !account.personal? %>
-      <%= button_to t("delete"), account, class: "btn btn-danger btn-outline", method: :delete, data: { turbo_confirm: t("are_you_sure"), turbo_confirm_description: subscribed? ? t(".delete_with_payments_description") : t(".delete_description") } %>
+      <%= button_tag t("delete"), form: :delete_account, class: "btn btn-danger btn-outline" %>
     <% end %>
   </div>
 <% end %>
+
+<%= form_with model: account, method: :delete, id: :delete_account, data: { turbo_confirm: t("are_you_sure"), turbo_confirm_description: subscribed? ? t(".delete_with_payments_description") : t(".delete_description") } %>
