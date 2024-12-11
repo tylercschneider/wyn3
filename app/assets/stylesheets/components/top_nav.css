@@ -330,6 +330,12 @@ section nav form button {
   }
 
   button {
+    &:has(span) {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
     img {
       border-radius: 50%;
       width: 24px;
@@ -342,6 +348,19 @@ section nav form button {
       color: var(--base-icon);
       display: block;
       height: 24px;
+    }
+
+    >span:last-of-type {
+      display: none;
+      font-size: 14px;
+
+      @media (min-width: 1024px) {
+        display: block;
+        max-width: 8rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        text-wrap: nowrap;
+      }
     }
   }
 }
