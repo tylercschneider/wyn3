@@ -1,6 +1,5 @@
 nav.pagy.nav {
   display: inline-flex;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: start;
 
@@ -31,6 +30,7 @@ nav.pagy.nav {
 
     &[aria-current="page"].current {
       background: var(--bg-primary);
+      border: 1px solid var(--bg-primary);
       color: var(--text-on-primary);
       margin-left: -1px;
     }
