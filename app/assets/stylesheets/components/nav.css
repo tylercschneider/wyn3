@@ -1,11 +1,3 @@
-.dropdown-menu {
-  min-width: 100%;
-
-  @media (min-width: 1024px) {
-    min-width: 200px;
-  }
-}
-
 /* Menu component */
 nav.menu-component {
   max-width: 275px;
