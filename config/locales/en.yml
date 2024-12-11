@@ -171,7 +171,7 @@ en:
       referrals: "Referrals"
     flash:
       confirm_payment: "Confirm your latest payment"
-    account_menu:
+    user_menu:
       profile: "Profile"
       password: "Password"
       connected_accounts: "Connected Accounts"
