@@ -7,54 +7,17 @@
     content: "*";
     color: var(--icon-on-danger-secondary);
   }
-
-  .calendar-icon {
-    position: absolute;
-    right: 8px;
-    top: 50%;
-  }
-
-
-  input:focus,
-  input:focus-visible {
-    + .calendar-icon path {
-      fill: var(--border-primary-hover);
-      color: var(--border-primary-hover);
-    }
-  }
-
-  input.error {
-    + .calendar-icon path {
-      fill: var(--icon-on-danger-secondary);
-      color: var(--icon-on-danger-secondary);
-    }
-  }
-}
-
-/* non-input elements (like the Stripe card form) can be styled to look like an input */
-div.form-control {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background-color: #fff;
-  border-width: 1px;
-  padding-top: .5rem;
-  padding-right: .75rem;
-  padding-bottom: .5rem;
-  padding-left: .75rem;
-  font-size: 1rem;
-  line-height: 1.5rem;
 }
 
 @layer components {
   .form-control {
     background: var(--base-bg-low);
-    border: 1px solid var(--base-border-primary);
+    border: 1px solid var(--base-border-tertiary);
     border-radius: 6px;
     box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
     color: var(--base-text-secondary);
     display: block;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 22px;
     padding: 6px 12px;
@@ -94,10 +57,11 @@ div.form-control {
 
 select {
   background-color: var(--base-bg-low);
-  border: 1px solid var(--base-border-primary);
+  border: 1px solid var(--base-border-tertiary);
   border-radius: 6px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   cursor: pointer;
+  font-size: 14px;
   line-height: 22px;
   padding: 6px 0px;
   width: 100%;
@@ -123,7 +87,7 @@ select:not([multiple]) {
 
 select[multiple] {
   background: var(--base-bg-low);
-  border: 1px solid var(--base-border-primary);
+  border: 1px solid var(--base-border-tertiary);
   border-radius: 6px;
   box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
   padding: 6px 0px;
@@ -161,7 +125,7 @@ select[multiple] {
 
   option {
     color: var(--text-on-secondary);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     padding: 4px 12px;
@@ -254,7 +218,7 @@ form.inline {
     display: block;
     margin-bottom: 0px;
     color: var(--base-text);
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     line-height: 24px;
   }

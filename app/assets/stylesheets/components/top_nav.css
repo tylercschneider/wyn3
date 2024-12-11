@@ -311,7 +311,7 @@ section nav form button {
     }
   }
 
-  &:has([aria-label="Dev Nav"]) {
+  &:has([aria-label="Dev Menu"]) {
     display: none;
 
     @media (min-width: 1024px) {
