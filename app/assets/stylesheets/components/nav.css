@@ -1,6 +1,6 @@
 /* Menu component */
 nav.menu-component {
-  /*max-width: 275px;*/
+  max-width: 275px;
   background-color: var(--base-bg-low);
   border: 1px solid var(--Base-base-border-tertiary);
   border-radius: 8px;
@@ -10,6 +10,7 @@ nav.menu-component {
 
   &.notifications {
     width: 256px;
+    max-width: 375px;
 
     @media (min-width:640px) {
       width: 384px;
