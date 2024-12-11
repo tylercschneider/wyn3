@@ -284,10 +284,24 @@ section nav form button {
   }
 }
 
+/* By default dropdowns are right edge aligned, to align dropdowns to the left add the .left-align class in addition to the .dropdown-menu element */
 .dropdown-menu {
   display: flex;
   align-items: center;
   position: relative;
+
+  .menu-component {
+    position: absolute;
+    top: 100%;
+    right: 0;
+  }
+
+  &.left-align {
+    .menu-component {
+      left: 0;
+      right: unset;
+    }
+  }
 
   @media (min-width: 1024px) {
     >button {
@@ -316,16 +330,6 @@ section nav form button {
 
     @media (min-width: 1024px) {
       display: flex;
-    }
-  }
-
-  .menu-component {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-
-    @media (min-width: 1024px) {
-      right: 0px;
     }
   }
 
