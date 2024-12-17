@@ -21,15 +21,6 @@
   </div>
 
   <div class="form-picker-group toggle">
-    <%= check_box_tag "configuration[gems][]", "oj", Jumpstart.config.gems.include?("oj"), id: "oj" %>
-    <div>
-      <label for="oj">Oj</label>
-      <p><%= link_to "Oj", "https://github.com/ohler55/oj", target: :_blank %> is a C extension for Ruby for fast JSON parsing.</p>
-      <p>Enabling Oj will speed up Rails JSON parsing in <code>config/initializers/oj.rb</code>.</p>
-    </div>
-  </div>
-
-  <div class="form-picker-group toggle">
     <%= check_box_tag "configuration[gems][]", "whenever", Jumpstart.config.gems.include?("whenever"), id: "whenever" %>
     <div>
       <label for="whenever">Whenever</label>
