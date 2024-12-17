@@ -83,7 +83,6 @@ en:
       description: "Collaborate and share with others by creating an account."
     edit:
       title: "Edit"
-    form:
       delete_description: "Deleting this account will permanently remove all associated data."
       delete_with_payments_description: "Deleting this account will cancel any active subscriptions and permanently remove all associated data."
     created: "Account was successfully created."
