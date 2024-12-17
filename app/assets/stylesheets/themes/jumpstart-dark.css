@@ -1,5 +1,5 @@
-:root.jumpstart-dark,
-.jumpstart-dark {
+:root.jumpstart.dark,
+.jumpstart.dark {
   /*Primary*/
   --bg-primary: theme('colors.avocado.950');
   --bg-primary-hover: theme('colors.avocado.600');

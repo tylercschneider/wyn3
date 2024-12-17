@@ -25,7 +25,7 @@ export default class extends Controller {
   }
 
   preferenceValueChanged() {
-    document.documentElement.classList.toggle('dark', this.preferenceValue === "dark" || (this.preferenceValue === "" && this.systemInDarkMode))
+    document.documentElement.classList.toggle('jumpstart-dark', this.preferenceValue === "dark" || (this.preferenceValue === "" && this.systemInDarkMode))
   }
 
   get systemInDarkMode() {
@@ -38,7 +38,7 @@ export default class extends Controller {
   }
 
   dark() {
-    this.preferenceValue = "dark"
+    this.preferenceValue = "jumpstart-dark"
     this.save()
   }
 

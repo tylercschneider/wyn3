@@ -1,8 +1,8 @@
-<% classes = "block py-0.5 px-2 -mx-2 rounded no-underline text-gray-800 dark:text-gray-200 hover:bg-gray-100 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-800" %>
-<% active_class = "bg-gray-200 dark:bg-gray-700" %>
+<% classes = "section-title block py-0.5 px-6 -mx-2 no-underline text-gray-800 dark:text-gray-200 hover:bg-avocado-100 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-800" %>
+<% active_class = "section-title pl-5 text-avocado-800 bg-avocado-100 border-l-avocado-500 border-l-4 dark:bg-gray-700" %>
 <% inactive_class = "" %>
 
-<div class="p-8 sm:fixed sm:w-[300px] sm:h-screen sm:overflow-scroll shrink-0 text-sm font-medium">
+<div class="p-6 sm:fixed sm:w-[300px] sm:h-screen sm:overflow-scroll shrink-0 text-sm font-medium border-r border-r-smoke-300">
   <%= link_to docs_path, class: "block" do %>
     <%= render_svg "jumpstart-docs-logo", styles: "text-gray-500 dark:text-gray-200" %>
   <% end %>
@@ -87,8 +87,8 @@
 
   <div class="hidden sm:block">
     <% nav.each do |section, links| %>
-      <%= header_with_anchor section, header_tag: :h5, header_class: "mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200" %>
-      <ul class="ml-3 list-none leading-loose">
+      <%= header_with_anchor section, header_tag: :h5, header_class: "mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200 border-t pt-4" %>
+      <ul class="list-none leading-loose">
         <% links.each do |title, url| %>
           <li><%= nav_link_to title, url, class: classes, active_class: active_class, inactive_class: inactive_class %></li>
         <% end %>

@@ -1,7 +1,7 @@
 <% content_for :section_title, "Announcements" %>
-
-<p class="text-xl">Announcements are a way for you to notify users of new features, changes, and improvements you've made to your product.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">Announcements are a way for you to notify users of new features, changes, and improvements you've made to your product.</p>
+<% end %>
 <%= h2_with_anchor "Viewing Announcements" %>
 <p>Announcements are shown in the navbar under <%= link_to "What's New", main_app.announcements_path, target: :_blank, class: "link underline" %>.</p>
 <p>When a user has unread announcements, a red dot will show up next to this link to get their attention that they haven't seen the latest announcements.</p>
@@ -9,7 +9,11 @@
 <p>Users who aren't logged in will always see the red dot next to "What's New" in the navbar.</p>
 
 <%= h2_with_anchor "Creating  Announcements" %>
+<<<<<<< Updated upstream
 <p>To create an announcement, login as an admin and visit <%= link_to "/admin/announcements", main_app.madmin_announcements_path, target: :_blank, class: "link underline" %>.</p>
+=======
+<p>To create an announcement, login as an admin and visit <%= link_to "/madmin/announcements", main_app.madmin_announcements_path, target: :_blank, class: "link underline" %>.</p>
+>>>>>>> Stashed changes
 
 <%= h2_with_anchor "Announcement Types" %>
 <p>Jumpstart Pro comes with 4 default announcement types.</p>

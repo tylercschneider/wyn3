@@ -1,7 +1,7 @@
 <% content_for :section_title, "Notifications" %>
-
-<p class="text-xl">Notifications for Jumpstart Pro are built-in using the <%= link_to "Noticed gem", "https://github.com/excid3/noticed", target: :_blank, class: "link underline" %> and allows delivering notifications across any medium.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">Notifications for Jumpstart Pro are built-in using the <%= link_to "Noticed gem", "https://github.com/excid3/noticed", target: :_blank, class: "link underline" %> and allows delivering notifications across any medium.</p>
+<% end %>
 <%= h2_with_anchor "Creating Notifications" %>
 <p>To generate a new notification, run the following:</p>
 <div class="not-prose">

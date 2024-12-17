@@ -1,7 +1,7 @@
 <% content_for :section_title, "Using Jumpstart Pro iOS & Android with Existing Apps" %>
-
-<p class="text-xl">If you're not using Jumpstart Pro Rails, here are the steps needed to update your web application to work with Jumpstart Pro iOS &amp; Android.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">If you're not using Jumpstart Pro Rails, here are the steps needed to update your web application to work with Jumpstart Pro iOS &amp; Android.</p>
+<% end %>
 <%= h2_with_anchor "API Endpoints" %>
 <p>Your Rails API will be used for authentication and other features.</p>
 <p>The host and URL base path are configurable in the iOS / Android app Endpoint configuration. By default, the host is <code>http://localhost:3000</code> and base API uri is <code>/api/v1</code>. You can change this configuration to match your application&#39;s API.</p>

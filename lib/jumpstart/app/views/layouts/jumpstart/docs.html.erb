@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="<%= class_names("h-full antialiased", "dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
+<html class="<%= class_names("jumpstart h-full antialiased", "jumpstart-dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
   <head>
     <title>Jumpstart Docs | <%= yield :section_title %></title>
     <%= csrf_meta_tags %>
@@ -15,30 +15,27 @@
     <%= render "payments_dependencies" %>
 
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script>
-      document.addEventListener("turbo:load", function() {
-        document.querySelectorAll("pre code").forEach(function(snippet) { hljs.highlightElement(snippet); })
-      });
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
     <%= yield :head %>
   </head>
-  <body class="h-full overflow-x-hidden font-sans font-normal leading-normal bg-offwhite dark:bg-gray-900 dark:text-gray-50" data-controller="theme" data-theme-preference-value="<%= current_user&.theme %>">
+  <body class="h-full overflow-x-hidden font-sans font-normal leading-normal" data-controller="theme" data-theme-preference-value="<%= current_user&.theme %>">
     <%= render partial: "flash" %>
 
     <div class="sm:flex">
       <%= render partial: "jumpstart/docs/nav" %>
 
-      <div class="sm:pl-[300px] flex-grow flex flex-col h-full bg-white dark:bg-gray-900 dark:text-gray-50 border-l border-gray-200 dark:border-gray-700 docs-main">
-        <% if content_for :section_title %>
-          <div class="px-4 py-10 mb-6 text-white bg-primary-500 dark:bg-primary-900 md:px-20">
-            <h1 class="font-black"><%= yield :section_title %></h1>
-          </div>
-        <% end %>
+      <div class="docs-main">
+          <header class="doc-header">
+            <h1><%= yield :section_title %></h1>
+            <% if content_for :section_subtitle %>
+              <p><%= yield :section_subtitle %></p>
+            <% end %>
+          </header>
 
-        <div class="prose dark:prose-invert max-w-7xl py-20 px-4 pt-4 md:px-20">
+        <div class="doc-body">
           <%= yield %>
         </div>
       </div>

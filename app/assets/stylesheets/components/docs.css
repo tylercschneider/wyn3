@@ -1,9 +1,122 @@
-.docs-main {
+.docs-main,
+.admin-main {
   min-height: calc(100vh - 64px);
+}
+
+.docs-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-x: auto;
+  height: 100%;
+  background: var(--base-bg-lowest);
+  color: var(--base-text);
+  border-left: 1px solid var(--base-border-tertiary);
+
+  @media (min-width: 640px) {
+    padding-left: 300px;
+  }
 }
 
 .image-placeholder {
   height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--base-bg-highest);
+}
 
-  @apply bg-gray-300 flex items-center justify-center;
+.doc-header {
+  padding: 32px 48px 48px;
+  background: var(--bg-primary);
+
+  h1,
+  p {
+    margin-top: 16px;
+    color: var(--text-on-primary);
+    font-family: Karla, sans-serif;
+    font-style: normal;
+  }
+
+  h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 48px;
+  }
+
+  p {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+
+    a {
+      color: var(--text-on-primary);
+      font-weight: 600;
+      text-decoration-line: underline;
+    }
+  }
+}
+
+.doc-body {
+  @media (min-width: 640px) {  
+    max-width: 640px;
+  }
+
+  @media (min-width: 780px) {  
+    max-width: 780px;
+  }
+
+  @media (min-width: 1024px) {  
+    max-width: 1024px;
+  }
+
+
+  padding: 48px 64px 48px 48px;
+
+  >h3,
+  >h4,
+  >h5 {
+    margin-top: 16px;
+  }
+
+  >h2~p,
+  >h3~p,
+  >h4~p,
+  >h5~p {
+    margin-top: 20px;
+  }
+
+  >h2+p,
+  >h3+p,
+  >h4+p,
+  >h5+p {
+    margin-top: 16px;
+  }
+
+  >h2:first-of-type {
+    margin: 0px;
+  }
+
+  >h2:not(:first-of-type) {
+    margin: 32px 0px 0px 0px;
+
+  }
+
+  section {
+    margin-bottom: 32px;
+
+    section {
+      margin-bottom: 16px;
+    }
+  }
+
+  a {
+    color: var(--text-primary);
+    font-family: Karla;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    text-decoration-line: underline;
+  }
 }

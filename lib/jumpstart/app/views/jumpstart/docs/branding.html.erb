@@ -1,7 +1,7 @@
 <% content_for :section_title, "Branding" %>
-
-<p class="text-xl">Jumpstart Pro includes branding assets that are easily replaceable with your own logo.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">Jumpstart Pro includes branding assets that are easily replaceable with your own logo.</p>
+<% end %>
 <%= h2_with_anchor "Logo" %>
 <p>The Jumpstart Pro placeholder is located in <code>app/assets/images/logo.svg</code> and you can simply replace this file to use your own logo.</p>
 <p>We recommend using an SVG logo for crisp rendering at any size. Logos look best at 24px tall.</p>

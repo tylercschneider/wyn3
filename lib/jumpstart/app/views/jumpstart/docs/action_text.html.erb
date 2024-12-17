@@ -1,7 +1,7 @@
 <% content_for :section_title, "Action Text" %>
-
-<p class="text-xl">Action Text provides rich text fields for your applications where you can upload images, @mention users, and create other types of dynamic attachments.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">Action Text provides rich text fields for your applications where you can upload images, @mention users, and create other types of dynamic attachments.</p>
+<% end %>
 <%= h2_with_anchor "Using Action Text" %>
 <p>Action Text is installed by default in Jumpstart Pro.</p>
 <p>Rich text fields are extremely easy to add. You can use the <code>rich_text</code> type when generating models and scaffolds and everything will be setup for you.</p>

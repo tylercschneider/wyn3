@@ -1,7 +1,7 @@
 <% content_for :section_title, "Scaffolds" %>
-
-<p class="text-xl">Jumpstart Pro customizes scaffolds to make it easier and quicker to develop your application.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">Jumpstart Pro customizes scaffolds to make it easier and quicker to develop your application.</p>
+<% end %>
 <%= h2_with_anchor "Account Resources" %>
 <p>If you'd like a resource to be shared across a Account, you can scope your controllers to the current account so the resources are shared between users in the associated account.</p>
 <p>Every user has a personal account that's only usable by themselves, so you can easily associate resources to accounts and still have private resources to a user.</p>

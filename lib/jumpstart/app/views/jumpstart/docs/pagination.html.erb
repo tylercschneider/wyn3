@@ -1,7 +1,7 @@
 <% content_for :section_title, "Pagination" %>
-
-<p>Styling is automatically defined to match with the <%= link_to "Pagy", "https://github.com/ddnexus/pagy", target: :_blank %> gem's HTML and classes.</p>
-
+<% content_for :section_subtitle do %>
+  <p>Styling is automatically defined to match with the <%= link_to "Pagy", "https://github.com/ddnexus/pagy", target: :_blank %> gem's HTML and classes.</p>
+<% end %>
 <%= h2_with_anchor "Pagination" %>
 <%= render "jumpstart/docs/snippet" do %>
   <%== pagy_nav @pagy %>

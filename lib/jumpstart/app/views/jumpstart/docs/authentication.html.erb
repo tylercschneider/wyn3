@@ -1,6 +1,7 @@
 <% content_for :section_title, "Authentication & OAuth" %>
-
-<p class="text-xl">User registration, authentication, forgotten passwords, social logins with OAuth, and more.</p>
+<% content_for :section_subtitle do %>
+  <p class="text-xl">User registration, authentication, forgotten passwords, social logins with OAuth, and more.</p>
+<% end %>
 
 <%= h2_with_anchor "Authentication with Devise" %>
 <p>Jumpstart Pro uses Devise for user registration and authentication. This library is well tested and receives regular security updates allowing you to focus on your business.</p>

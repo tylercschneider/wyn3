@@ -1,7 +1,7 @@
 <% content_for :section_title, "Active Storage" %>
-
-<p class="text-xl">Active Storage provides file uploads for Rails applications and is the storage mechanism for Action Text, Action Mailbox, and more.</p>
-
+<% content_for :section_subtitle do %>
+  <p class="text-xl">Active Storage provides file uploads for Rails applications and is the storage mechanism for Action Text, Action Mailbox, and more.</p>
+<% end %>
 <%= h2_with_anchor "Using Active Storage" %>
 <p>Active Storage is installed by default in Jumpstart Pro.</p>
 <p>Check out the <%= link_to "GoRails screencast episodes on Active Storage", "https://gorails.com/episodes/tagged/ActiveStorage", target: :_blank, class: "text-primary-500" %> and the <%= link_to "Active Storage Rails Guide", "https://edgeguides.rubyonrails.org/active_storage_overview.html", target: :_blank, class: "text-primary-500" %> for more information on how to use Active Storage.</p>

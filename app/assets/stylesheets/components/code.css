@@ -1,12 +1,20 @@
-pre {
-  @apply text-sm mb-6;
-
-  code.hljs {
-    @apply rounded p-4;
-  }
-
+code {
+  color: var(--base-text);
+  background: var(--bg-disabled-secondary);
+  padding: 4px 6px;
+  font-family: monospace;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 8px;
 }
 
-code {
-  @apply text-red-500 text-sm;
+pre code {
+  color: var(--base-text);
+  background: var(--bg-disabled-secondary);
+  border-radius: 0.25rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  display: block;
 }
