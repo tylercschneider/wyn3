@@ -355,16 +355,12 @@ section nav form button {
     }
 
     >span:last-of-type {
-      display: none;
       font-size: 14px;
-
-      @media (min-width: 1024px) {
-        display: block;
-        max-width: 8rem;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        text-wrap: nowrap;
-      }
+      display: block;
+      max-width: 8rem;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      text-wrap: nowrap;
     }
   }
 }
