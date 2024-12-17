@@ -361,6 +361,12 @@ section nav form button {
       text-overflow: ellipsis;
       overflow: hidden;
       text-wrap: nowrap;
+
+      &:has(.initials) {
+        display: flex;
+        align-items: center;
+        line-height: 1em;
+      }
     }
   }
 }
