@@ -1,4 +1,6 @@
-<% content_for :section_title, "Email" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Email" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">Jumpstart Pro provides easy configuration for transaction email providers.</p>
 <% end %>

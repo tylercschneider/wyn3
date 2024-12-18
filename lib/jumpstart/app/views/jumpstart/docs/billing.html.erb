@@ -1,4 +1,6 @@
-<% content_for :section_title, "Payments & Billing" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Payments & Billing" %>
+<% end %>
 <% content_for :section_subtitle do %>
   Jumpstart Pro uses the <%= link_to "Pay gem", "https://github.com/pay-rails/pay", target: :_blank, class: "link underline" %> for handling payments and billing.
 <% end %>

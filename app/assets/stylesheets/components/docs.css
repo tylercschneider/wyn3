@@ -28,7 +28,7 @@
 
 .doc-header {
   padding: 32px 48px 48px;
-  background: var(--bg-primary);
+  /* background: var(--bg-primary); */
 
   h1,
   p {

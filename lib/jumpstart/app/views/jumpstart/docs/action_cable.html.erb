@@ -1,4 +1,6 @@
-<% content_for :section_title, "Action Cable" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Action Cable" %>
+<% end %>
 
 <p class="text-xl">Action Cable provides a realtime websocket connection between the browser and your Rails app backed by a Redis pubsub connection.</p>
 

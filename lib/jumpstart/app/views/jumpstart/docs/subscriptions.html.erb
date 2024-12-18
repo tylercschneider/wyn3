@@ -1,4 +1,6 @@
-<% content_for :section_title, "Subscriptions" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Subscriptions" %>
+<% end %>
 
 <%= h2_with_anchor "Subscriptions" %>
 <p>Subscriptions in Jumpstart Pro are billed against a Account, not a User. This allows you to handle various different billing situations.</p>

@@ -1,4 +1,6 @@
-<% content_for :section_title, "Multitenancy" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Multitenancy" %>
+<% end %>
 
 <%= h2_with_anchor "Overview" %>
 <p>Jumpstart Pro supports multi-tenancy out-of-the-box by using the <code>Account</code> model to scope access to resources. This forbids users that are not associated to a given account from seeing the resources that belong to that account. The below diagram illustrates this functionality:</p>

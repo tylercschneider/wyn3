@@ -1,4 +1,6 @@
-<% content_for :section_title, "Authentication & OAuth" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Authentication & OAuth" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">User registration, authentication, forgotten passwords, social logins with OAuth, and more.</p>
 <% end %>

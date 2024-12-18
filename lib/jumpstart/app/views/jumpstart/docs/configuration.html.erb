@@ -1,4 +1,6 @@
-<% content_for :section_title, "Configuration" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Configuration" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">Configuring Jumpstart Pro is easy. We've built a handy configuration wizard interface in development mode to save you time configuring your application.</p>
 <% end %>

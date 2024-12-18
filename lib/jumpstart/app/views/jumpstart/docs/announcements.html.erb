@@ -1,4 +1,6 @@
-<% content_for :section_title, "Announcements" %>
+<<% content_for :section_title do %>
+  <%= h1_with_anchor "Announcements" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">Announcements are a way for you to notify users of new features, changes, and improvements you've made to your product.</p>
 <% end %>

@@ -1,4 +1,6 @@
-<% content_for :section_title, "Icons" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Icons" %>
+<% end %>
 
 <%= h2_with_anchor "Heroicons" %>
 <p>Our recommended icon set is <%= link_to "Heroicons", "https://heroicons.com/", target: :_blank %>. They're created by the TailwindCSS creators and come with solid, outline, and mini variations.</p>

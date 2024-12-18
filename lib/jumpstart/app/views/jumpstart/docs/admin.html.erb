@@ -1,4 +1,6 @@
-<% content_for :section_title, "Admin" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Admin" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">Jumpstart Pro ships with an admin area for browsing and managing your application and users.</p>
 <% end %>

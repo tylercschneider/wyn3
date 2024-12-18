@@ -1,4 +1,6 @@
-<% content_for :section_title, "Action Text" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Action Text" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">Action Text provides rich text fields for your applications where you can upload images, @mention users, and create other types of dynamic attachments.</p>
 <% end %>

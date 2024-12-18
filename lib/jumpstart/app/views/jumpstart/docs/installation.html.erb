@@ -1,5 +1,6 @@
-<% content_for :section_title, "Installation" %>
-
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Installation" %>
+<% end %>
 <%= h2_with_anchor "Installing Jumpstart Pro" %>
 <p>To install dependencies, set up, and configure your application follow the latest instructions in the repository:</p>
 <p><%= link_to "Rails Installation", "https://github.com/jumpstart-pro/jumpstart-pro-rails#readme", class: "font-bold", target: :_blank %></p>

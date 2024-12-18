@@ -1,4 +1,6 @@
-<% content_for :section_title, "Roles" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Roles" %>
+<% end %>
 
 <%= h2_with_anchor "Admins" %>
 <p>Users with the <code>admin</code> flag set to <code>true</code> will be allowed to access the application's admin interface, Sidekiq web UI, and more.</p>

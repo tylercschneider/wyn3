@@ -19,13 +19,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
+    <script>
+      document.addEventListener("turbo:load", function() {
+        // Theme toggling logic
+        const themeRadios = document.querySelectorAll('input[name="theme"]');
+        const currentTheme = ['dark', 'juicy'].find(cls => document.documentElement.classList.contains(cls)) || null;
+
+        themeRadios.forEach(radio => {
+          radio.checked = (radio.value === currentTheme) || (radio.value === 'light' && currentTheme === null);
+
+          radio.addEventListener('change', function() {
+            document.documentElement.classList.remove('dark', 'juicy');
+            if (this.value === 'dark' || this.value === 'juicy') {
+              document.documentElement.classList.add(this.value);
+            }
+          });
+        });
+      });
+    </script>
+
     <%= yield :head %>
   </head>
   <body class="h-full overflow-x-hidden font-sans font-normal leading-normal" data-controller="theme" data-theme-preference-value="<%= current_user&.theme %>">
     <%= render partial: "flash" %>
 
+    <%= render partial: "jumpstart/docs/top_nav" %>
+
     <div class="sm:flex">
-      <%= render partial: "jumpstart/docs/nav" %>
+      <%= render partial: "jumpstart/docs/side_nav" %>
 
       <div class="docs-main">
           <header class="doc-header">

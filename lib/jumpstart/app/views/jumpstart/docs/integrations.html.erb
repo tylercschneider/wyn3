@@ -1,4 +1,6 @@
-<% content_for :section_title, "Integrations" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Integrations" %>
+<% end %>
 
 <p class="text-xl">Jumpstart Pro has support for integrating your app with several third party services.</p>
 <p>To enable an integration you can do so in the Integrations section of the Jumpstart Pro configuration wizard UI located at <%= link_to nil, "/jumpstart", target: :_blank, class: "link underline" %>.</p>

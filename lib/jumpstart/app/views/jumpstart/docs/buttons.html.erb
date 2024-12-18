@@ -1,4 +1,6 @@
-<% content_for :section_title, "Buttons" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Buttons" %>
+<% end %>
 
 <% types = {
   "Primary" => "btn-primary",
