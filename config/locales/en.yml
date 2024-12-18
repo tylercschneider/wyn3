@@ -83,6 +83,8 @@ en:
       description: "Collaborate and share with others by creating an account."
     edit:
       title: "Edit"
+      delete_description: "Deleting this account will permanently remove all associated data."
+      delete_with_payments_description: "Deleting this account will cancel any active subscriptions and permanently remove all associated data."
     created: "Account was successfully created."
     created_and_switch_html: "Account was successfully created. <a class=\"underline\" href=\"%{link}\">Switch account</a>"
     updated: "Account was successfully updated."
@@ -168,7 +170,7 @@ en:
       referrals: "Referrals"
     flash:
       confirm_payment: "Confirm your latest payment"
-    account_menu:
+    user_menu:
       profile: "Profile"
       password: "Password"
       connected_accounts: "Connected Accounts"

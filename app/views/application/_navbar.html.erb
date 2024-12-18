@@ -19,9 +19,9 @@
     </button>
 
     <% if user_signed_in? %>
-      <%= render "dev_nav" if Rails.env.development? %>
+      <%= render "dev_menu" if Rails.env.development? %>
       <%= render "notifications" %>
-      <%= render "account_menu" %>
+      <%= render "user_menu" %>
     <% end %>
   </section>
 </nav>

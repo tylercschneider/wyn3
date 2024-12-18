@@ -37,7 +37,6 @@ group :test do
 end
 
 gem "acts_as_tenant", "~> 1.0" if Jumpstart.config.gems.include?("acts_as_tenant")
-gem "oj", "~> 3.8" if Jumpstart.config.gems.include?("oj")
 gem "refer", "~> 0.5.0" if Jumpstart.config.gems.include?("refer")
 gem "whenever", "~> 1.0", require: false if Jumpstart.config.gems.include?("whenever")
 

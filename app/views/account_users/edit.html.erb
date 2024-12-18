@@ -4,9 +4,9 @@
   </div>
 
   <div class="lg:w-3/4 w-full p-4">
-    <div class="lg:p-10 p-4 bg-white rounded-lg border border-gray-300 dark:bg-gray-900 dark:border-gray-700">
-      <div class="flex items-center">
-        <%= account_avatar @account, class: "flex-shrink-0 rounded-full mr-4 h-10 w-10" %>
+    <div class="p-4 bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-700 rounded-lg lg:p-10">
+      <div class="flex items-center gap-4">
+        <%= account_avatar @account %>
         <h1 class="h3">
           <%= link_to @account.name, @account, class: "text-black dark:text-gray-50" %>
 

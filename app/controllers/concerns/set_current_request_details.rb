@@ -22,7 +22,7 @@ module SetCurrentRequestDetails
 
   def account_from_domain
     return unless Jumpstart::Multitenancy.domain?
-    Account.includes(:payment_processor, :users).find_by(domain: request.domain)
+    Account.includes(:payment_processor, :users).find_by(domain: request.host)
   end
 
   def account_from_subdomain
@@ -36,7 +36,7 @@ module SetCurrentRequestDetails
   end
 
   def account_from_param
-    return unless (account_id = params[:account_id].presence)
+    return unless user_signed_in? && (account_id = params[:account_id].presence)
     current_user.accounts.includes(:payment_processor, :users).find_by(id: account_id)
   end
 

@@ -2,8 +2,6 @@ module ConnectedAccount::Oauth
   extend ActiveSupport::Concern
 
   included do
-    serialize :auth, coder: JSON
-
     encrypts :access_token
     encrypts :access_token_secret
 

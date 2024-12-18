@@ -6,8 +6,8 @@ class HotwireNativeTest < ActionDispatch::IntegrationTest
     assert_redirected_to new_user_session_path
   end
 
-  test "unauthenticated hotwire native requests return 302" do
+  test "unauthenticated hotwire native requests" do
     get "/account/password", headers: {HTTP_USER_AGENT: "Hotwire Native iOS"}
-    assert_response :redirect
+    assert_response :unauthorized
   end
 end
