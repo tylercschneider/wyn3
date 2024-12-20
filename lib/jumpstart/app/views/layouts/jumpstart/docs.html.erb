@@ -23,16 +23,14 @@
       document.addEventListener("turbo:load", function() {
         // Theme toggling logic
         const themeRadios = document.querySelectorAll('input[name="theme"]');
-        const currentTheme = ['dark', 'juicy'].find(cls => document.documentElement.classList.contains(cls)) || null;
+        const currentTheme = ['jumpstart', 'dark', 'juicy'].find(cls => document.documentElement.classList.contains(cls)) || null;
 
         themeRadios.forEach(radio => {
           radio.checked = (radio.value === currentTheme) || (radio.value === 'light' && currentTheme === null);
 
           radio.addEventListener('change', function() {
-            document.documentElement.classList.remove('dark', 'juicy');
-            if (this.value === 'dark' || this.value === 'juicy') {
-              document.documentElement.classList.add(this.value);
-            }
+            document.documentElement.classList.remove('jumpstart', 'dark', 'juicy');
+            document.documentElement.classList.add(this.value);
           });
         });
       });
@@ -40,7 +38,7 @@
 
     <%= yield :head %>
   </head>
-  <body class="h-full overflow-x-hidden font-sans font-normal leading-normal" data-controller="theme" data-theme-preference-value="<%= current_user&.theme %>">
+  <body class="h-full overflow-x-hidden font-sans font-normal leading-normal">
     <%= render partial: "flash" %>
 
     <%= render partial: "jumpstart/docs/top_nav" %>

@@ -1,4 +1,6 @@
-<% content_for :section_title, "Slideover" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Slideover" %>
+<% end %>
 
 <%= h2_with_anchor "Slideover" %>
 <p>Slideovers are commonly used for contextual modals or navigation. Slideovers are implemented using the Stimulus <code>slideover_controller</code>.</p>

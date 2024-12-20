@@ -1,4 +1,6 @@
-<% content_for :section_title, "Pills" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Pills" %>
+<% end %>
 
 <%= h2_with_anchor "Default" %>
 <%= render "jumpstart/docs/snippet" do %>

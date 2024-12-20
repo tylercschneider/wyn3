@@ -1,4 +1,4 @@
-<nav class="top-nav fixed w-full z-10">
+<nav class="top-nav sticky top-0 w-full z-10">
  <section class="logo">
     <%= link_to root_path do %>
       <%= render_svg "logo", styles: "fill-current" %>
@@ -33,7 +33,7 @@
           <li class="menu-section">
             <ul class="menu-sub-list">
               <div class="space-y-2 p-2">
-                <% %w[light dark juicy].each do |theme| %>
+                <% %w[light dark juicy jumpstart].each do |theme| %>
                   <div class="form-picker-group switch">
                     <input type="radio" name="theme" id="<%= theme %>" value="<%= theme %>" <%='checked' if current_user&.theme == "#{theme}"%>>
                     <label for="<%= theme %>"><%= theme.capitalize %></label>

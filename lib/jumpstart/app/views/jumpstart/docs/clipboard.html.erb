@@ -1,4 +1,6 @@
-<% content_for :section_title, "Clipboard" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Clipboard" %>
+<% end %>
 
 <%= h2_with_anchor "Clipboard" %>
 <p>You can use the clipboard controller to copy text to the clipboard (with tooltips on success).</p>

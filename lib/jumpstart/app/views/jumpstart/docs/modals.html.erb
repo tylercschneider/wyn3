@@ -1,4 +1,6 @@
-<% content_for :section_title, "Modals" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Modals" %>
+<% end %>
 
 <%= h2_with_anchor "Modals" %>
 <p>Modals are implemented using the Stimulus <code>modal_controller</code> or overriding the Turbo confirm method.</p>

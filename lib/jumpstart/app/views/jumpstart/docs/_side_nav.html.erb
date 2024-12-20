@@ -3,13 +3,6 @@
 <% inactive_class = "" %>
 
 <div class="p-6 sm:fixed sm:w-[300px] sm:h-screen sm:overflow-scroll shrink-0 text-sm font-medium border-r border-r-smoke-300">
-  <%= link_to docs_path, class: "block" do %>
-    <%= render_svg "jumpstart-docs-logo", styles: "text-gray-500 dark:text-gray-200" %>
-  <% end %>
-
-  <%= link_to "Back to the app", main_app.root_path, class: "block text-sm mt-4 py-1 text-gray-900 dark:text-gray-50" %>
-  <%= link_to "Configuration", root_path, class: "block text-sm py-1 text-gray-900 dark:text-gray-50", target: :_blank %>
-
   <% nav = {
     "Get Started" => [
       ["Installation", installation_docs_path],
@@ -87,7 +80,7 @@
 
   <div class="hidden sm:block">
     <% nav.each do |section, links| %>
-      <%= header_with_anchor section, header_tag: :h5, header_class: "mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200 border-t pt-4" %>
+      <%= header_with_anchor section, header_tag: :h5, header_class: "first-of-type:mt-0 mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200 first-of-type:border-none border-t first-of-type:pt-0 pt-4" %>
       <ul class="list-none leading-loose">
         <% links.each do |title, url| %>
           <li><%= nav_link_to title, url, class: classes, active_class: active_class, inactive_class: inactive_class %></li>

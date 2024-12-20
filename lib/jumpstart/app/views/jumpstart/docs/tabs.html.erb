@@ -1,4 +1,6 @@
-<% content_for :section_title, "Tabs" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Tabs" %>
+<% end %>
 
 <%= h2_with_anchor "Tabs" %>
 <p>Tabs are implemented with the Stimulus.js <code>tabs_controller</code>. It works by having an list of tabs and panel targets that are hidden and shown based upon the active tab.</p>

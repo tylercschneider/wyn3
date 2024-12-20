@@ -1,4 +1,6 @@
-<% content_for :section_title, "Forms" %>
+<% content_for :section_title do %>
+  <%= h1_with_anchor "Forms" %>
+<% end %>
 <% content_for :section_subtitle do %>
   <p>We've included the <%= link_to "TailwindCSS Forms", "https://github.com/tailwindlabs/tailwindcss-forms", target: :_blank %> plugin to provide default styling for form fields.</p>
 <% end %>
