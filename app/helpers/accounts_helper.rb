@@ -2,7 +2,7 @@ module AccountsHelper
   def account_avatar(account, size: "size-8", image_size: 48, **options)
     classes = options[:class]
 
-    if account.personal? && account.owner_id == current_user&.id
+    if account.personal? && account.owner?(current_user)
       image_tag(avatar_url_for(current_user, options), class: classes, alt: account.name)
 
     elsif account.avatar.attached? && account.avatar.variable?
