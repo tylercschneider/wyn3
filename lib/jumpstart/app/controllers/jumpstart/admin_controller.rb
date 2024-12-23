@@ -1,5 +1,3 @@
-require_dependency "jumpstart/application_controller"
-
 module Jumpstart
   class AdminController < ApplicationController
     def show

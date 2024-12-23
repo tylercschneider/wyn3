@@ -10,7 +10,7 @@
           <h1 class="h3 mb-2"><%= @api_token.name %></h1>
         </div>
 
-        <div class="flex-shrink-0">
+        <div class="shrink-0">
           <%= link_to t(".edit"), edit_api_token_path(@api_token), class: "btn btn-secondary" %>
           <%= link_to t(".revoke"), @api_token, class: "btn btn-danger", data: { turbo_method: :delete, turbo_confirm: t(".confirm") } %>
         </div>

@@ -1,15 +1,19 @@
 .announcement-new {
-  @apply bg-primary-100 text-primary-600;
+  background-color: var(--color-blue-100);
+  color: var(--color-blue-600);
 }
 
 .announcement-fix {
-  @apply bg-red-100 text-red-600;
+  background-color: var(--color-red-100);
+  color: var(--color-red-600);
 }
 
 .announcement-update {
-  @apply bg-green-100 text-green-600;
+  background-color: var(--color-green-100);
+  color: var(--color-green-600);
 }
 
 .announcement-improvement {
-  @apply bg-purple-100 text-purple-600;
+  background-color: var(--color-purple-100);
+  color: var(--color-purple-600);
 }

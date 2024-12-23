@@ -353,21 +353,6 @@ section nav form button {
       display: block;
       height: 24px;
     }
-
-    >span:last-of-type {
-      font-size: 14px;
-      display: block;
-      max-width: 8rem;
-      text-overflow: ellipsis;
-      overflow: hidden;
-      text-wrap: nowrap;
-
-      &:has(.initials) {
-        display: flex;
-        align-items: center;
-        line-height: 1em;
-      }
-    }
   }
 }
 

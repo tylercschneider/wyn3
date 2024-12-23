@@ -1,13 +1,7 @@
-// Load all the controllers within this directory and all subdirectories.
-// Controller files must be named *_controller.js.
-
-import { application } from "./application"
-
-// Register each controller with Stimulus
-import controllers from "./**/*_controller.js"
-controllers.forEach((controller) => {
-  application.register(controller.name, controller.module.default)
-})
+// Import and register all your controllers from the importmap via controllers/**/*_controller
+import { application } from "controllers/application"
+import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
+eagerLoadControllersFrom("controllers", application)
 
 import { Alert, Dropdown, Modal, Tabs, Popover, Toggle, Slideover } from "tailwindcss-stimulus-components"
 application.register('alert', Alert)

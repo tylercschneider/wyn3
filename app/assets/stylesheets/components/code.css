@@ -1,12 +1,16 @@
 pre {
-  @apply text-sm mb-6;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  margin-bottom: 1.5rem;
 
   code.hljs {
-    @apply rounded p-4;
+    border-radius: 0.125rem;
+    padding: 1rem;
   }
-
 }
 
 code {
-  @apply text-red-500 text-sm;
+  color: var(--color-red-500);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }

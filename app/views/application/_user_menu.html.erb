@@ -1,6 +1,6 @@
 <div class="dropdown-menu" data-controller="dropdown">
   <button data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" aria-label="User Menu">
-    <%= account_avatar current_account %>
+    <%= account_avatar current_account, size: "size-6" %>
   </button>
   <nav data-dropdown-target="menu"
     data-transition-enter="transition ease-out duration-200"

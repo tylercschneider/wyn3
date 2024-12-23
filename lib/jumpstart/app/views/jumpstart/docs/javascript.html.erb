@@ -34,10 +34,10 @@
 
 <%= h3_with_anchor "Adding Additional JavaScript Packages" %>
 <p>
-  Adding new JavaScript packages to your application is easy. You can use the <code>yarn add</code> command to add new packages to your application. For example, if you wanted to add the SortableJS package to your application, you could run the following command:
+  Adding new JavaScript packages to your application is easy. You can use the <code>bin/importmap pin package</code> command to add new packages to your application. For example, if you wanted to add the SortableJS package to your application, you could run the following command:
 </p>
 <div class="not-prose">
-  <pre><code>yarn add sortablejs</code></pre>
+  <pre><code>bin/importmap pin sortablejs</code></pre>
 </div>
 <p>
   Once you have run the above, you can then import the package in your JavaScript file with:

@@ -1,7 +1,3 @@
-import Trix from "trix"
-import "@rails/actiontext"
-import { get, post } from "@rails/request.js"
-
 Trix.config.textAttributes.inlineCode = {
   tagName: "code",
   inheritable: true
@@ -28,8 +24,10 @@ class EmbedController {
     this.toolbar.querySelector('[data-trix-dialog="href"]').insertAdjacentHTML('beforeend', `
         <div data-behavior="embed_container">
           <div class="link_to_embed link_to_embed--new">
-            Would you like to embed media from this site?
-            <input class="btn btn-secondary btn-small btn-outline" type="button" data-behavior="embed_url" value="Yes, embed it">
+            <span>Embed media from this site?</span>
+            <div class="trix-button-group">
+              <input class="trix-button trix-button--dialog" type="button" data-behavior="embed_url" value="Yes, embed it">
+              </div>
           </div>
         </div>
     `)
@@ -59,9 +57,9 @@ class EmbedController {
   }
 
   async loadPatterns(value) {
-    const response = await get("/action_text/embeds/patterns.json", { responseKind: "json" })
+    const response = await fetch("/action_text/embeds/patterns.json")
     if (response.ok) {
-      const patterns = await response.json
+      const patterns = await response.json()
       this.patterns = patterns.map(pattern => new RegExp(pattern.source, pattern.options))
       if (this.match(value)) {
         this.fetch(value)
@@ -75,9 +73,14 @@ class EmbedController {
   }
 
   async fetch(value) {
-    const response = await post(`/action_text/embeds?id=${encodeURIComponent(value)}`, { responseKind: "json" })
+    const response = await fetch(`/action_text/embeds?id=${encodeURIComponent(value)}`, {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": this.csrfToken,
+      }
+    })
     if (response.ok) {
-      this.showEmbed(await response.json)
+      this.showEmbed(await response.json())
     } else {
       this.reset()
     }
@@ -99,6 +102,10 @@ class EmbedController {
   reset() {
     this.embedContainerElement.style.display = "none"
     this.currentEmbed = null
+  }
+
+  get csrfToken() {
+    return document.querySelector("[name='csrf-token']").content
   }
 }
 

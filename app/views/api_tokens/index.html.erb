@@ -26,7 +26,7 @@
           </thead>
           <tbody>
             <% @api_tokens.each do |api_token| %>
-              <tr class="group border-t border-gray-200 hover:bg-gray-50 hover:dark:bg-gray-900/75 dark:border-gray-800">
+              <tr class="group border-t border-gray-200 hover:bg-gray-50 dark:hover:bg-gray-900/75 dark:border-gray-800">
                 <td class="p-3 font-medium"><%= link_to api_token.name, api_token %></td>
                 <td class="p-3"><%= api_token.last_used_at? ? local_time_ago(api_token.last_used_at) : "—" %></td>
                 <td class="hidden sm:table-cell p-3"><%= api_token.created_at.strftime("%b %e, %Y") %></td>

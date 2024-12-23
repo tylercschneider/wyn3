@@ -1,4 +1,4 @@
-<%= tag.div class: "z-10 inline-flex items-center align-middle leading-none rounded no-underline",
+<%= tag.div class: "z-10 inline-flex items-center align-middle leading-none rounded-sm no-underline",
   data: {
     controller: "notifications",
     notifications_account_id_value: current_account.id,
@@ -7,7 +7,7 @@
   } do %>
   <div class="dropdown-menu" data-controller="dropdown">
     <%# Marks all notifications as read when menu opens by default. Remove the notifications Stimulus actions to disable this. %>
-    <%= tag.button class: "inline-block select-none lg:rounded lg:p-2 lg:hover:bg-primary-50",
+    <%= tag.button class: "inline-block select-none lg:rounded-sm lg:p-2",
       aria: { label: "Notifications" },
       data: {
         action: "click->notifications#open click->dropdown#toggle click@window->dropdown#hide"

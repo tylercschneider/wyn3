@@ -7,7 +7,6 @@
 // document.documentElement.classList.toggle("dark", localStorage.theme === 'dark' || (localStorage.theme !== "light" && window.matchMedia('(prefers-color-scheme: dark)').matches))
 
 import { Controller } from "@hotwired/stimulus"
-import { patch } from "@rails/request.js"
 
 export default class extends Controller {
   static values = {
@@ -57,9 +56,17 @@ export default class extends Controller {
   }
 
   saveToUser() {
-    patch("/users", {
+    fetch("/users", {
+      method: "PATCH",
       body: {user: {"theme": this.preferenceValue }},
-      contentType: "application/json"}
-    )
+      headers: {
+        "X-CSRF-Token": this.csrfToken,
+        "Content-Type": "application/json"
+      }
+    })
+  }
+
+  get csrfToken() {
+    return document.querySelector("[name='csrf-token']").content
   }
 }

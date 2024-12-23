@@ -11,11 +11,9 @@
 // Source code for the stream element can be found here:
 // https://github.com/hotwired/turbo/blob/main/src/elements/stream_element.ts
 
-import { StreamActions } from "@hotwired/turbo"
-
 // Remove elements after X milliseconds
 // <%= turbo_stream.remove_later, target: "my-id", after: "2000" %>
-StreamActions.remove_later = function() {
+Turbo.StreamActions.remove_later = function() {
   setTimeout(() => {
     this.targetElements.forEach((element) => element.remove())
   }, this.getAttribute("after"))
@@ -23,12 +21,12 @@ StreamActions.remove_later = function() {
 
 // Resets a form
 // <%= turbo_stream.reset_form "new_post"
-StreamActions.reset_form = function() {
+Turbo.StreamActions.reset_form = function() {
   this.targetElements.forEach((element) => element.reset())
 }
 
 // Scrolls an element into view
 // <%= turbo_stream.scroll_to "comment_1"
-StreamActions.scroll_to = function() {
+Turbo.StreamActions.scroll_to = function() {
   this.targetElements.forEach((element) => element.scrollIntoView({behavior: 'smooth'}))
 }

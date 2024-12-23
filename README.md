@@ -7,10 +7,8 @@ Welcome! To get started, clone the repository and push it to a new repository.
 You'll need the following installed to run the template successfully:
 
 * Ruby 3.2+
-* Node.js v20+
 * PostgreSQL 12+ (can be switched to SQLite or MySQL)
 * Libvips or Imagemagick
-* [Stripe CLI](https://stripe.com/docs/stripe-cli) for Stripe webhooks in development
 
 If you use Homebrew, dependencies are listed in `Brewfile` so you can install them using:
 

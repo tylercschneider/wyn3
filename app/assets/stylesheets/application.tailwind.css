@@ -1,46 +1,47 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
+@import "tailwindcss";
 
-/*
- * Jumpstart Pro default styles
- * Remove these if you'd like to use TailwindUI which expects a clean slate
-*/
-@import "themes/dark";
-@import "themes/juicy";
-@import "themes/light";
-@import "themes/jumpstart-dark";
-@import "themes/jumpstart";
-@import "components/base";
-@import "components/actiontext";
-@import "components/alert";
-@import "components/animation";
-@import "components/announcements";
-@import "components/avatars";
-@import "components/buttons";
-@import "components/cards";
-@import "components/code";
-@import "components/connected_accounts";
-@import "components/direct_uploads";
-@import "components/docs";
-@import "components/forms";
-@import "components/iframe";
-@import "components/modal";
-@import "components/nav";
-@import "components/notifications";
-@import "components/pagination";
-@import "components/pills";
-@import "components/strada";
-@import "components/tabs";
-@import "components/toasts";
-@import "components/tooltips";
-@import "components/top_nav";
-@import "components/trix";
-@import "components/typography";
-@import "components/util";
-@import "components/wells";
-@import "components/braintree";
+@plugin "@tailwindcss/aspect-ratio";
+@plugin "@tailwindcss/forms";
+@plugin "@tailwindcss/typography";
 
-@import "tailwindcss/utilities";
+@variant dark (&:where(.dark, .dark *));
+@variant hotwire-native (html.hotwire-native &);
+@variant not-hotwire-native (html:not(.hotwire-native) &);
 
-@import "tippy.js/dist/tippy.css";
-@import "tom-select/dist/css/tom-select.css";
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --color-primary: var(--bg-primary);
+}
+
+@import "./themes/dark.css" layer(theme);
+@import "./themes/juicy.css" layer(theme);
+@import "./themes/light.css" layer(theme);
+@import "./themes/jumpstart-dark.css" layer(theme);
+@import "./themes/jumpstart.css" layer(theme);
+
+@import "./components/base.css" layer(components);
+@import "./components/actiontext.css" layer(components);
+@import "./components/alert.css" layer(components);
+@import "./components/animation.css" layer(components);
+@import "./components/announcements.css" layer(components);
+@import "./components/avatars.css" layer(components);
+@import "./components/buttons.css" layer(components);
+@import "./components/cards.css" layer(components);
+@import "./components/code.css" layer(components);
+@import "./components/direct_uploads.css" layer(components);
+@import "./components/forms.css" layer(components);
+@import "./components/hotwire_native.css" layer(components);
+@import "./components/iframe.css" layer(components);
+@import "./components/modal.css" layer(components);
+@import "./components/nav.css" layer(components);
+@import "./components/notifications.css" layer(components);
+@import "./components/pagination.css" layer(components);
+@import "./components/pills.css" layer(components);
+@import "./components/tabs.css" layer(components);
+@import "./components/toasts.css" layer(components);
+@import "./components/tooltips.css" layer(components);
+@import "./components/top_nav.css" layer(components);
+@import "./components/typography.css" layer(components);
+@import "./components/util.css" layer(components);
+@import "./components/wells.css" layer(components);
+@import "./components/braintree.css" layer(components);

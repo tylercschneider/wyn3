@@ -8,7 +8,7 @@
 
 <div class="not-prose alert alert-info mb-6" role="alert">
   <div class="flex items-start justify-start">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-4 flex-shrink-0" viewBox="0 0 20 20" fill="currentColor">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-4 shrink-0" viewBox="0 0 20 20" fill="currentColor">
       <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd" />
     </svg>
     <div>
@@ -32,17 +32,7 @@
 
 <%= h3_with_anchor "Processes" %>
 <p>Use the <code>bin/dev</code> command to run your application's processes.</p>
-<p>As usual, you'll need to run several processes in development.</p>
-
-<ul>
-  <li><code>rails server</code> - starts your Rails application server.</li>
-  <li><code>yarn run build</code> - bundles Javascript using esbuild</li>
-  <li><code>yarn run build:css</code> - bundles CSS using Tailwind CLI and PostCSS</li>
-  <li><code>sidekiq</code> - or whatever background worker process you have configured</li>
-</ul>
-
-<p>These commands are defined in <code>Procfile</code> and <code>Procfile.dev</code> so they can be started and shutdown together.</p>
-<p>You'll also need to make sure the PostgreSQL, Redis, etc servers are installed and running externally.</p>
+<p>These processes are defined in <code>Procfile</code> and <code>Procfile.dev</code> so they can be started and shutdown together.</p>
 
 <%= h3_with_anchor "Overmind" %>
 <p><%= link_to "Overmind", "https://github.com/DarthSim/overmind", target: :_blank %> is a process manager that runs the processes defined in <code>Procfile.dev</code>. Overmind is recommended because it allows you to join a process and interact with it.</p>

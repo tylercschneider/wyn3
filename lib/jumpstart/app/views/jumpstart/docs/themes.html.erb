@@ -9,8 +9,7 @@ application.
 
 <p>
 The dark and light themes provide a great set of neutral colors for any interface. They’re great starting
-points to modify when creating your own custom theme. Jumpstart’s juicy theme is a good example of how a
-theme can be customized to reflect a stronger brand expression.
+points to modify when creating your own custom theme.
 </p>
 
 <p>
@@ -39,32 +38,12 @@ to color (like swapping primary colors to match your brand) easier and more effi
       <p class="leading-normal">Notice with the "dark" theme</p>
     </div>
   </div>
-
-  <div class="juicy">
-    <div class="banner banner-info" role="alert">
-      <svg class="icon-notice" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 0 1 .67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 1 1-.671-1.34l.041-.022ZM12 9a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Z" clip-rule="evenodd" />
-      </svg>
-      <p class="leading-normal">Notice with the "juicy" theme</p>
-    </div>
-  </div>
 </div>
 
 <%= h3_with_anchor "Modifying the default themes" %>
 
 <p>
-The light and dark themes that ship by default use semantically named color roles which are defined in
-<code>tailwind.config.js</code> and map to Tailwind colors. Changing the colors here is the easiest way to make
-large application wide changes to the default theming for both light and dark modes. To get started changing the
-colors, if not creating a custom theme, you will need to modify the color values in the <code>theme</code> object
-in <code>tailwind.config.js</code>.
-</p>
-
-<p>
-The juicy theme is an example of when you want to go further and have more fine-grained control over every aspect of
-a theme. It uses none of the default semantic names setup in <code>tailwind.config.js.</code> This is so that changes
-there do not affect this theme.
-</p>
+The light and dark themes that ship by default use semantically named color roles and map to Tailwind colors. Changing the colors here is the easiest way to make large application wide changes to the default theming for both light and dark modes.</p>
 
 <p>
 The next sections will walk you through the default color roles and how to modify them.
@@ -125,7 +104,7 @@ can’t be relied on to communicate depth. <code>base</code> is also used to set
 
 <p>
 Many products keep things neutral with white page backgrounds and varying shades of gray for text, but others use
-backgrounds and text color as another way to express brand (like in the juicy theme). With <code>base-*</code>, our
+backgrounds and text color as another way to express brand. With <code>base-*</code>, our
 color system easily supports either scenario.
 </p>
 
@@ -133,53 +112,10 @@ color system easily supports either scenario.
 
 <p>
 If you want to create a completely custom theme, you can do so by copying any of the default theme files
-(light.css, dark.css, or juicy.css), creating a file for your theme in <code>app/assets/stylesheets/themes</code>,
+(like light.css and dark.css), creating a file for your theme in <code>app/assets/stylesheets/themes</code>,
 pasting in the copied theme, changing the top level class name to match the file/theme name and modifying the color
-values to your liking. After that import your new theme in <code>app/assets/stylesheets/application.scss</code> and
+values to your liking. After that import your new theme in <code>app/assets/stylesheets/application.tailwind.css</code> and
 you're good to go.
-</p>
-
-<%= h4_with_anchor "Example: Changing the default color theme" %>
-
-<p>
-<em>⚠️ Changing the colors here will only affect light and dark themes and not the juicy theme.</em>
-</p>
-
-<p>
-<Here are the default semantic names for the colors used in the light and dark themes:
-</p>
-
-<div class="not-prose">
-  <pre><code>// tailwind.config.js
-  theme: {
-    extend: {
-      colors: {
-        primary: colors.blue,
-        secondary: colors.gray,
-        tertiary: colors.gray,
-        danger: colors.red,
-        success: colors.green,
-        info: colors.blue,
-        warning: colors.yellow,
-        accent: colors.orange,
-        light: colors.gray,
-        dark: colors.gray,
-        disabled: colors.gray,
-      },
-    },
-  },
-</code></pre>
-</div>
-
-<p>
-If your have a brand color, say teal for example, that you want to use, you can change the <code>primary</code> color
-value from <code>colors.blue</code> to <code>colors.teal</code>. This will change the primary color for both light
-and dark modes.
-</p>
-
-<p>
-These colors come from the Tailwind color palette. You can find the full list of Tailwind
-colors <%= link_to "here", "https://tailwindcss.com/docs/customizing-colors", target: "_blank" %>.
 </p>
 
 <%= h5_with_anchor "Using 'on-*' to track relationships between colors" %>

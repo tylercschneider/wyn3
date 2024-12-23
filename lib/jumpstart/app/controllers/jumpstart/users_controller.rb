@@ -3,7 +3,8 @@ require_dependency "jumpstart/application_controller"
 module Jumpstart
   class UsersController < ApplicationController
     def index
-      render json: User.where(admin: [nil, false]).where(User.arel_table[:email].matches("%#{User.sanitize_sql_like(params[:query])}%"))
+      users = User.where(admin: [nil, false]).where(User.arel_table[:email].matches("%#{User.sanitize_sql_like(params[:q].to_s)}%"))
+      render turbo_stream: helpers.async_combobox_options(users)
     end
 
     def create
