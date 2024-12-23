@@ -151,7 +151,7 @@ class AccountTest < ActiveSupport::TestCase
     pay_charge = pay_customer.charge(10_00)
 
     mail = Pay::UserMailer.with(pay_customer: pay_customer, pay_charge: pay_charge).receipt
-    assert_equal [account.email, "accounting@example.com"], mail.to
+    assert_equal [account.owner.email, "accounting@example.com"], mail.to
   end
 
   test "destroys noticed events when associated" do
