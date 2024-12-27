@@ -92,7 +92,7 @@ builder:
 # Use accessory services (secrets come from .kamal/secrets).
 accessories:
   db:
-    image: postgres:16
+    image: postgres:17
     host: 192.168.0.1
     port: 5432
     env:
