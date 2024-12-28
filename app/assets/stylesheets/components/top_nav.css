@@ -407,3 +407,13 @@ button[aria-label="Notifications"] svg {
     }
   }
 }
+
+.account-menu {
+  .name {
+    font-size: 14px;
+    max-width: 7rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-wrap: nowrap;
+  }
+}
