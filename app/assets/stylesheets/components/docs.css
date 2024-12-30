@@ -1,3 +1,8 @@
+.docs-layout {
+  scroll-behavior: smooth;
+  scroll-padding-top: 57px;
+}
+
 .docs-main,
 .admin-main {
   min-height: calc(100vh - 64px);
@@ -27,7 +32,7 @@
 }
 
 .doc-header {
-  padding: 32px 48px 48px;
+  padding: 32px 48px;
 
   h1,
   p {
@@ -69,6 +74,10 @@
     max-width: 1024px;
   }
 
+  @media (min-width: 1420px) {
+    max-width: none;
+  }
+
 
   padding: 48px 64px 48px 48px;
 
@@ -108,14 +117,7 @@
       margin-bottom: 16px;
     }
   }
-
-  a {
-    color: var(--text-primary);
-    font-family: Karla;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px;
-    text-decoration-line: underline;
-  }
+}
+.docs-container {
+  padding-top: 57px;
 }

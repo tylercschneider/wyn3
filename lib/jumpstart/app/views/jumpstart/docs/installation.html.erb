@@ -1,11 +1,10 @@
-<% content_for :section_title do %>
-  <%= h1_with_anchor "Installation" %>
-<% end %>
-<%= h2_with_anchor "Installing Jumpstart Pro" %>
+<% content_for :section_title, "Installing Jumpstart Pro" %>
+
+<%= h2_with_anchor "Dependencies" %>
 <p>To install dependencies, set up, and configure your application follow the latest instructions in the repository:</p>
-<p><%= link_to "Rails Installation", "https://github.com/jumpstart-pro/jumpstart-pro-rails#readme", class: "font-bold", target: :_blank %></p>
-<p><%= link_to "iOS Installation", "https://github.com/jumpstart-pro/jumpstart-pro-ios#readme", class: "font-bold", target: :_blank %></p>
-<p><%= link_to "Android Installation", "https://github.com/jumpstart-pro/jumpstart-pro-android#readme", class: "font-bold", target: :_blank %></p>
+<p><%= link_to "Rails Installation", "https://github.com/jumpstart-pro/jumpstart-pro-rails#readme", class: "link font-bold", target: :_blank %></p>
+<p><%= link_to "iOS Installation", "https://github.com/jumpstart-pro/jumpstart-pro-ios#readme", class: "link font-bold", target: :_blank %></p>
+<p><%= link_to "Android Installation", "https://github.com/jumpstart-pro/jumpstart-pro-android#readme", class: "link font-bold", target: :_blank %></p>
 
 <div class="alert alert-info" role="alert">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

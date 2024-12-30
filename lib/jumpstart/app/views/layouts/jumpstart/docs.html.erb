@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="<%= class_names("jumpstart h-full antialiased", "jumpstart-dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
+<html class="docs-layout <%= class_names("jumpstart h-full antialiased", "jumpstart-dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
   <head>
     <title>Jumpstart Docs | <%= yield :section_title %></title>
     <%= csrf_meta_tags %>
@@ -43,20 +43,20 @@
 
     <%= render partial: "jumpstart/docs/top_nav" %>
 
-    <div class="sm:flex">
+    <div class="docs-container md:flex">
       <%= render partial: "jumpstart/docs/side_nav" %>
 
       <div class="docs-main">
-          <header class="doc-header">
-            <h1><%= yield :section_title %></h1>
-            <% if content_for :section_subtitle %>
-              <p><%= yield :section_subtitle %></p>
-            <% end %>
-          </header>
+        <header class="doc-header">
+          <h1><%= yield :section_title %></h1>
+          <% if content_for :section_subtitle %>
+            <p><%= yield :section_subtitle %></p>
+          <% end %>
+        </header>
 
-        <div class="doc-body">
+        <main class="doc-body">
           <%= yield %>
-        </div>
+        </main>
       </div>
     </div>
 

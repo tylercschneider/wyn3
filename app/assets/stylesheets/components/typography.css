@@ -28,10 +28,15 @@ h6, .h6 {
 }
 
 .link {
-  @apply text-primary-500;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+  text-decoration-line: underline;
 
   &:hover,
   &:focus {
-    @apply text-primary-600;
+    color: var(--text-primary-hover);
   }
 }
