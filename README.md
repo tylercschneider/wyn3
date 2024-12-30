@@ -10,18 +10,7 @@ You'll need the following installed to run the template successfully:
 * PostgreSQL 12+ (can be switched to SQLite or MySQL)
 * Libvips or Imagemagick
 
-If you use Homebrew, dependencies are listed in `Brewfile` so you can install them using:
-
-```bash
-brew bundle install --no-upgrade
-```
-
-Then you can start the database servers:
-
-```bash
-brew services start postgresql
-brew services start redis
-```
+Optionally, the [Stripe CLI](https://docs.stripe.com/stripe-cli) to sync webhooks in development.
 
 ## Create Your Repository
 
