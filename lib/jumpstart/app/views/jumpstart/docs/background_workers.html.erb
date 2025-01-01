@@ -1,10 +1,10 @@
-<% content_for :section_title do %>
-  <%= h1_with_anchor "Background Workers" %>
-<% end %>
+<% content_for :section_title, "Background Workers" %>
 <% content_for :section_subtitle do %>
   <p class="text-xl">Jumpstart Pro makes adding background workers easy.</p>
 <% end %>
+
 <%= h2_with_anchor "Choosing Your Background Workers" %>
+
 <p>The Jumpstart Pro config admin lets you select your preferred tool for processing background jobs.</p>
 
 <ul>
@@ -15,8 +15,12 @@
 </ul>
 
 <%= h2_with_anchor "Active Job" %>
-<p>After selecting your background worker of choice and saving your config, Jumpstart Pro will add the gem and configure ActiveJob to use it as the default for all environments.</p>
+
+<p>
+  After selecting your background worker of choice and saving your config, Jumpstart Pro will add the gem and configure ActiveJob to use it as the default for all environments.
+</p>
 
 <%= h2_with_anchor "Sidekiq" %>
+
 <p>If Sidekiq is enabled, we automatically enable the Sidekiq Web UI, restrict it to only admin users and add links to it in the navigation.</p>
-<p>Sidekiq requires Redis to operate. Ensure <a href="https://redis.io/docs/install/install-redis/" target="_blank">Redis is installed</a> and properly configured in your setup before enabling Sidekiq.</p>
+<p>Sidekiq requires Redis to operate. Ensure <a href="https://redis.io/docs/install/install-redis/" target="_blank" class="link">Redis is installed</a> and properly configured in your setup before enabling Sidekiq.</p>

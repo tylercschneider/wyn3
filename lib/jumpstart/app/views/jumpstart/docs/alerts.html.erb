@@ -1,6 +1,4 @@
-<% content_for :section_title do %>
-  <%= h1_with_anchor "Alerts & Notices" %>
-<% end %>
+<% content_for :section_title, "Alerts & Notices" %>
 
 <%= h2_with_anchor "Alerts" %>
 
@@ -169,9 +167,9 @@
 <%= h2_with_anchor "Toast Notifications" %>
 
 <p>
-Toast notifications are visible in the upper right corner of this page. You can create toast notifications by passing a hash of options to the <code>flash</code> object.
-Behind the scenes the <code>flash</code> object is used to instantiate and render an instance of the <code>ToastComponent</code> class found at <code>app/components/toast_component.rb</code>.
-The following examples show how to create various toast notifications:
+  Toast notifications are visible in the upper right corner of this page. You can create toast notifications by passing a hash of options to the <code>flash</code> object.
+  Behind the scenes the <code>flash</code> object is used to instantiate and render an instance of the <code>ToastComponent</code> class found at <code>app/components/toast_component.rb</code>.
+  The following examples show how to create various toast notifications:
 </p>
 
 <pre><code># Basic Example
@@ -182,17 +180,21 @@ flash[:notice] = {
 </code></pre>
 
 <p>
-You can also use the <code>ToastComponent</code> directly if you would like by instantiating an instance of the class as shown below:
+  You can also use the <code>ToastComponent</code> directly if you would like by instantiating an instance of the class as shown below:
 </p>
 
 <pre><code># Using the ToastComponent Class
-render ToastComponent.new(title: "Basic Example", description: "Toast description goes here.")
+render ToastComponent.new(
+  title: "Basic Example",
+  description: "Toast description goes here."
+  )
 </code></pre>
 
 
 <p>
-Toasts can also have icons. By default Jumpstart provides named icons for <code>:alert, :notice, :success, :default</code> values. To use a built-in named icon pass the name of the icon
-as the value to the <code>icon_name:</code> option as shown in the following examples below:
+  Toasts can also have icons. By default Jumpstart provides named icons for <code>:alert, :notice, :success, :default</code> values. To use a built-in named icon pass the name of the icon
+  as the value to the <code>icon_name:</code> option as shown in the following examples below:
+</p>
 
 <pre><code># Toast with icon
 flash[:notice] = {
@@ -203,24 +205,31 @@ flash[:notice] = {
 </code></pre>
 
 <pre><code># Toast with icon
-render ToastComponent.new(title: "Basic Example", description: "Toast description goes here.", icon_name: :success)
+render ToastComponent.new(
+  title: "Basic Example",
+  description: "Toast description goes here.",
+  icon_name: :success
+  )
 </pre></code>
 
 <p>
-There is also the option to use a custom icon by passing a block when instantiating a <code>ToastComponent</code> that calls <code>capture_for :icon</code> as shown in the below example:
+  There is also the option to use a custom icon by passing a block when instantiating a <code>ToastComponent</code> that calls <code>capture_for :icon</code> as shown in the below example:
 </p>
 
 <pre><code># Toast with custom icon
-render ToastComponent.new title: "Toast with icon", description: "This is a toast description." do |component|
-  component.capture_for :icon do
-   <-- custom SVG here -->
+render ToastComponent.new(
+  title: "Toast with icon",
+  description: "This is a toast description." do |component|
+    component.capture_for :icon do
+      <-- custom SVG here -->
+    end
   end
-end
+  )
 </pre></code>
 
 <p>
-Toast notifications can also have a link to help navigate users to completing any follow-up actions or next steps. To add such a link pass a hash to the <code>link</code>
-option with the <code>text</code> and <code>url</code> keys and their values in hash passed to the <code>flash</code> object as shown in the example below:
+  Toast notifications can also have a link to help navigate users to completing any follow-up actions or next steps. To add such a link pass a hash to the <code>link</code>
+  option with the <code>text</code> and <code>url</code> keys and their values in hash passed to the <code>flash</code> object as shown in the example below:
 </p>
 
 <pre><code># Toast with link
@@ -233,21 +242,24 @@ flash[:notice] = {
 </code></pre>
 
 <p>
-Or via <code>capture_for :link</code> when using a <code>ToastComponent</code> directly:
+  Or via <code>capture_for :link</code> when using a <code>ToastComponent</code> directly:
 </p>
 
 <pre><code># Toast with link
-render ToastComponent.new title: "Auto-dismissing toast", description: "This is a toast description." do |component|
-  component.capture_for :link do
-    link_to "View", root_path
-  end
-end
+render ToastComponent.new(
+    title: "Auto-dismissing toast",
+    description: "This is a toast description." do |component|
+      component.capture_for :link do
+        link_to "View", root_path
+      end
+    end
+  )
 </code></pre>
 
 <p>
-Toast notifications can also be set to dismiss automatically (user does not have to click the close button to remove the toast notification). To create an auto-dismissing
-toast notification set the <code>dismissable</code> option to <code>false</code> and then set the interval which the toast will be auto-dismissed after via the
-<code>dismiss_after</code> option as shown in the following example:
+  Toast notifications can also be set to dismiss automatically (user does not have to click the close button to remove the toast notification). To create an auto-dismissing
+  toast notification set the <code>dismissable</code> option to <code>false</code> and then set the interval which the toast will be auto-dismissed after via the
+  <code>dismiss_after</code> option as shown in the following example:
 </p>
 
 <pre><code># Auto-dismissing toast
@@ -262,7 +274,12 @@ flash[:notice] = {
 </code></pre>
 
 <pre><code># Auto-dismissing toast
-render(ToastComponent.new title: "Auto-dismissing toast", description: "This is a toast description.", dismissable: false, dismiss_after: 5000)
+render ToastComponent.new(
+    title: "Auto-dismissing toast",
+    description: "This is a toast description.",
+    dismissable: false,
+    dismiss_after: 5000
+  )
 </code></pre>
 
 <div class="not-prose">

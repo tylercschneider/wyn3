@@ -1,6 +1,4 @@
-<% content_for :section_title do %>
-  <%= h1_with_anchor "Buttons" %>
-<% end %>
+<% content_for :section_title, "Buttons" %>
 
 <% types = {
   "Primary" => "btn-primary",
@@ -13,7 +11,9 @@
 } %>
 
 <%= h2_with_anchor "Button Styles" %>
+
 <p>Buttons come with a variety of different styles out of the box. For example: <code>btn btn-primary</code></p>
+
 <%= render "jumpstart/docs/snippet" do %>
   <div class="space-y-4 space-x-2">
     <% types.each do |name, type| %>
@@ -31,7 +31,9 @@
 <% end %>
 
 <%= h2_with_anchor "Sizes" %>
+
 <p>Buttons come in a variety of sizes from <code>btn-xs</code>, <code>btn-sm</code>, <code>btn-lg</code> to <code>btn-xl</code>.</p>
+
 <%= render "jumpstart/docs/snippet" do %>
 <div class="space-y-4 space-x-2">
   <% types.each do |name, type| %>
@@ -65,7 +67,8 @@
 <% end %>
 
 <%= h2_with_anchor "Icon Buttons" %>
-<p>See the <%= link_to "Icons documentation", icons_docs_path %>.</p>
+
+<p>See the <%= link_to "Icons documentation", icons_docs_path, class: "link" %>.</p>
 
 <%= render "jumpstart/docs/snippet" do %>
 <div class="space-y-4">
@@ -82,8 +85,9 @@
 <% end %>
 
 <%= h3_with_anchor "Button Icon Positions" %>
+
 <p>
-You can also have icons on left sides, both sides or right side of the button text. Just place the icon(s) accordingly in the markup.
+  You can also have icons on left sides, both sides or right side of the button text. Just place the icon(s) accordingly in the markup.
 </p>
 
 <%= render "jumpstart/docs/snippet" do %>
@@ -129,7 +133,9 @@ You can also have icons on left sides, both sides or right side of the button te
 <% end %>
 
 <%= h2_with_anchor "Block Buttons" %>
+
 <p>Buttons are <code>inline-flex</code> by default. To make them full-width, you can add <code>btn-block</code>.</p>
+
 <%= render "jumpstart/docs/snippet" do %>
   <div class="space-y-4 w-96">
     <% types.each do |name, type| %>
@@ -145,7 +151,9 @@ You can also have icons on left sides, both sides or right side of the button te
 <% end %>
 
 <%= h2_with_anchor "Outlined Buttons" %>
+
 <p>Outlined buttons can be used by adding <code>btn-outline</code>.</p>
+
 <%= render "jumpstart/docs/snippet" do %>
   <div class="space-y-4">
     <% types.each do |name, type| %>
@@ -155,6 +163,7 @@ You can also have icons on left sides, both sides or right side of the button te
 <% end %>
 
 <%= h2_with_anchor "Disabled" %>
+
 <%= render "jumpstart/docs/snippet" do %>
 <section class="space-y-8">
 <p>Buttons can be disabled by adding the <code>disabled</code> attribute to the button tag.</p>

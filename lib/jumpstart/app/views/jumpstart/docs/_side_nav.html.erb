@@ -2,7 +2,7 @@
 <% active_class = "section-title pl-5 text-avocado-800 bg-avocado-100 border-l-avocado-500 border-l-4 dark:bg-gray-700" %>
 <% inactive_class = "" %>
 
-<div class="p-6 pb-20 sm:fixed sm:w-[300px] sm:h-screen sm:overflow-scroll shrink-0 text-sm font-medium border-r border-r-smoke-300">
+<aside class="p-6 pb-20 lg:fixed lg:w-[300px] lg:h-screen lg:overflow-scroll shrink-0 text-sm font-medium border-r border-r-smoke-300">
   <% nav = {
     "Get Started" => [
       ["Installation", installation_docs_path],
@@ -76,9 +76,9 @@
     ]
   } %>
 
-  <%= select_tag nil, grouped_options_for_select(nav, request.path), class: "sm:hidden", onchange: "Turbo.visit(this.selectedOptions[0].value)" %>
+  <%= select_tag nil, grouped_options_for_select(nav, request.path), class: "lg:hidden", onchange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
-  <div class="hidden sm:block">
+  <div class="hidden lg:block">
     <% nav.each do |section, links| %>
       <%= header_with_anchor section, header_tag: :h5, header_class: "first-of-type:mt-0 mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200 first-of-type:border-none border-t first-of-type:pt-0 pt-4" %>
       <ul class="list-none leading-loose">
@@ -88,4 +88,4 @@
       </ul>
     <% end %>
   </div>
-</div>
+</aside>
