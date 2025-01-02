@@ -42,7 +42,7 @@
 
   h1,
   p {
-    color: var(--text-on-primary);
+    color: var(--base-text);
     margin-top: 16px;
   }
 
