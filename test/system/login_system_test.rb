@@ -2,8 +2,6 @@ require "application_system_test_case"
 
 class LoginSystemTest < ApplicationSystemTestCase
   setup do
-    Capybara.app_host = "http://lvh.me"
-    Capybara.always_include_port = true
   end
 
   test "can login" do

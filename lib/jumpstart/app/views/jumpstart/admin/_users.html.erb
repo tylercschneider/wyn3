@@ -10,15 +10,14 @@
     </tr>
   </thead>
   <tbody id="admin_users">
-<%= render partial: "jumpstart/users/user", collection: User.where(admin: true).order(created_at: :asc), as: :user %>
+    <%= render partial: "jumpstart/users/user", collection: User.where(admin: true).order(created_at: :asc), as: :user %>
   </tbody>
 </table>
 
 <h4>Add an admin</h4>
-<%= select_tag :id, [], placeholder: "Search users by email", form: :admin_user, data: {
-  controller: :select,
-  select_url_value: users_path(format: :json),
-  select_label_field_value: :email,
-  select_value_field_value: :id,
-  select_submit_on_change_value: true
-} %>
+<div class="flex items-center gap-2">
+  <%= combobox_tag :id, users_path, placeholder: "Search users" do |combobox| %>
+    <% combobox.customize_hidden_field form: :admin_user %>
+  <% end %>
+  <%= submit_tag "Add", form: :admin_user, class: "btn btn-secondary" %>
+</div>

@@ -89,7 +89,7 @@ nav.menu-component {
             text-overflow: ellipsis;
             white-space: nowrap;
 
-            &:has(svg) {
+            &:has(*) {
               display: flex;
             }
 
@@ -98,7 +98,7 @@ nav.menu-component {
               color: var(--base-text-secondary);
             }
 
-            span {
+            >span {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;

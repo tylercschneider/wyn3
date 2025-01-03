@@ -1,3 +1,1 @@
 web: bin/rails server -p $PORT
-css: yarn build:css --watch
-js: yarn build --reload

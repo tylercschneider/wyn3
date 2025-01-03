@@ -62,5 +62,8 @@ module JumpstartApp
         pin_all_from Rails.root.join("app/javascript/madmin/controllers"), under: "controllers", to: "madmin/controllers"
       end
     end
+
+    # Opt-in to Rails 8.1 change
+    config.active_support.to_time_preserves_timezone = :zone
   end
 end

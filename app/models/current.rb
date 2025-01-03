@@ -35,6 +35,6 @@ class Current < ActiveSupport::CurrentAttributes
   end
 
   def other_accounts
-    @other_accounts ||= user.accounts.order(name: :asc).where.not(id: account.id)
+    @other_accounts ||= user.present? ? user.accounts.order(name: :asc).where.not(id: account.id) : Account.none
   end
 end

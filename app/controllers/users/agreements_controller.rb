@@ -25,7 +25,7 @@ class Users::AgreementsController < ApplicationController
   private
 
   def set_agreement
-    @agreement = Rails.application.config.agreements.find { _1.id.to_s == params[:id] }
+    @agreement = Rails.application.config.agreements.find { it.id.to_s == params[:id] }
 
     if @agreement.nil?
       redirect_to root_path

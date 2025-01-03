@@ -22,106 +22,34 @@
       </a>  </section>
 
       <section class="nav-container hidden lg:flex" data-toggle-target="toggleable">
-        <nav><!-- BEGIN app/views/application/_left_nav.html.erb --><!-- END app/views/application/_left_nav.html.erb --></nav>
-        <nav><!-- BEGIN app/views/application/_right_nav.html.erb -->
-          <!-- END app/views/application/_right_nav.html.erb --></nav>
+        <nav>
+          <%= nav_link_to "Left", "#", class: "active" %>
+          <%= nav_link_to "Left", "#" %>
+        </nav>
+        <nav><%= nav_link_to "Right", "#" %></nav>
       </section>
 
       <section class="nav-user-controls">
-        <button type="button" id="sidebar-open" data-action="click->toggle#toggle touch->toggle#toggle">
+        <button type="button">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
           </svg>
         </button>
 
-        <!-- BEGIN app/views/application/_dev_menu.html.erb --><div class="dropdown-menu" data-controller="dropdown">
-          <button data-controller="tooltip" data-tooltip-content-value="Development" data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" aria-label="Dev Nav">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z"></path>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+        <button role="button" aria-label="Dev Nav">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.107 1.204.165.397.505.71.93.78l.893.15c.543.09.94.559.94 1.109v1.094c0 .55-.397 1.02-.94 1.11l-.894.149c-.424.07-.764.383-.929.78-.165.398-.143.854.107 1.204l.527.738c.32.447.269 1.06-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.398.165-.71.505-.781.929l-.149.894c-.09.542-.56.94-1.11.94h-1.094c-.55 0-1.019-.398-1.11-.94l-.148-.894c-.071-.424-.384-.764-.781-.93-.398-.164-.854-.142-1.204.108l-.738.527c-.447.32-1.06.269-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.109v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.526-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.107.397-.165.71-.505.78-.929l.15-.894Z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path>
+          </svg>
+        </button>
+
+        <button aria-label="Notifications">
+          <span class="appearance-none flex items-center relative">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"></path>
             </svg>
-          </button>
-          <div data-dropdown-target="menu" data-transition-enter="transition ease-out duration-200" data-transition-enter-from="opacity-0 translate-y-1" data-transition-enter-to="opacity-100 translate-y-0" data-transition-leave="transition ease-in duration-150" data-transition-leave-from="opacity-100 translate-y-0" data-transition-leave-to="opacity-0 translate-y-1" class="z-20 hidden lg:absolute lg:right-0 opacity-0 translate-y-1">
-            <nav class="menu-component" aria-label="User menu">
-              <ul class="menu-list">
-                <li class="menu-section">
-                  <ul class="menu-sub-list">
-                    <li><a data-turbo="false" href="/jumpstart">Configuration</a></li>
-                    <li><a target="_blank" data-turbo="false" href="/mailbin">Mailbin</a></li>
-                  </ul>
-                </li>
-                <li class="menu-section">
-                  <ul class="menu-sub-list">
-                    <li><a target="_blank" data-turbo="false" href="/jumpstart/docs">Documentation</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- END app/views/application/_dev_menu.html.erb -->
-        <!-- BEGIN app/views/application/_notifications.html.erb --><div class="z-10 inline-flex items-center align-middle leading-none rounded no-underline" data-controller="notifications" data-notifications-account-id-value="1" data-notifications-total-unread-value="0">
-          <div class="relative flex items-center" data-controller="dropdown">
-            <button class="inline-block select-none lg:rounded lg:p-2 lg:hover:bg-primary-50" aria-label="Notifications" data-action="click->notifications#open click->dropdown#toggle click@window->dropdown#hide">
-              <span class="appearance-none flex items-center relative">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"></path>
-                </svg>
-                <span data-notifications-target="badge" class="hidden absolute top-0 right-0 h-2 w-2 transform -translate-y-1/2 translate-x-1/2 rounded-full text-white shadow-solid bg-red-500"></span>
-              </span>
-            </button>    <div data-dropdown-target="menu" data-transition-enter="transition ease-out duration-200" data-transition-enter-from="opacity-0 translate-y-1" data-transition-enter-to="opacity-100 translate-y-0" data-transition-leave="transition ease-in duration-150" data-transition-leave-from="opacity-100 translate-y-0" data-transition-leave-to="opacity-0 translate-y-1" class="absolute top-full right-0 mt-2 hidden z-20 opacity-0 translate-y-1">
-              <div class="bg-white border border-gray-200 dark:bg-gray-900 dark:border-gray-700 shadow rounded overflow-hidden w-64 sm:w-96">
-                <turbo-frame class="divide-y divide-gray-200 dark:divide-gray-700" loading="lazy" data-notifications-target="list" id="notifications" src="/notifications" target="_top">
-                  <p class="p-4"><i class="fas fa-circle-notch fa-spin text-gray-400 mr-1"></i> Loading...</p>
-                </turbo-frame>      </div>
-            </div>
-          </div>
-        </div><!-- END app/views/application/_notifications.html.erb -->
-        <!-- BEGIN app/views/application/_account_menu.html.erb --><div class="dropdown-menu" data-controller="dropdown">
-          <button data-action="click->dropdown#toggle click@window->dropdown#hide" role="button" aria-label="Profile Menu">
-            <img alt="Admin One" src="https://secure.gravatar.com/avatar/8f09a9f2cfee67d8827e24d9139601f0.png?default=mp&amp;rating=pg&amp;size=48">
-          </button>
-          <div data-dropdown-target="menu" data-transition-enter="transition ease-out duration-200" data-transition-enter-from="opacity-0 translate-y-1" data-transition-enter-to="opacity-100 translate-y-0" data-transition-leave="transition ease-in duration-150" data-transition-leave-from="opacity-100 translate-y-0" data-transition-leave-to="opacity-0 translate-y-1" class="z-20 hidden lg:absolute lg:right-0 opacity-0 translate-y-1">
-            <nav class="menu-component" aria-label="User menu">
-              <ul class="menu-list">
-                <li class="menu-section">
-                  <h2 class="menu-section-heading"><a href="/accounts/acct_bzXq9KrLEMm32iAnOP0xGDYk">Admin One</a></h2>
-                </li>
-
-                <li class="menu-section">
-                  <ul class="menu-sub-list">
-                    <li><a href="/users/edit">Profile</a></li>
-                    <li><a href="/account/password/edit">Password</a></li>
-                    <li></li>
-                    <li></li>
-                    <li><a href="/accounts">Accounts</a></li>
-                    <!-- <li></li> -->
-                  </ul>
-                </li>
-                <li class="menu-section">
-                  <h2 class="menu-section-heading">switch account</h2>
-
-                  <ul class="menu-sub-list">
-                    <li><form class="button_to" method="post" action="/accounts/acct_0pAP5m3JOwak9HY7DbjLBKYg/switch"><input type="hidden" name="_method" value="patch" autocomplete="off"><button data-controller="accounts" data-action="ajax:success->accounts#reconnect" type="submit">Admin One team account</button><input type="hidden" name="authenticity_token" value="olluZW2V1Fz_4OMAhK82uXH2wBgqW60HGQtpB1UIEgQeTt_yX94HIiGOoiYy5Ne_lfo_rPWDBNjUEosf2zbGOQ" autocomplete="off"></form></li>
-                  </ul>
-                </li>
-                <li class="menu-section">
-                  <ul class="menu-sub-list">
-                    <li><a target="_blank" data-turbo="false" href="/admin">Admin Area</a></li>
-                  </ul>
-                </li>
-                <li class="menu-section">
-                  <ul class="menu-sub-list">
-                    <li>
-                      <form class="button_to" method="post" action="/users/sign_out"><input type="hidden" name="_method" value="delete" autocomplete="off"><button type="submit">Sign Out</button><input type="hidden" name="authenticity_token" value="uKQGWJ4dcMKJ44kVxHMfuJMQ8ZZhydO14Xif-qwhc4KMnorVLfH3IlsISfebGlpuq4Lm0n-hb-LFrsgin4WRUA" autocomplete="off"></form>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- END app/views/application/_account_menu.html.erb -->
+          </span>
+        </button>
       </section>
   </nav>
 <% end %>

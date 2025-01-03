@@ -16,12 +16,8 @@
       <li class="menu-section">
         <ul class="menu-sub-list">
           <li><%= link_to "Configuration", jumpstart_path(script_name: nil), data: { turbo: false } %></li>
-          <li><%= link_to 'Mailbin', mailbin_path(script_name: nil), target: :_blank, data: { turbo: false } %></li>
-        </ul>
-      </li>
-      <li class="menu-section">
-        <ul class="menu-sub-list">
           <li><%= link_to "Documentation", jumpstart.docs_path, target: :_blank, data: { turbo: false } %></li>
+          <li><%= link_to 'Mailbin', mailbin_path(script_name: nil), target: :_blank, data: { turbo: false } %></li>
         </ul>
       </li>
     </ul>

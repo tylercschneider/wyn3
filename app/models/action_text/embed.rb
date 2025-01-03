@@ -31,6 +31,7 @@ class ActionText::Embed < ApplicationRecord
     {source: "^https:\\/\\/play\\.spotify\\.com\\/(.*?)", options: ""},
     {source: "^spotify\\:(.*?)", options: ""},
     {source: "^https:\\/\\/([^\\.]+\\.)?twitter\\.com\\/(.*?)\\/status\\/(.*?)", options: ""},
+    {source: "^https:\\/\\/([^\\.]+\\.)?x\\.com\\/(.*?)\\/status\\/(.*?)", options: ""},
     {source: "^http:\\/\\/([^\\.]+\\.)?vimeo\\.com\\/(.*?)", options: ""},
     {source: "^https:\\/\\/([^\\.]+\\.)?vimeo\\.com\\/(.*?)", options: ""},
     {source: "^http:\\/\\/([^\\.]+\\.)?youtube\\.com\\/(.*?)", options: ""},

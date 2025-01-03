@@ -11,7 +11,7 @@
           <h1 class="h3"><%= @account.name %></h1>
         </div>
 
-        <div class="flex-shrink-0 mt-3 sm:mt-0 sm:text-right">
+        <div class="shrink-0 mt-3 sm:mt-0 sm:text-right">
           <%= switch_account_button @account, label: t(".switch"), class: "btn btn-secondary", form_class: "inline-block" unless current_account == @account %>
           <%= link_to t(".edit_account"), edit_account_path(@account), class: "btn btn-secondary" if !@account.personal? && account_admin?(@account, current_user) %>
         </div>

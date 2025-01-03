@@ -15,5 +15,5 @@
 }
 
 [data-controller="stripe--embedded-checkout"] iframe {
-  @apply rounded-lg;
+  border-radius: 0.5rem;
 }

@@ -1,9 +1,10 @@
-/* eslint no-console:0 */
-
+// Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails"
-require("@rails/activestorage").start()
-require("local-time").start()
+import "trix"
+import "@rails/actiontext"
+import "channels"
+import "controllers"
+import "src"
 
-import "./channels"
-import "./controllers"
-import "./src/**/*"
+import LocalTime from "local-time"
+LocalTime.start()

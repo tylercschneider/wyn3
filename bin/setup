@@ -25,16 +25,6 @@ FileUtils.chdir APP_ROOT do
   puts "== Installing dependencies =="
   system("bundle check") || system!("bundle install")
 
-  # Install yarn system wide
-  system! "npm install -g yarn" unless command_available?("yarn")
-
-  # Install JavaScript dependencies if using Yarn
-  system("yarn")
-
-  puts "\n== Compiling CSS & JS =="
-  system! "yarn run build"
-  system! "yarn run build:css"
-
   # puts "\n== Copying sample files =="
   # unless File.exist?("config/database.yml")
   #   FileUtils.cp "config/database.yml.sample", "config/database.yml"

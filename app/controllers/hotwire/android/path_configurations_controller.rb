@@ -38,39 +38,31 @@ class Hotwire::Android::PathConfigurationsController < ApplicationController
           }
         },
         {
-          patterns: ["^$", "^/$"],
+          patterns: [
+            "^$",
+            "^/$"
+          ],
           properties: {
             uri: "hotwire://fragment/web/home",
             presentation: "replace_root"
           }
         },
         {
-          patterns: ["/new$", "/edit$"],
+          patterns: [
+            "/new$",
+            "/edit$",
+            "/users/sign_in",
+            "/users/sign_up"
+          ],
           properties: {
             context: "modal",
-            uri: "hotwire://fragment/web/modal/sheet",
             pull_to_refresh_enabled: false
           }
         },
         {
-          patterns: ["/users/sign_in"],
+          patterns: ["/reset_app"],
           properties: {
-            uri: "hotwire://fragment/users/sign_in",
-            context: "modal"
-          }
-        },
-        {
-          patterns: ["/users/sign_up"],
-          properties: {
-            uri: "hotwire://fragment/users/sign_up",
-            context: "modal"
-          }
-        },
-        {
-          patterns: ["/account/password/edit"],
-          properties: {
-            uri: "hotwire://fragment/account/password/edit",
-            context: "modal"
+            uri: "hotwire://fragment/reset_app"
           }
         }
       ]

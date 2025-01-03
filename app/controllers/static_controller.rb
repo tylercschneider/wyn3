@@ -12,11 +12,11 @@ class StaticController < ApplicationController
   end
 
   def terms
-    @agreement = Rails.application.config.agreements.find { _1.id == :terms_of_service }
+    @agreement = Rails.application.config.agreements.find { it.id == :terms_of_service }
   end
 
   def privacy
-    @agreement = Rails.application.config.agreements.find { _1.id == :privacy_policy }
+    @agreement = Rails.application.config.agreements.find { it.id == :privacy_policy }
   end
 
   def reset_app

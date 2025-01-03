@@ -2,6 +2,12 @@
 
 This file includes notes on major changes that might affect your application and require changes from you to update.
 
+### December 23, 2024
+
+* Upgrade to TailwindCSS v4 & import maps
+  This update removes the Node.js dependency as we've migrated to the `tailwindcss-rails` gem along with `importmap-rails`. This keeps Jumpstart more aligned with Rails defaults and simplifies dependencies even further.
+  To continue using live reloading, we recommend `hotwire-spark` or `hotwire-livereload`.
+
 ### December 6, 2024
 
 * [Breaking] Remove Flatpickr. Since Flatpickr isn't accessible to screen readers, we have decided to remove it in favor of the built-in `datetime_local` browser field.

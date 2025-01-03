@@ -30,6 +30,6 @@ class Account < ApplicationRecord
   end
 
   def owner?(user)
-    owner_id == user.id
+    owner_id == user&.id
   end
 end

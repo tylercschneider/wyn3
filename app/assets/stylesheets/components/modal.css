@@ -16,6 +16,7 @@ dialog.slideover[closing] {
 
 dialog.modal {
   border-radius: 8px;
+  margin: auto;
   max-height: 100vh;
   width: 100%;
 
@@ -31,19 +32,19 @@ dialog.modal {
     background: var(--base-bg-backdrop);
     opacity: 0.5;
   }
-  
+
   &.modal-sm {
     max-width: 384px;
   }
-  
+
   &.modal-md {
     max-width: 448px;
   }
-  
+
   &.modal-lg {
     max-width: 512px;
   }
-  
+
   &.modal-full {
     border-radius: 0px;
     max-height: 100%;
