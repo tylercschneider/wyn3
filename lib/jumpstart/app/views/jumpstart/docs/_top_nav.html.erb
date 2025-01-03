@@ -8,14 +8,14 @@
 
   <section class="nav-container hidden lg:flex">
     <nav>
-      <%= nav_link_to "Back to the app", main_app.root_path %>
+      <%= nav_link_to "← Back to the app", main_app.root_path %>
       <%= nav_link_to "Configuration", root_path, target: :_blank %>
     </nav>
   </section>
 
   <section class="w-44 nav-user-controls">
-    <label for="theme-select" class="mb-0">Theme</label>
     <select name="theme" id="theme-select">
+      <option disabled>Theme</option>
       <option value="light">Light</option>
       <option value="dark">Dark</option>
       <option value="juicy">Juicy</option>
