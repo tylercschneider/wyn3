@@ -35,7 +35,8 @@
   data: {
     turbo: false,
     disable_with: t(".redirecting")
-    } %&gt;
+    }
+  ) %&gt;
 </code></pre>
 </div>
 
@@ -68,13 +69,18 @@
 <div class="not-prose">
   <pre><code>&lt;%= button_to(
   t("oauth.twitter"),
-  omniauth_authorize_path(:user, :twitter, record: current_account.to_sgid(for: :oauth),
-  redirect_to: account_path(current_account)),
+  omniauth_authorize_path(
+    :user,
+    :twitter,
+    record: current_account.to_sgid(for: :oauth),
+    redirect_to: account_path(current_account)
+  ),
   class: "btn btn-twitter m-1",
   data: {
     turbo: false,
     disable_with: t(".redirecting")
-    } %&gt;
+  }
+) %&gt;
 </code></pre>
 </div>
 
