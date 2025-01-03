@@ -1,8 +1,4 @@
-<% classes = "section-title block py-0.5 px-6 -mx-2 no-underline text-gray-800 dark:text-gray-200 hover:bg-avocado-100 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-800" %>
-<% active_class = "section-title pl-5 text-avocado-800 bg-avocado-100 border-l-avocado-500 border-l-4 dark:bg-gray-700" %>
-<% inactive_class = "" %>
-
-<aside class="p-6 pb-20 lg:fixed lg:w-[300px] lg:h-screen lg:overflow-scroll shrink-0 text-sm font-medium border-r border-r-smoke-300">
+<aside class="docs-side-nav">
   <% nav = {
     "Get Started" => [
       ["Installation", installation_docs_path],
@@ -80,10 +76,13 @@
 
   <div class="hidden lg:block">
     <% nav.each do |section, links| %>
-      <%= header_with_anchor section, header_tag: :h5, header_class: "first-of-type:mt-0 mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200 first-of-type:border-none border-t first-of-type:pt-0 pt-4" %>
+      <h5><%= section %></h5>
+
       <ul class="list-none leading-loose">
         <% links.each do |title, url| %>
-          <li><%= nav_link_to title, url, class: classes, active_class: active_class, inactive_class: inactive_class %></li>
+          <li>
+            <%= nav_link_to title, url, class: "docs-side-nav-link", active_class: "docs-side-nav-link active" %>
+          </li>
         <% end %>
       </ul>
     <% end %>
