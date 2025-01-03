@@ -1,8 +1,10 @@
-<% content_for :section_title, "Forms" %>
-
-<p>We've included the <%= link_to "TailwindCSS Forms", "https://github.com/tailwindlabs/tailwindcss-forms", target: :_blank %> plugin to provide default styling for form fields.</p>
+<% content_for :title, "Forms" %>
+<% content_for :subtitle do %>
+  We've included the <%= link_to "TailwindCSS Forms", "https://github.com/tailwindlabs/tailwindcss-forms", target: :_blank %> plugin to provide default styling for form fields.
+<% end %>
 
 <%= h2_with_anchor "Block Layout" %>
+
 <%= render "jumpstart/docs/snippet" do %>
   <form action="#">
 
@@ -79,6 +81,7 @@
 <% end %>
 
 <%= h2_with_anchor "Checkboxes" %>
+
 <%= render "jumpstart/docs/snippet" do %>
 <form action="#" class="space-y-4">
   <fieldset>
@@ -145,6 +148,7 @@
 <% end %>
 
 <%= h2_with_anchor "Switches/Toggles" %>
+
 <%= render "jumpstart/docs/snippet" do %>
 <form action="#" class="space-y-4">
   <fieldset class="space-y-2">
@@ -211,6 +215,7 @@
 <% end %>
 
 <%= h2_with_anchor "Radio Buttons" %>
+
 <%= render "jumpstart/docs/snippet" do %>
 <form action="#" class="space-y-4">
   <fieldset class="space-y-2">
@@ -289,6 +294,7 @@
 <% end %>
 
 <%= h3_with_anchor "Inline Layout" %>
+
 <%= render "jumpstart/docs/snippet" do %>
   <form action="#" class="inline">
     <div class="form-group">

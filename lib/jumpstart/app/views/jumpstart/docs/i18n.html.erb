@@ -1,6 +1,7 @@
-<% content_for :section_title, "Internationalization (I18n)" %>
-
-<p class="text-xl">Jumpstart Pro comes preconfigured with internationalization support allowing you to translate your app to any locale easily.</p>
+<% content_for :title, "Internationalization (I18n)" %>
+<% content_for :subtitle do %>
+  Jumpstart Pro comes preconfigured with internationalization support allowing you to translate your app to any locale easily.
+<% end %>
 
 <%= h2_with_anchor "I18n Settings" %>
 
@@ -13,6 +14,7 @@
 </ul>
 
 <%= h2_with_anchor "Requests" %>
+
 <p>The <code>SetLocale</code> concern sets the locale at the beginning of each request. It checks for a locale from several places:</p>
 <ul>
   <li><code>params[:locale]</code></li>
@@ -24,19 +26,22 @@
 <p>You can customize this concern to change the order or look for the locale in other places such as the domain or subdomain.</p>
 
 <%= h2_with_anchor "Devise I18n" %>
-<p>The <%= link_to "devise-i18n", "https://github.com/tigrish/devise-i18n", target: :_blank %> gem comes preinstalled to provide translations for most languages.</p>
+
+<p>The <%= link_to "devise-i18n", "https://github.com/tigrish/devise-i18n", target: :_blank, class: "link" %> gem comes preinstalled to provide translations for most languages.</p>
 <p>These translations don't include every key since Devise has been customized. You will need to customize the translations using the following command:</p>
 <div class="not-prose">
   <pre class="mb-4"><code>rails g devise:i18n:locale es</code></pre>
 </div>
 
 <%= h2_with_anchor "I18n Examples" %>
-<p>Jumpstart Pro uses the standard Rails I18n functionality. See the <%= link_to "Rails I18n guide", "https://guides.rubyonrails.org/i18n.html", target: :_blank %> for details on how Rails implements I18n.</p>
+
+<p>Jumpstart Pro uses the standard Rails I18n functionality. See the <%= link_to "Rails I18n guide", "https://guides.rubyonrails.org/i18n.html", target: :_blank, class: "link" %> for details on how Rails implements I18n.</p>
 <p>Translations are automatically scoped by specifying a period <code>.</code> at the beginning of the key. Without the period (<code>.</code>) at the beginning, it will start lookup at the top level.<p>
 <p><code>t("hello")</code> in <code>app/views/dashboard/show.html.erb</code> will look for <code>en.hello</code></p>
 <p><code>t(".hello")</code> in <code>app/views/dashboard/show.html.erb</code> will look for <code>en.dashboard.show.hello</code></p>
 
 <%= h4_with_anchor "Relative Translations" %>
+
 <div class="not-prose">
   <pre class="lang-ruby"><code># app/views/dashboard/show.html.erb
 &lt;%= t ".hello" %&gt;</code></pre>
@@ -51,6 +56,7 @@ en:
 </div>
 
 <%= h4_with_anchor "With Arguments" %>
+
 <div class="not-prose">
   <pre class="lang-ruby"><code># app/views/dashboard/show.html.erb
 &lt;%= t ".welcome", name: "Chris" %&gt;</code></pre>
@@ -65,6 +71,7 @@ en:
 </div>
 
 <%= h4_with_anchor "With HTML" %>
+
 <p>Keys ending in <code>_html</code> will render as HTML.</p>
 <div class="not-prose">
   <pre class="lang-ruby"><code># app/views/dashboard/show.html.erb
@@ -79,6 +86,7 @@ en:
 </div>
 
 <%= h4_with_anchor "Controllers" %>
+
 <div class="not-prose">
   <pre class="lang-ruby"><code># app/controllers/messages_controller.rb
 MessagesController < BaseController
@@ -110,6 +118,7 @@ MessagesController < BaseController
 </div>
 
 <%= h4_with_anchor "Model Names" %>
+
 <div class="not-prose">
   <pre><code>en:
   activerecord:
@@ -118,6 +127,7 @@ MessagesController < BaseController
 </div>
 
 <%= h4_with_anchor "Model Attributes" %>
+
 <div class="not-prose">
   <pre><code>en:
   activerecord:
@@ -127,6 +137,7 @@ MessagesController < BaseController
 </div>
 
 <%= h4_with_anchor "Model Validation Errors" %>
+
 <div class="not-prose">
   <pre><code>en:
   activerecord:

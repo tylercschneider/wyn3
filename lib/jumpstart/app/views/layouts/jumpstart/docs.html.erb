@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html class="<%= class_names("h-full antialiased", "dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
+<html class="docs-layout <%= class_names("jumpstart h-full antialiased", "jumpstart-dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
   <head>
     <%= render "head" %>
+
+    <script>
+      document.addEventListener("turbo:load", function() {
+        // Theme toggling logic
+        const themeSelector = document.querySelector('#theme-select');
+        const currentTheme = ['jumpstart', 'dark', 'juicy'].find(cls => document.documentElement.classList.contains(cls)) || null;
+
+        for (const option of themeSelector.options) {
+          option.selected = (option.value === currentTheme) || (option.value === 'light' && currentTheme === null);
+        }
+
+        themeSelector.addEventListener('change', function() {
+          document.documentElement.classList.remove('jumpstart', 'dark', 'juicy');
+          document.documentElement.classList.add(this.value);
+        });
+      });
+    </script>
   </head>
-  <body class="h-full overflow-x-hidden font-sans font-normal leading-normal bg-offwhite dark:bg-gray-900 dark:text-gray-50" data-controller="theme" data-theme-preference-value="<%= current_user&.theme %>">
+
+  <body class="docs-body">
     <%= render partial: "flash" %>
+    <%= render partial: "jumpstart/docs/top_nav" %>
 
-    <div class="sm:flex">
-      <%= render partial: "jumpstart/docs/nav" %>
+    <section class="docs-container">
+      <%= render partial: "jumpstart/docs/side_nav" %>
 
-      <div class="sm:pl-[300px] grow flex flex-col h-full bg-white dark:bg-gray-900 dark:text-gray-50 border-l border-gray-200 dark:border-gray-700 docs-main">
-        <% if content_for :section_title %>
-          <div class="px-4 py-10 mb-6 md:px-20">
-            <h1 class="font-black"><%= yield :section_title %></h1>
-          </div>
-        <% end %>
+      <main class="docs-main">
+        <header class="docs-header">
+          <%= tag.h1 yield(:title) %>
+          <%= tag.p yield(:subtitle) if content_for(:subtitle) %>
+        </header>
 
-        <div class="prose dark:prose-invert max-w-7xl py-20 px-4 pt-4 md:px-20">
+        <section class="docs-content">
           <%= yield %>
-        </div>
-      </div>
-    </div>
-
+        </section>
+      </main>
+    </section>
   </body>
 </html>

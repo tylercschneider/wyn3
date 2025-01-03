@@ -1,10 +1,10 @@
-<% content_for :section_title, "Themes" %>
+<% content_for :title, "Themes" %>
 
 <%= h2_with_anchor "Overview" %>
 
 <p>
-Jumpstart Pro comes with a default set of themes that can be used to quickly get started with a new
-application.
+  Jumpstart Pro comes with a default set of themes that can be used to quickly get started with a new
+  application.
 </p>
 
 <p>
@@ -13,11 +13,12 @@ points to modify when creating your own custom theme.
 </p>
 
 <p>
-Semantic color names in Jumpstart’s color system make theming, customization, and system-wide changes
-to color (like swapping primary colors to match your brand) easier and more efficient.
+  Semantic color names in Jumpstart’s color system make theming, customization, and system-wide changes
+  to color (like swapping primary colors to match your brand) easier and more efficient.
 </p>
 
 <%= h3_with_anchor "Theme Examples" %>
+
 <p>These notices all use the same HTML, but have a different theme applied with a CSS class.</p>
 
 <div class="not-prose flex flex-col gap-2">
@@ -46,60 +47,60 @@ to color (like swapping primary colors to match your brand) easier and more effi
 The light and dark themes that ship by default use semantically named color roles and map to Tailwind colors. Changing the colors here is the easiest way to make large application wide changes to the default theming for both light and dark modes.</p>
 
 <p>
-The next sections will walk you through the default color roles and how to modify them.
+  The next sections will walk you through the default color roles and how to modify them.
 </p>
 
 <%= h5_with_anchor "Primary and Secondary colors" %>
 
 <p>
-To start updating colors or creating your own theme, begin with Primary. Primary can be your main brand color or
-a primary accent color that is high-emphasis.
+  To start updating colors or creating your own theme, begin with Primary. Primary can be your main brand color or
+  a primary accent color that is high-emphasis.
 </p>
 
 <p>
-Secondary colors are used for less prominent components, but could still carry a color expression of your brand.
+  Secondary colors are used for less prominent components, but could still carry a color expression of your brand.
 </p>
 
 <%= h5_with_anchor "Danger, Success, Info, Warning & Accent" %>
 
 <p>
-Some colors communicate status in the UI—destructive or successful actions, warnings, alerts, etc.
+  Some colors communicate status in the UI—destructive or successful actions, warnings, alerts, etc.
 </p>
 
 <p>
-If you change these, we recommend choosing from similar color palettes—pink or red for danger, green or turquoise
-for success, etc.—as these are common associations understood by end users.
+  If you change these, we recommend choosing from similar color palettes—pink or red for danger, green or turquoise
+  for success, etc.—as these are common associations understood by end users.
 </p>
 
 <%= h5_with_anchor "Dark and Light" %>
 
 <p>
-Dark and light buttons are named for their background colors.
+  Dark and light buttons are named for their background colors.
 </p>
 
 <%= h5_with_anchor "Disabled" %>
 
 <p>
-If you change these, we recommend that you ensure disabled states are visually distinct from enabled states.
+  If you change these, we recommend that you ensure disabled states are visually distinct from enabled states.
 </p>
 
 <%= h5_with_anchor "Base" %>
 
 <p>
-These colors are used for baseline or default foundational design elements like page background, divider lines,
-borders on elements with focus, etc.
+  These colors are used for baseline or default foundational design elements like page background, divider lines,
+  borders on elements with focus, etc.
 </p>
 
 <p>
-These colors establish hierarchy in the UI, with different shades of colors across text, icons, surfaces, and
-borders. To distinguish them from other color groups, they are named with the prefix <code>base-</code>.
+  These colors establish hierarchy in the UI, with different shades of colors across text, icons, surfaces, and
+  borders. To distinguish them from other color groups, they are named with the prefix <code>base-</code>.
 </p>
 
 <p>
-<code>base</code> as a semantic building block is used for colors that portray elevation, like
-<code>base-bg-lowest</code> and <code>base-bg-highest</code>—especially in dark mode, where things like drop shadow
-can’t be relied on to communicate depth. <code>base</code> is also used to set consistent colors for icons
-(<code>base-icon</code>) and text (<code>base-text</code>, <code>base-text-disabled</code>, etc.).
+  <code>base</code> as a semantic building block is used for colors that portray elevation, like
+  <code>base-bg-lowest</code> and <code>base-bg-highest</code>—especially in dark mode, where things like drop shadow
+  can’t be relied on to communicate depth. <code>base</code> is also used to set consistent colors for icons
+  (<code>base-icon</code>) and text (<code>base-text</code>, <code>base-text-disabled</code>, etc.).
 </p>
 
 <p>
@@ -121,8 +122,8 @@ you're good to go.
 <%= h5_with_anchor "Using 'on-*' to track relationships between colors" %>
 
 <p>
-A color role’s semantic name gives clues about how a color may “bond” with other colors. Semantic names with
-<code>on-*</code> indicate a relationship to another color in the system. When choosing colors for
-a custom theme, consider checking the contrast ratio between these color pairs for accessibility with
-a tool like <%= link_to "WebAIM's Contrast Checker", "https://webaim.org/resources/contrastchecker/", target: "_blank" %>.
+  A color role’s semantic name gives clues about how a color may “bond” with other colors. Semantic names with
+  <code>on-*</code> indicate a relationship to another color in the system. When choosing colors for
+  a custom theme, consider checking the contrast ratio between these color pairs for accessibility with
+  a tool like <%= link_to "WebAIM's Contrast Checker", "https://webaim.org/resources/contrastchecker/", target: "_blank", class: "link" %>.
 </p>

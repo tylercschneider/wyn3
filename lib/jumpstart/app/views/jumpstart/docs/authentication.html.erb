@@ -1,17 +1,20 @@
-<% content_for :section_title, "Authentication & OAuth" %>
-
-<p class="text-xl">User registration, authentication, forgotten passwords, social logins with OAuth, and more.</p>
+<% content_for :title, "Authentication & OAuth" %>
+<% content_for :subtitle do %>
+  User registration, authentication, forgotten passwords, social logins with OAuth, and more.
+<% end %>
 
 <%= h2_with_anchor "Authentication with Devise" %>
+
 <p>Jumpstart Pro uses Devise for user registration and authentication. This library is well tested and receives regular security updates allowing you to focus on your business.</p>
 <p>If you would like to collect other information on registration, you can add the fields to the devise views in <code>app/views/devise</code> and permit the additional params in <code>application_controller.rb</code>.</p>
 
 <%= h2_with_anchor "Social Login / OAuth with Omniauth Providers" %>
-<p>To enable an oauth provider you can do so in the OAuth section of the Jumpstart Pro configuration wizard UI located at <%= link_to nil, "/jumpstart", target: :_blank, class: "link underline" %>.</p>
+
+<p>To enable an oauth provider you can do so in the OAuth section of the Jumpstart Pro configuration wizard UI located at <%= link_to nil, "/jumpstart", target: :_blank, class: "link" %>.</p>
 <%= link_to("https://jumpstartpro.b-cdn.net/jsp-oauth-config-wizard-v1.png", target: "_blank") do %>
   <%= image_tag "https://jumpstartpro.b-cdn.net/jsp-oauth-config-wizard-v1.png", class: "block mx-auto", alt: "Screenshot of Jumpstart Pro OAuth configuration wizard", size: "800" %>
 <% end %>
-  <p>Devise is preconfigured to connect with Omniauth providers so users can register or sign in with their social accounts.</p>
+<p>Devise is preconfigured to connect with Omniauth providers so users can register or sign in with their social accounts.</p>
 <p>We automatically handle the various situations that can arise with social auth:</p>
 
 <ul>
@@ -25,9 +28,16 @@
 
 <p>To create a button for OAuth, you will use the following:</p>
 <div class="not-prose">
-  <pre><code>&lt;%= button_to omniauth_authorize_path(:user, :twitter), class: "btn btn-twitter m-1", data: { turbo: false, disable_with: t(".redirecting") } do %&gt;
-  &lt;%= t("oauth.twitter") %&gt;
-&lt;% end %&gt;</code></pre>
+  <pre><code>&lt;%= button_to(
+  t("oauth.twitter"),
+  omniauth_authorize_path(:user, :twitter),
+  class: "btn btn-twitter m-1",
+  data: {
+    turbo: false,
+    disable_with: t(".redirecting")
+    }
+  ) %&gt;
+</code></pre>
 </div>
 
 <p>This makes a POST request to our Rails app. OmniAuth handles the request and redirects to the OAuth provider for login. This POST request is required for security.</p>
@@ -36,6 +46,7 @@
 <p>By default, OmniAuth callbacks controller will create a <code>ConnectedAccount</code> record and associate it with <code>current_user</code>.</p>
 
 <%= h2_with_anchor "Custom OAuth Providers" %>
+
 <p>To add custom OmniAuth OAuth providers to Jumpstart Pro, you can follow these steps:</p>
 
 <ol>
@@ -48,18 +59,33 @@
 <p>Jumpstart Pro automatically generates buttons for OmniAuth providers registered with Devise. It also registers callbacks in the Devise OmniauthCallbacksController to save the OAuth credentials and generates scopes for the ConnectedAccount model.</p>
 
 <%= h2_with_anchor "OAuth Connected Accounts" %>
+
 <p>Users can sign up or login with connected accounts. We automatically add links based upon which OmniAuth providers are enabled. By default, Jumpstart Pro has options for a few OmniAuth providers, but you're free to add other providers and they will be automatically added to parts of the UI.</p>
 
 <%= h2_with_anchor "Associate ConnectedAccount with other models" %>
+
 <p>If you would like to associate the <code>ConnectedAccount</code> with a different model, you can pass in the <code>record</code> param set to a Signed GlobalID. The callback controller will detect this and use this as the owner of the ConnectedAccount record.</p>
 <p>Here we will associate the Twitter <code>ConnectedAccount</code> with the <code>current_account</code>. Optionally, you can set the <code>redirect_to</code> to send the user to a different location afterwards.</p>
 <div class="not-prose">
-  <pre><code>&lt;%= button_to omniauth_authorize_path(:user, :twitter, record: current_account.to_sgid(for: :oauth), redirect_to: account_path(current_account)), class: "btn btn-twitter m-1", data: { turbo: false, disable_with: t(".redirecting") } do %&gt;
-  &lt;%= t("oauth.twitter") %&gt;
-&lt;% end %&gt;</code></pre>
+  <pre><code>&lt;%= button_to(
+  t("oauth.twitter"),
+  omniauth_authorize_path(
+    :user,
+    :twitter,
+    record: current_account.to_sgid(for: :oauth),
+    redirect_to: account_path(current_account)
+  ),
+  class: "btn btn-twitter m-1",
+  data: {
+    turbo: false,
+    disable_with: t(".redirecting")
+  }
+) %&gt;
+</code></pre>
 </div>
 
 <%= h2_with_anchor "Working with Connected Account Data" %>
+
 <p>The User model <code>has_many :connected_accounts</code> which you can use to access the data collected from the accounts such as credentials and user information.</p>
 <p>We automatically generate a scope for each provider, so you can filter out connected accounts easily: <code>@user.connected_accounts.twitter.first</code></p>
 <p>If you would like to do something after connecting an OAuth account, you can add a method to the OmniauthCallbacksController for the provider and it will be called after the account is connected.</p>
@@ -79,6 +105,7 @@ end</code></pre>
 </div>
 
 <%= h2_with_anchor "Single log in across all sub domains" %>
+
 <p>By default, users will be required to enter their credentials for each of their subdomains. If instead you want them to log a single time and have access to all their subdomains, add these two lines:</p>
 <div class="not-prose">
   <pre class="lang-ruby"><code># config/application.rb

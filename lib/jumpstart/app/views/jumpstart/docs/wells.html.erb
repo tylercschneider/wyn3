@@ -1,6 +1,6 @@
-<% content_for :section_title, "Wells" %>
+<% content_for :title, "Wells" %>
 
-<%= h2_with_anchor "Default Well" %>
+<%= h2_with_anchor "Default Well", header_class: "mb-4" %>
 
 <%= render "jumpstart/docs/snippet" do %>
   <div class="well">
@@ -12,7 +12,7 @@
   </div>
 <% end %>
 
-<%= h2_with_anchor "Large Well" %>
+<%= h2_with_anchor "Large Well", header_class: "mb-4" %>
 
 <%= render "jumpstart/docs/snippet" do %>
   <div class="well well-lg">

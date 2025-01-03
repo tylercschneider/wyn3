@@ -247,25 +247,29 @@ form.inline {
   &.switch,
   &.toggle {
     &:has(> .form-checkbox:disabled) label,
-    &:has(> [type="checkbox"]:disabled) label {
+    &:has(> [type="checkbox"]:disabled) label,
+    &:has(> [type="radio"]:disabled) label {
       color: var(--base-text-disabled);
       cursor: not-allowed;
     }
 
     &:has(> .form-checkbox:disabled) label::before,
-    &:has(> [type="checkbox"]:disabled) label::before {
+    &:has(> [type="checkbox"]:disabled) label::before,
+    &:has(> [type="radio"]:disabled) label::before {
       background: var(--bg-disabled-secondary);
       cursor: not-allowed;
     }
 
     &:has(> .form-checkbox:disabled) label::after,
-    &:has(> [type="checkbox"]:disabled) label::after {
+    &:has(> [type="checkbox"]:disabled) label::after,
+    &:has(> [type="radio"]:disabled) label::after {
       background: var(--bg-disabled);
       cursor: not-allowed;
     }
 
     &:has(> .form-checkbox:disabled:checked) label::before,
-    &:has(> [type="checkbox"]:disabled:checked) label::before {
+    &:has(> [type="checkbox"]:disabled:checked) label::before,
+    &:has(> [type="radio"]:disabled:checked) label::before {
       background: var(--bg-disabled-selected);
       cursor: not-allowed;
     }
@@ -276,7 +280,8 @@ form.inline {
 .toggle {
   position: relative;
 
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     position: absolute;
     top: 2;
     left: 0;
@@ -350,7 +355,8 @@ form.inline {
 .toggle-right {
   position: relative;
 
-  input[type="checkbox"] {
+  input[type="checkbox"],
+  input[type="radio"] {
     position: absolute;
     top: 2px;
     left: 120px;
@@ -358,7 +364,8 @@ form.inline {
   }
 
   &:has( .form-checkbox:checked) label,
-  &:has( [type="checkbox"]:checked) label {
+  &:has( [type="checkbox"]:checked) label,
+  &:has( [type="radio"]:checked) label {
     &::before {
       background: var(--bg-primary);
     }

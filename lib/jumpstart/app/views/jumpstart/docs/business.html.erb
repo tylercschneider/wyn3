@@ -1,36 +1,39 @@
-<% content_for :section_title, "Business" %>
-
-<p class="text-xl">Jumpstart Pro has many successful business owners who have built (and sold!) their companies.</p>
+<% content_for :title, "Business" %>
+<% content_for :subtitle do %>
+  Jumpstart Pro has many successful business owners who have built (and sold!) their companies.
+<% end %>
 
 <%= h2_with_anchor "Starting Your Business" %>
+
 <p>It's daunting to start your own company. There are so many things to do and a million decisions to make.</p>
 <p>Let's start with a few things that you're going to need:</p>
 <ul>
   <li>
     <strong>A legal entity</strong>
-    <p class="text-sm">This is your LLC or Corporation that you'll be doing business as. It protects you from being personally liable in case of a lawsuit, for example.</p>
+    <p>This is your LLC or Corporation that you'll be doing business as. It protects you from being personally liable in case of a lawsuit, for example.</p>
   </li>
   <li>
     <strong>A Tax ID (EIN in the US)</strong>
-    <p class="text-sm">This is required to pay federal taxes, hire employees, open a bank account, and apply for business licenses and permits.</p>
+    <p>This is required to pay federal taxes, hire employees, open a bank account, and apply for business licenses and permits.</p>
   </li>
   <li>
     <strong>Issue stock to founders</strong>
-    <p class="text-sm">You'll need to issue stock to the founders that is equivalent to the ownership each person has.</p>
+    <p>You'll need to issue stock to the founders that is equivalent to the ownership each person has.</p>
   </li>
   <li>
     <strong>File 83(b) election in US</strong>
-    <p class="text-sm">This is a letter you send to the Internal Revenue Service letting them know you'd like to be taxed on your equity, such as shares of restricted stock, on the date the equity was granted to you rather than on the date the equity vests. Without this election, you can land yourself in some serious tax trouble later on.</p>
+    <p>This is a letter you send to the Internal Revenue Service letting them know you'd like to be taxed on your equity, such as shares of restricted stock, on the date the equity was granted to you rather than on the date the equity vests. Without this election, you can land yourself in some serious tax trouble later on.</p>
   </li>
   <li>
     <strong>A business bank account</strong>
-    <p class="text-sm">You'll need to keep finances for the business separate from your personal finances.</p>
+    <p>You'll need to keep finances for the business separate from your personal finances.</p>
   </li>
 </ul>
 
-<p>We recommend using <%= link_to "Stripe Atlas", "https://stripe.com/atlas", target: :_blank %> to incorporate your company. They will help you do all of the above and connect you with accountants to help file taxes and everything.</p>
+<p>We recommend using <%= link_to "Stripe Atlas", "https://stripe.com/atlas", target: :_blank, class: "link" %> to incorporate your company. They will help you do all of the above and connect you with accountants to help file taxes and everything.</p>
 
 <p>There are also many other considerations:</p>
+
 <ul>
   <li>
     <strong>What type of company do I want to create?</strong>
@@ -48,6 +51,7 @@
 </ul>
 
 <%= h2_with_anchor "Running Your Business" %>
+
 <p>Now that you're established, you're going to need a lot of things.</p>
 
 <ul>

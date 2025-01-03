@@ -1,15 +1,4 @@
-<% classes = "block py-0.5 px-2 -mx-2 rounded-sm no-underline text-gray-800 dark:text-gray-200 hover:bg-gray-100 hover:text-gray-800 dark:text-gray-100 dark:hover:text-gray-200 dark:hover:bg-gray-800" %>
-<% active_class = "bg-gray-200 dark:bg-gray-700" %>
-<% inactive_class = "" %>
-
-<div class="p-8 sm:fixed sm:w-[300px] sm:h-screen sm:overflow-scroll shrink-0 text-sm font-medium">
-  <%= link_to docs_path, class: "block" do %>
-    <%= render_svg "jumpstart-docs-logo", styles: "text-gray-500 dark:text-gray-200" %>
-  <% end %>
-
-  <%= link_to "Back to the app", main_app.root_path, class: "block text-sm mt-4 py-1 text-gray-900 dark:text-gray-50" %>
-  <%= link_to "Configuration", root_path, class: "block text-sm py-1 text-gray-900 dark:text-gray-50", target: :_blank %>
-
+<aside class="docs-side-nav">
   <% nav = {
     "Get Started" => [
       ["Installation", installation_docs_path],
@@ -83,16 +72,19 @@
     ]
   } %>
 
-  <%= select_tag nil, grouped_options_for_select(nav, request.path), class: "sm:hidden", onchange: "Turbo.visit(this.selectedOptions[0].value)" %>
+  <%= select_tag nil, grouped_options_for_select(nav, request.path), class: "lg:hidden", onchange: "Turbo.visit(this.selectedOptions[0].value)" %>
 
-  <div class="hidden sm:block">
+  <div class="hidden lg:block">
     <% nav.each do |section, links| %>
-      <%= header_with_anchor section, header_tag: :h5, header_class: "mt-4 font-semibold mb-1 text-gray-800 dark:text-gray-200" %>
-      <ul class="ml-3 list-none leading-loose">
+      <h5><%= section %></h5>
+
+      <ul class="list-none leading-loose">
         <% links.each do |title, url| %>
-          <li><%= nav_link_to title, url, class: classes, active_class: active_class, inactive_class: inactive_class %></li>
+          <li>
+            <%= nav_link_to title, url, class: "docs-side-nav-link", active_class: "docs-side-nav-link active" %>
+          </li>
         <% end %>
       </ul>
     <% end %>
   </div>
-</div>
+</aside>

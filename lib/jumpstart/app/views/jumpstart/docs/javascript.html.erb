@@ -1,11 +1,12 @@
-<% content_for :section_title, "JavaScript" %>
-
-<p class="text-xl">Jumpstart Pro leverages <%= link_to "Stimulus.js", "https://github.com/stimulusjs/stimulus", target:"_blank", class: "link" %> for a variety of interactive components. Feel free to reach for any front-end framework you may need, just keep in mind that you'll want it to be Turbo compatible.</p>
+<% content_for :title, "JavaScript" %>
+<% content_for :subtitle do %>
+  Jumpstart Pro leverages <%= link_to "Stimulus.js", "https://github.com/stimulusjs/stimulus", target:"_blank" %> for a variety of interactive components. Feel free to reach for any front-end framework you may need, just keep in mind that you'll want it to be Turbo compatible.
+<% end %>
 
 <%= h2_with_anchor "Bundling JavaScript" %>
 
 <p>
-  Jumpstart Pro uses <%= link_to "esbuild", "https://esbuild.github.io", target: "_blank" %>, which is a JavaScript bundler and minifier written in Go, to bundle your JavaScript. It's fast, and it's easy to use.
+  Jumpstart Pro uses <%= link_to "esbuild", "https://esbuild.github.io", target: "_blank", class: "link" %>, which is a JavaScript bundler and minifier written in Go, to bundle your JavaScript. It's fast, and it's easy to use.
 </p>
 <p>
   When developing your application, Jumpstart Pro defaults to having a configuration setup that will watch for changes in your views, JavaScript, or stylesheets and reload the page when it detects changes.
@@ -13,12 +14,13 @@
 </p>
 
 <%= h2_with_anchor "JavaScript Packages" %>
+
 <p>
   Jumpstart Pro comes with a few JavaScript packages pre-installed. You can find them in the dependencies section of the <code>package.json</code> file.
 </p>
 <p>
-  One of the packages is our own <%= link_to "tailwindcss-stimulus-components", "https://github.com/excid3/tailwindcss-stimulus-components", target: "_blank" %> package which is a set of StimulusJS controllers and components for TailwindCSS apps similar to Bootstrap JS components.
-  This package has components of it's own which you can find links to in the <%= link_to "Components", "https://github.com/excid3/tailwindcss-stimulus-components#components", target: "_blank" %> section of the README in the repository.
+  One of the packages is our own <%= link_to "tailwindcss-stimulus-components", "https://github.com/excid3/tailwindcss-stimulus-components", target: "_blank", class: "link" %> package which is a set of StimulusJS controllers and components for TailwindCSS apps similar to Bootstrap JS components.
+  This package has components of it's own which you can find links to in the <%= link_to "Components", "https://github.com/excid3/tailwindcss-stimulus-components#components", target: "_blank", class: "link" %> section of the README in the repository.
 </p>
 <p>
   Jumpstart Pro has some of the controllers from this package already imported in the <code>app/javascript/controllers/index.js</code> file by default:
@@ -29,10 +31,11 @@
 </p>
 <p>
   The StimulusJS controllers from the tailwindcss-stimulus-components package and the components from Jumpstart Pro or any of your own code can be wired up together easily, saving you time and effort. For example,
-  it can be used to add show and hide functionality to the Jumpstart Pro <%= link_to "alert", alerts_docs_path, target: "_blank" %> components.
+  it can be used to add show and hide functionality to the Jumpstart Pro <%= link_to "alert", alerts_docs_path, target: "_blank", class: "link" %> components.
 </p>
 
 <%= h3_with_anchor "Adding Additional JavaScript Packages" %>
+
 <p>
   Adding new JavaScript packages to your application is easy. You can use the <code>bin/importmap pin package</code> command to add new packages to your application. For example, if you wanted to add the SortableJS package to your application, you could run the following command:
 </p>
