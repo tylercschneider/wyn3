@@ -50,7 +50,7 @@
 }
 
 .docs-side-nav-link {
-  color: var(--base-text-tertiary);
+  color: var(--base-text-secondary);
   display: block;
   margin: 0 -8px;
   padding: 2px 24px;
