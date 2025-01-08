@@ -81,6 +81,7 @@
     }
   }
 
+  &.alert-danger,
   &.alert-error {
     background: var(--bg-danger-secondary);
     color: var(--text-on-danger-secondary);
@@ -133,6 +134,7 @@
     }
   }
 
+  &.banner-danger,
   &.banner-error {
     background: var(--bg-danger-secondary);
     color: var(--text-on-danger-secondary);
@@ -169,6 +171,7 @@
   fill: var(--icon-on-warning-secondary);
 }
 
+.icon-danger,
 .icon-error {
   fill: var(--icon-on-danger-secondary);
 }

@@ -31,7 +31,7 @@
   <pre><code>&lt;%= button_to(
   t("oauth.twitter"),
   omniauth_authorize_path(:user, :twitter),
-  class: "btn btn-twitter m-1",
+  class: "btn btn-primary m-1",
   data: {
     turbo: false,
     disable_with: t(".redirecting")
@@ -75,7 +75,7 @@
     record: current_account.to_sgid(for: :oauth),
     redirect_to: account_path(current_account)
   ),
-  class: "btn btn-twitter m-1",
+  class: "btn btn-primary m-1",
   data: {
     turbo: false,
     disable_with: t(".redirecting")
