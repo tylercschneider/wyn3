@@ -102,7 +102,7 @@ nav.menu-component {
               overflow: hidden;
               text-overflow: ellipsis;
               white-space: nowrap;
-              width: 90%;
+              max-width: 90%;
             }
 
             svg {

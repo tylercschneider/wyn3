@@ -187,7 +187,7 @@ flash[:notice] = {
 render ToastComponent.new(
   title: "Basic Example",
   description: "Toast description goes here."
-  )
+)
 </code></pre>
 
 
@@ -209,7 +209,7 @@ render ToastComponent.new(
   title: "Basic Example",
   description: "Toast description goes here.",
   icon_name: :success
-  )
+)
 </pre></code>
 
 <p>
@@ -224,7 +224,7 @@ render ToastComponent.new(
       <-- custom SVG here -->
     end
   end
-  )
+)
 </pre></code>
 
 <p>
@@ -247,13 +247,13 @@ flash[:notice] = {
 
 <pre><code># Toast with link
 render ToastComponent.new(
-    title: "Auto-dismissing toast",
-    description: "This is a toast description." do |component|
-      component.capture_for :link do
-        link_to "View", root_path
-      end
+  title: "Auto-dismissing toast",
+  description: "This is a toast description." do |component|
+    component.capture_for :link do
+      link_to "View", root_path
     end
-  )
+  end
+)
 </code></pre>
 
 <p>
@@ -275,11 +275,11 @@ flash[:notice] = {
 
 <pre><code># Auto-dismissing toast
 render ToastComponent.new(
-    title: "Auto-dismissing toast",
-    description: "This is a toast description.",
-    dismissable: false,
-    dismiss_after: 5000
-  )
+  title: "Auto-dismissing toast",
+  description: "This is a toast description.",
+  dismissable: false,
+  dismiss_after: 5000
+)
 </code></pre>
 
 <div class="not-prose">

@@ -7,6 +7,10 @@
   padding: 16px;
   position: relative;
 
+  &.fixed {
+    position: fixed;
+  }
+
   @media (min-width: 1024px) {
     padding: 0px 32px;
   }
