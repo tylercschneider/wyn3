@@ -50,7 +50,7 @@ class AccountUsersController < Accounts::BaseController
 
   # Only allow a trusted parameter "white list" through.
   def account_user_params
-    params.require(:account_user).permit(*AccountUser::ROLES)
+    params.expect(account_user: AccountUser::ROLES)
   end
 
   def require_non_personal_account!

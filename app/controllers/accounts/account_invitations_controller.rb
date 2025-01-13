@@ -49,9 +49,6 @@ class Accounts::AccountInvitationsController < Accounts::BaseController
   end
 
   def invitation_params
-    params
-      .require(:account_invitation)
-      .permit(:name, :email, AccountUser::ROLES)
-      .merge(account: @account, invited_by: current_user)
+    params.expect(account_invitation: [:name, :email, *AccountUser::ROLES]).merge(account: @account, invited_by: current_user)
   end
 end

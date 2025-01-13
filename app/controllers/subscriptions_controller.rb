@@ -81,7 +81,7 @@ class SubscriptionsController < ApplicationController
   private
 
   def billing_params
-    params.require(:account).permit(:extra_billing_info, :billing_email)
+    params.expect(account: [:extra_billing_info, :billing_email])
   end
 
   def require_payments_enabled

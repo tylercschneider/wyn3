@@ -42,6 +42,6 @@ class ApiTokensController < ApplicationController
   end
 
   def api_token_params
-    params.require(:api_token).permit(:name)
+    params.expect(api_token: [:name])
   end
 end

@@ -20,6 +20,6 @@ class Account::PasswordsController < ApplicationController
   private
 
   def password_params
-    params.require(:user).permit(:current_password, :password, :password_confirmation)
+    params.expect(user: [:current_password, :password, :password_confirmation])
   end
 end

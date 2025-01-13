@@ -95,7 +95,7 @@ class AccountsController < Accounts::BaseController
     attributes = [:name, :avatar]
     attributes << :domain if Jumpstart::Multitenancy.domain?
     attributes << :subdomain if Jumpstart::Multitenancy.subdomain?
-    params.require(:account).permit(*attributes)
+    params.expect(account: attributes)
   end
 
   def prevent_personal_account_deletion

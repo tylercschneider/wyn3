@@ -14,6 +14,6 @@ class Api::V1::PasswordsController < Api::BaseController
   private
 
   def password_params
-    params.require(:user).permit(:current_password, :password, :password_confirmation)
+    params.expect(user: [:current_password, :password, :password_confirmation])
   end
 end
