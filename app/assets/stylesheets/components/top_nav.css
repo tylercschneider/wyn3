@@ -350,6 +350,7 @@ section nav form button {
       max-width: none;
       height: 24px;
       border: 1px solid var(--base-border-tertiary);
+      object-fit: cover;
     }
 
     svg {
