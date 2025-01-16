@@ -14,7 +14,7 @@ class NotificationsController < ApplicationController
   end
 
   def mark_as_read
-    current_user.notifications.where(account: current_account).mark_as_read
+    current_user.notifications.where(account: current_account).mark_as_read_and_seen
     redirect_to notifications_path
   end
 
