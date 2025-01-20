@@ -65,5 +65,8 @@ module JumpstartApp
 
     # Opt-in to Rails 8.1 change
     config.active_support.to_time_preserves_timezone = :zone
+
+    # We already authenticate /admin routes
+    ::MissionControl::Jobs.http_basic_auth_enabled = false if defined?(::MissionControl::Jobs)
   end
 end
