@@ -26,7 +26,7 @@ module Jumpstart
           :support_email,
           :background_job_processor,
           :email_provider,
-          :personal_accounts,
+          :account_types,
           :apns,
           :fcm,
           integrations: [],

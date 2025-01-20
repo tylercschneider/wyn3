@@ -3,12 +3,17 @@
 <p class="mt-8 text-sm text-gray-700 dark:text-gray-300">What kind of accounts does your application need?</p>
 <div class="mt-2 form-group">
   <div class="form-picker-group">
-    <%= f.radio_button :personal_accounts, true, checked: Jumpstart.config.personal_accounts?, id: "personal_accounts" %>
-    <%= label_tag "personal_accounts", "Personal and Team Accounts" %>
+    <%= f.radio_button :account_types, "both", checked: Jumpstart.config.account_types == "both", id: "both_accounts" %>
+    <%= label_tag "both_accounts", "Personal and Team Accounts" %>
   </div>
 
   <div class="form-picker-group">
-    <%= f.radio_button :personal_accounts, false, checked: !Jumpstart.config.personal_accounts?, id: "team_accounts" %>
+    <%= f.radio_button :account_types, "personal", checked: Jumpstart.config.account_types == "personal", id: "personal_accounts" %>
+    <%= label_tag "personal_accounts", "Just Personal Accounts" %>
+  </div>
+
+  <div class="form-picker-group">
+    <%= f.radio_button :account_types, "team", checked: Jumpstart.config.account_types == "team", id: "team_accounts" %>
     <%= label_tag "team_accounts", "Just Team Accounts" %>
   </div>
 </div>

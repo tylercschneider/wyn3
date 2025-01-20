@@ -241,6 +241,7 @@ module Jumpstart
     attr_accessor :multitenancy
     attr_accessor :apns
     attr_accessor :fcm
+    attr_accessor :account_types
     attr_writer :gems
     attr_writer :omniauth_providers
 
@@ -267,7 +268,7 @@ module Jumpstart
       @default_from_email = options["default_from_email"] || "My App <no-reply@example.com>"
       @background_job_processor = QUEUE_ADAPTERS.values.map(&:to_s).include?(options["background_job_processor"]) ? options["background_job_processor"] : nil
       @email_provider = options["email_provider"]
-      @personal_accounts = cast_to_boolean(options["personal_accounts"], default: true)
+      @account_types = options["account_types"] || (cast_to_boolean(options["personal_accounts"], default: true) ? "both" : "team")
       @apns = cast_to_boolean(options["apns"])
       @fcm = cast_to_boolean(options["fcm"])
       @integrations = options.fetch("integrations", [])
@@ -307,13 +308,15 @@ module Jumpstart
 
     def omniauth_providers = Array(@omniauth_providers)
 
-    def personal_accounts=(value)
-      @personal_accounts = cast_to_boolean(value)
+    def register_with_account? = !personal_accounts?
+
+    def personal_accounts?
+      ["both", "personal"].include? @account_types
     end
 
-    def personal_accounts? = @personal_accounts.nil? ? true : cast_to_boolean(@personal_accounts)
-
-    def register_with_account? = !personal_accounts?
+    def team_accounts?
+      ["both", "team"].include? @account_types
+    end
 
     def apns? = cast_to_boolean(@apns || false)
 

@@ -17,7 +17,7 @@
           <li><%= link_to t(".password"), edit_account_password_path %></li>
           <li><%= link_to t(".connected_accounts"), user_connected_accounts_path if Devise.omniauth_configs.any? %></li>
           <li><%= link_to t(".billing"), subscriptions_path if Jumpstart.config.payments_enabled? %></li>
-          <li><%= link_to t(".accounts"), accounts_path %></li>
+          <li><%= link_to t(".accounts"), accounts_path if Jumpstart.config.team_accounts? %></li>
         </ul>
       </li>
       <% if current_user.admin? %>
