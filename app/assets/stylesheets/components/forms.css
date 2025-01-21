@@ -478,7 +478,6 @@ form.inline {
     color: var(--base-text-secondary);
 
     span {
-      font-family: "Noto Sans";
       font-size: 14px;
       font-weight: 400;
       line-height: 21px;

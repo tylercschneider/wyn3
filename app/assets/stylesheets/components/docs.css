@@ -21,7 +21,7 @@
 
 .docs-side-nav {
   flex-shrink: 0;
-  font-size: 1rem;
+  font-size: 0.875rem;
   font-weight: 400;
   padding: 24px 24px 80px 24px;
 
@@ -36,6 +36,7 @@
     border-top: 1px solid var(--base-border-tertiary);
     color: var(--base-text-tertiary);
     font-weight: 600;
+    font-size: 0.925rem;
     line-height: 20px;
     margin-top: 1rem;
     margin-bottom: 0.25rem;
@@ -107,7 +108,7 @@
     line-height: 32px;
 
     a {
-      color: var(--text-on-primary);
+      color: var(--text-primary);
       font-weight: 600;
       text-decoration-line: underline;
     }

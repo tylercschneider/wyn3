@@ -54,3 +54,16 @@ h6, .h6 {
     color: var(--text-primary-hover);
   }
 }
+
+code {
+  background: var(--bg-disabled);
+  border-radius: 0.25rem;
+  color: var(--base-text);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.375rem;
+}
+
+pre code {
+  padding: 0.5rem 0.75rem;
+  display: block;
+}

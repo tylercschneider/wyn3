@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html class="docs-layout <%= class_names("jumpstart h-full antialiased", "jumpstart-dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
+<html class="docs-layout <%= class_names("h-full antialiased", "dark": current_user&.dark_theme?) %>" lang="<%= I18n.locale %>">
   <head>
     <%= render "head" %>
 
     <script>
       document.addEventListener("turbo:load", function() {
-        // Theme toggling logic
         const themeSelector = document.querySelector('#theme-select');
         const currentTheme = ['jumpstart', 'dark', 'juicy'].find(cls => document.documentElement.classList.contains(cls)) || null;
 

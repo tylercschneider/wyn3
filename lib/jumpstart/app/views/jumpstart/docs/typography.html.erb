@@ -37,3 +37,18 @@
   <li>Unstyled list</li>
 </ul>
 <% end %>
+
+<%= h2_with_anchor "Code" %>
+
+<%= render "jumpstart/docs/snippet" do %>
+  <div>Inline <code>code element</code> in a div</div>
+<% end %>
+
+<%= render "jumpstart/docs/snippet" do %>
+ <pre><code>pre code element
+with multiple lines</code></pre>
+<% end %>
+
+<%= render "jumpstart/docs/snippet" do %>
+  <p>Please press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> to refresh.</p>
+<% end %>
