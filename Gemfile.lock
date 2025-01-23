@@ -189,7 +189,7 @@ GEM
     invisible_captcha (2.3.0)
       rails (>= 5.2)
     io-console (0.8.0)
-    irb (1.15.0)
+    irb (1.15.1)
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
@@ -241,7 +241,7 @@ GEM
       net-protocol
     net-protocol (0.2.2)
       timeout
-    net-scp (4.0.0)
+    net-scp (4.1.0)
       net-ssh (>= 2.6.5, < 8.0.0)
     net-sftp (4.0.0)
       net-ssh (>= 5.0.0, < 8.0.0)
@@ -361,7 +361,7 @@ GEM
       chunky_png (~> 1.0)
       rqrcode_core (~> 1.0)
     rqrcode_core (1.2.0)
-    rubocop (1.70.0)
+    rubocop (1.71.0)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
       parallel (~> 1.10)
@@ -431,11 +431,11 @@ GEM
     tailwindcss-rails (3.3.0)
       railties (>= 7.0.0)
       tailwindcss-ruby
-    tailwindcss-ruby (4.0.0.beta.10)
-    tailwindcss-ruby (4.0.0.beta.10-aarch64-linux-gnu)
-    tailwindcss-ruby (4.0.0.beta.10-arm64-darwin)
-    tailwindcss-ruby (4.0.0.beta.10-x86_64-darwin)
-    tailwindcss-ruby (4.0.0.beta.10-x86_64-linux-gnu)
+    tailwindcss-ruby (4.0.0)
+    tailwindcss-ruby (4.0.0-aarch64-linux-gnu)
+    tailwindcss-ruby (4.0.0-arm64-darwin)
+    tailwindcss-ruby (4.0.0-x86_64-darwin)
+    tailwindcss-ruby (4.0.0-x86_64-linux-gnu)
     thor (1.3.2)
     thruster (0.1.10)
     thruster (0.1.10-aarch64-linux)
@@ -590,7 +590,7 @@ CHECKSUMS
   inline_svg (1.10.0) sha256=5b652934236fd9f8adc61f3fd6e208b7ca3282698b19f28659971da84bf9a10f
   invisible_captcha (2.3.0) sha256=309ee5a5e891ecfb732c85b12f1aa9252a648df6f2761b3b41205e824e30ff15
   io-console (0.8.0) sha256=cd6a9facbc69871d69b2cb8b926fc6ea7ef06f06e505e81a64f14a470fddefa2
-  irb (1.15.0) sha256=bae0d1bd5867d9c2b7d7348711308d8a08baf3be07396f8c26d8a5bf43d15dd5
+  irb (1.15.1) sha256=d9bca745ac4207a8b728a52b98b766ca909b86ff1a504bcde3d6f8c84faae890
   jbuilder (2.13.0)
   json (2.9.1) sha256=d2bdef4644052fad91c1785d48263756fe32fcac08b96a20bb15840e96550d11
   jumpstart (0.1.0)
@@ -613,7 +613,7 @@ CHECKSUMS
   net-imap (0.5.5) sha256=abe6a8932c68269804b0f0b499a0d1972098e7e6b8b61a7c508b127ebde1682a
   net-pop (0.1.2) sha256=848b4e982013c15b2f0382792268763b748cce91c9e91e36b0f27ed26420dff3
   net-protocol (0.2.2) sha256=aa73e0cba6a125369de9837b8d8ef82a61849360eba0521900e2c3713aa162a8
-  net-scp (4.0.0) sha256=b32ded0d48c88ce70844a063e4e14efb44a95e51a9e0c0bfb0c54b4313b622ea
+  net-scp (4.1.0) sha256=a99b0b92a1e5d360b0de4ffbf2dc0c91531502d3d4f56c28b0139a7c093d1a5d
   net-sftp (4.0.0) sha256=65bb91c859c2f93b09826757af11b69af931a3a9155050f50d1b06d384526364
   net-smtp (0.5.0) sha256=5fc0415e6ea1cc0b3dfea7270438ec22b278ca8d524986a3ae4e5ae8d087b42a
   net-ssh (7.3.0) sha256=172076c4b30ce56fb25a03961b0c4da14e1246426401b0f89cba1a3b54bf3ef0
@@ -665,7 +665,7 @@ CHECKSUMS
   rotp (6.3.0) sha256=75d40087e65ed0d8022c33055a6306c1c400d1c12261932533b5d6cbcd868854
   rqrcode (2.2.0) sha256=23eea88bb44c7ee6d6cab9354d08c287f7ebcdc6112e1fe7bcc2d010d1ffefc1
   rqrcode_core (1.2.0) sha256=cf4989dc82d24e2877984738c4ee569308625fed2a810960f1b02d68d0308d1a
-  rubocop (1.70.0) sha256=96751f8440b36a0ac6e9a8ab596900803118d83d6b83f2037bf8b3d7a5bc440e
+  rubocop (1.71.0) sha256=e19679efd447346ac476122313d3788ae23c38214790bcf660e984c747608bf0
   rubocop-ast (1.37.0) sha256=9513ac88aaf113d04b52912533ffe46475de1362d4aa41141b51b2455827c080
   rubocop-minitest (0.36.0) sha256=1d15850849c685ff4b6d64dd801ec2d13eb2fe56b6f7ce9aab93d1b0508e7b9f
   rubocop-performance (1.23.1) sha256=f22f86a795f5e6a6180aac2c6fc172534b173a068d6ed3396d6460523e051b82
@@ -685,11 +685,11 @@ CHECKSUMS
   stimulus-rails (1.3.4) sha256=765676ffa1f33af64ce026d26b48e8ffb2e0b94e0f50e9119e11d6107d67cb06
   stringio (3.1.2) sha256=204f1828f85cdb39d57cac4abc6dc44b04505a223f131587f2e20ae3729ba131
   tailwindcss-rails (3.3.0) sha256=dcb8ecbc737152236b625920659a0089a043393d85bcce51c34235d0ebfaba1c
-  tailwindcss-ruby (4.0.0.beta.10) sha256=4cbd3b2653c4aa968917b485852177aadbba6529338a5d701e896ca8b02632ab
-  tailwindcss-ruby (4.0.0.beta.10-aarch64-linux-gnu) sha256=d5693f5158bd0d6c4c6088e42327ecc89ff7c5ba2d82661bfd445b0be4b40d76
-  tailwindcss-ruby (4.0.0.beta.10-arm64-darwin) sha256=d4d17052097596f538603e0fa2fe27708302146cce88c13ec7d029a4d71a8418
-  tailwindcss-ruby (4.0.0.beta.10-x86_64-darwin) sha256=5d445162ee5ddb08df0db0a758cefe22b40353aae2a5294f2ba0b068a7a13ca5
-  tailwindcss-ruby (4.0.0.beta.10-x86_64-linux-gnu) sha256=9e9cf572b0c974a9935be3f464b0b08fd76cbe6d5aa233cbfc4f74ecbf59f107
+  tailwindcss-ruby (4.0.0) sha256=edcbfb0f6e6b611ae6d223995cf3a427cedca5621cd496f422440a42c72c9b78
+  tailwindcss-ruby (4.0.0-aarch64-linux-gnu) sha256=255a11ac95653f19197b154f3c36be9a48b3b1446ca2574f2a3ac31e434384b9
+  tailwindcss-ruby (4.0.0-arm64-darwin) sha256=9164f96a12ce671f1dadf1d850fb47c880d0e441aa474c509ed543b3266ded34
+  tailwindcss-ruby (4.0.0-x86_64-darwin) sha256=4606bc700bd97023e0160f1a2e87c0f72ee802bc7bd65d4536f1caacd6a4962b
+  tailwindcss-ruby (4.0.0-x86_64-linux-gnu) sha256=e6018f23fd78fc7fea55ff593b832b6c1d702328b8cb9d4edca5ef86fe2f7342
   thor (1.3.2) sha256=eef0293b9e24158ccad7ab383ae83534b7ad4ed99c09f96f1a6b036550abbeda
   thruster (0.1.10) sha256=80cbeaa660312e24c779048e2c4a73d973a4a99b4252492f0649fbfb63e2efa6
   thruster (0.1.10-aarch64-linux) sha256=70f446efa6d3b4839a18773de032aed8a43e4856bbc1c043ef396e4ccb1524e6
