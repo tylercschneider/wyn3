@@ -18,7 +18,7 @@
         <a class="block py-1 text-sm text-gray-700 dark:text-gray-200 no-underline hover:text-primary" data-tabs-target="tab" data-action="click->tabs#change:prevent" href="#integrations">Integrations</a>
         <a class="block py-1 text-sm text-gray-700 dark:text-gray-200 no-underline hover:text-primary" data-tabs-target="tab" data-action="click->tabs#change:prevent" href="#oauth">OAuth</a>
         <a class="block py-1 text-sm text-gray-700 dark:text-gray-200 no-underline hover:text-primary" data-tabs-target="tab" data-action="click->tabs#change:prevent" href="#payments">Payments</a>
-        <a class="block py-1 text-sm text-gray-700 dark:text-gray-200 no-underline hover:text-primary" data-tabs-target="tab" data-action="click->tabs#change:prevent" href="#turbo_native">Turbo Native</a>
+        <a class="block py-1 text-sm text-gray-700 dark:text-gray-200 no-underline hover:text-primary" data-tabs-target="tab" data-action="click->tabs#change:prevent" href="#turbo_native">Hotwire Native</a>
         <a class="block py-1 text-sm text-gray-700 dark:text-gray-200 no-underline hover:text-primary" data-tabs-target="tab" data-action="click->tabs#change:prevent" href="#users">Admin Users</a>
       </div>
 
@@ -35,7 +35,7 @@
           <%= render "flash" %>
         </div>
 
-        <% %w{ application multitenancy dependencies integrations oauth payments turbo_native users }.each do |name| %>
+        <% %w{ application multitenancy dependencies integrations oauth payments hotwire_native users }.each do |name| %>
           <%= tag.div id: name, class: "hidden", data: { tabs_target: "panel" } do %>
             <%= render name, f: f %>
           <% end %>
