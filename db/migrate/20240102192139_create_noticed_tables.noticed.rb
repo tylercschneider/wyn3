@@ -1,7 +1,8 @@
 # This migration comes from noticed (originally 20231215190233)
 class CreateNoticedTables < ActiveRecord::Migration[6.1]
-  class Notification < ActiveRecord::Base
+  class TempNotification < ActiveRecord::Base
     self.inheritance_column = nil
+    self.table_name = "notifications"
   end
 
   def self.up
@@ -14,6 +15,7 @@ class CreateNoticedTables < ActiveRecord::Migration[6.1]
       else
         t.json :params
       end
+      t.integer :notifications_count
 
       t.timestamps
     end
@@ -29,8 +31,10 @@ class CreateNoticedTables < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
+    Noticed::Event.reset_column_information
+
     # Migrate notifications to new tables
-    Notification.find_each do |notification|
+    TempNotification.find_each do |notification|
       attributes = notification.attributes.slice("type", "account_id", "created_at", "updated_at").with_indifferent_access
       attributes[:type] = "Account::AcceptedInviteNotifier" if attributes[:type] == "AcceptedInvite"
       attributes[:type] = attributes[:type].sub("Notification", "Notifier")
