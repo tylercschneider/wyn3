@@ -10,6 +10,7 @@
 <%= viewport_meta_tag %>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
+<meta name="application-name" content="<%= Jumpstart.config.application_name %>">
 
 <% if current_user&.system_theme? %>
   <script>document.documentElement.classList.toggle("dark", window.matchMedia('(prefers-color-scheme: dark)').matches)</script>
