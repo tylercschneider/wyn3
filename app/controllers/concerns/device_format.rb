@@ -1,7 +1,7 @@
 module DeviceFormat
   # Sets the request variant based upon the user agent
   #
-  # For simplicity, we only register a "native" format for Turbo Native apps
+  # For simplicity, we only register a "native" format for Hotwire Native apps
   # but you may add others like "phone", "tablet" to render different partials
   # based upon the device
 
