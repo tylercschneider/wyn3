@@ -6,8 +6,7 @@
 <%= h2_with_anchor "Bundling JavaScript" %>
 
 <p>
-  Jumpstart Pro uses <%= link_to "esbuild", "https://esbuild.github.io", target: "_blank", class: "link" %>, which is a JavaScript bundler and minifier written in Go, to bundle your JavaScript. It's fast, and it's easy to use.
-</p>
+  Jumpstart Pro uses <%= link_to "Propshaft", "https://github.com/rails/propshaft", target: "_blank", class: "link" %> which is the default Rails asset pipeline library.</p>
 <p>
   When developing your application, Jumpstart Pro defaults to having a configuration setup that will watch for changes in your views, JavaScript, or stylesheets and reload the page when it detects changes.
   This helps speed up your development process by not having to manually refresh the page every time you make a change or run commands to rebuild your assets.
@@ -16,7 +15,7 @@
 <%= h2_with_anchor "JavaScript Packages" %>
 
 <p>
-  Jumpstart Pro comes with a few JavaScript packages pre-installed. You can find them in the dependencies section of the <code>package.json</code> file.
+  Jumpstart Pro comes with a few JavaScript packages pre-installed. You can find them in <code>config/importmap.rb</code> file.
 </p>
 <p>
   One of the packages is our own <%= link_to "tailwindcss-stimulus-components", "https://github.com/excid3/tailwindcss-stimulus-components", target: "_blank", class: "link" %> package which is a set of StimulusJS controllers and components for TailwindCSS apps similar to Bootstrap JS components.
