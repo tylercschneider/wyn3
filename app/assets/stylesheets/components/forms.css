@@ -585,6 +585,13 @@ form.inline {
   --hw-visual-viewport-height: 100vh;
 }
 
+.dark {
+  --hw-component-bg-color: var(--base-bg-low);
+  --hw-border-color: var(--base-border-tertiary);
+  --hw-option-bg-color: var(--base-bg-low);
+  --hw-active-bg-color: var(--bg-primary);
+}
+
 .hw-combobox {
   border-width: 0;
   display: inline-flex;
@@ -619,6 +626,7 @@ form.inline {
 
 .hw-combobox__input {
   border: none;
+  background-color: var(--hw-component-bg-color);
   font-size: inherit;
   line-height: var(--hw-line-height);
   min-width: 0;
