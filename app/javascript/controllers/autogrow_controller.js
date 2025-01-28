@@ -11,7 +11,11 @@ export default class extends Controller {
   }
 
   autogrow() {
-    this.element.style.height = 'auto';
-    this.element.style.height = `${this.element.scrollHeight}px`;
+    this.element.style.height = 'auto'
+
+    // offsetHeight accounts for borders while clientHeight & scrollHeight do not
+    let borderHeight = (this.element.offsetHeight - this.element.clientHeight)
+
+    this.element.style.height = `${this.element.scrollHeight + borderHeight}px`
   }
 }
