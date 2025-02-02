@@ -16,7 +16,7 @@ class AccountUser < ApplicationRecord
   updates_subscription_quantity -> { account.per_unit_quantity }
 
   def account_owner?
-    account.owner_id == user_id
+    account.owner?(user)
   end
 
   def owner_must_be_admin
