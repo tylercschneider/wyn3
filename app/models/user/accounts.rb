@@ -22,7 +22,10 @@ module User::Accounts
     # Invited users don't have a name immediately, so we will run this method twice for them
     # once on create where no name is present and again on accepting the invitation
     return if name.blank?
-    return accounts.first if accounts.any?
+
+    if (account = accounts.where(personal: Jumpstart.config.personal_accounts?).first)
+      return account
+    end
 
     account = accounts.new(owner: self, name: name, personal: Jumpstart.config.personal_accounts?)
     account.account_users.new(user: self, admin: true)
