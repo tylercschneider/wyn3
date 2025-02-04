@@ -58,7 +58,7 @@ export default class extends Controller {
   saveToUser() {
     fetch("/users", {
       method: "PATCH",
-      body: {user: {"theme": this.preferenceValue }},
+      body: JSON.stringify({user: {"theme": this.preferenceValue }}),
       headers: {
         "X-CSRF-Token": this.csrfToken,
         "Content-Type": "application/json"
