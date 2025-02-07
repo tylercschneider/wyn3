@@ -17,10 +17,10 @@ Optionally, the [Stripe CLI](https://docs.stripe.com/stripe-cli) to sync webhook
 Create a [new Git](https://github.com/new) repository for your project. Then you can clone Jumpstart Pro and push it to your new repository.
 
 ```bash
-git clone git@github.com:jumpstart-pro/jumpstart-pro-rails.git myapp
+git clone https://github.com/jumpstart-pro/jumpstart-pro-rails.git myapp
 cd myapp
 git remote rename origin jumpstart-pro
-git remote add origin git@github.com:your-account/your-repo.git # Replace with your new Git repository url
+git remote add origin https://github.com/your-account/your-repo.git # Replace with your new Git repository url
 git push -u origin main
 ```
 
