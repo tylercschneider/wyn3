@@ -159,9 +159,15 @@ GEM
       tzinfo
     ffi (1.17.1)
     ffi (1.17.1-aarch64-linux-gnu)
+    ffi (1.17.1-aarch64-linux-musl)
+    ffi (1.17.1-arm-linux-gnu)
+    ffi (1.17.1-arm-linux-musl)
     ffi (1.17.1-arm64-darwin)
+    ffi (1.17.1-x86-linux-gnu)
+    ffi (1.17.1-x86-linux-musl)
     ffi (1.17.1-x86_64-darwin)
     ffi (1.17.1-x86_64-linux-gnu)
+    ffi (1.17.1-x86_64-linux-musl)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -253,11 +259,19 @@ GEM
       racc (~> 1.4)
     nokogiri (1.18.2-aarch64-linux-gnu)
       racc (~> 1.4)
+    nokogiri (1.18.2-aarch64-linux-musl)
+      racc (~> 1.4)
+    nokogiri (1.18.2-arm-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.2-arm-linux-musl)
+      racc (~> 1.4)
     nokogiri (1.18.2-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.2-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.2-x86_64-linux-gnu)
+      racc (~> 1.4)
+    nokogiri (1.18.2-x86_64-linux-musl)
       racc (~> 1.4)
     noticed (2.6.0)
       rails (>= 6.1.0)
@@ -433,9 +447,11 @@ GEM
       tailwindcss-ruby (~> 4.0)
     tailwindcss-ruby (4.0.3)
     tailwindcss-ruby (4.0.3-aarch64-linux-gnu)
+    tailwindcss-ruby (4.0.3-aarch64-linux-musl)
     tailwindcss-ruby (4.0.3-arm64-darwin)
     tailwindcss-ruby (4.0.3-x86_64-darwin)
     tailwindcss-ruby (4.0.3-x86_64-linux-gnu)
+    tailwindcss-ruby (4.0.3-x86_64-linux-musl)
     thor (1.3.2)
     thruster (0.1.10)
     thruster (0.1.10-aarch64-linux)
@@ -477,10 +493,18 @@ GEM
 
 PLATFORMS
   aarch64-linux
+  aarch64-linux-gnu
+  aarch64-linux-musl
+  arm-linux-gnu
+  arm-linux-musl
   arm64-darwin
   ruby
+  x86-linux-gnu
+  x86-linux-musl
   x86_64-darwin
   x86_64-linux
+  x86_64-linux-gnu
+  x86_64-linux-musl
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
@@ -574,9 +598,15 @@ CHECKSUMS
   et-orbi (1.2.11) sha256=d26e868cc21db88280a9ec1a50aa3da5d267eb9b2037ba7b831d6c2731f5df64
   ffi (1.17.1) sha256=26f6b0dbd1101e6ffc09d3ca640b2a21840cc52731ad8a7ded9fb89e5fb0fc39
   ffi (1.17.1-aarch64-linux-gnu) sha256=c5d22cb545a3a691d46060f1343c461d1a8d38c3fd71b96b4cbbe6906bf1fd38
+  ffi (1.17.1-aarch64-linux-musl) sha256=88b9d6ae905d21142df27c94bb300042c1aae41b67291885f600eaad16326b1d
+  ffi (1.17.1-arm-linux-gnu) sha256=fe14f5ece94082f3b0e651a09008113281f2764e7ea95f522b64e2fe32e11504
+  ffi (1.17.1-arm-linux-musl) sha256=df14927ca7bd9095148a7d1938bb762bbf189d190cf25d9547395ec7acc198a0
   ffi (1.17.1-arm64-darwin) sha256=a8e04f79d375742c54ee7f9fff4b4022b87200a4ec0eb082128d3b6559e67b4d
+  ffi (1.17.1-x86-linux-gnu) sha256=01411c78cb3cff3c88cf67b2a7b24534e9b1638253d88581fef44c2083f6a174
+  ffi (1.17.1-x86-linux-musl) sha256=02bcc7bbcff71e021ef05f43469f7c5074ab3422e415b287001bd890c9cbb1c6
   ffi (1.17.1-x86_64-darwin) sha256=0036199c290462dd7f03bc22933644c1685b7834a21788062bd5df48c72aa7a6
   ffi (1.17.1-x86_64-linux-gnu) sha256=8c0ade2a5d19f3672bccfe3b58e016ae5f159e3e2e741c856db87fcf07c903d0
+  ffi (1.17.1-x86_64-linux-musl) sha256=3a343086820c96d6fbea4a5ef807fb69105b2b8174678f103b3db210c3f78401
   fugit (1.11.1) sha256=e89485e7be22226d8e9c6da411664d0660284b4b1c08cacb540f505907869868
   globalid (1.2.1) sha256=70bf76711871f843dbba72beb8613229a49429d1866828476f9c9d6ccc327ce9
   hashdiff (1.1.2) sha256=2c30eeded6ed3dce8401d2b5b99e6963fe5f14ed85e60dd9e33c545a44b71a77
@@ -619,9 +649,13 @@ CHECKSUMS
   nio4r (2.7.4) sha256=d95dee68e0bb251b8ff90ac3423a511e3b784124e5db7ff5f4813a220ae73ca9
   nokogiri (1.18.2) sha256=93791cfb33186fe077eb9e1b8a6855b5621e328f81f565334572fa398366f8bf
   nokogiri (1.18.2-aarch64-linux-gnu) sha256=74e0f9a7487a30a2957f46c5113d58f836436b033c9906e0bc6fee9d8cdafabf
+  nokogiri (1.18.2-aarch64-linux-musl) sha256=99bcea596a80eaee99f2bae2596275641ea688262c1da32b4e90db6159e86477
+  nokogiri (1.18.2-arm-linux-gnu) sha256=6fb0246b69f2c589a69254e82bc2a40aa238c4f977fd7903e283341a92935729
+  nokogiri (1.18.2-arm-linux-musl) sha256=dcdd4d10ed2743f0d8c887825700c3a8506aea1aa415917ac50ccc01597c51a3
   nokogiri (1.18.2-arm64-darwin) sha256=8288ec7a296e2510ca9bd053c0c5989f11260f8c07bc3e9afbafa536f7077281
   nokogiri (1.18.2-x86_64-darwin) sha256=7fca165e5ee87e9b6b3f1377180376afc0c8652ed2a3d761f472f0e3d3a1c651
   nokogiri (1.18.2-x86_64-linux-gnu) sha256=9330ced4a976604865c2a76ce158e2bc608fa83999552e85a32ec06f85f427db
+  nokogiri (1.18.2-x86_64-linux-musl) sha256=1cd7786ed15c76958d6a8f9a864df6208fecd624c340eb4ed211fbea60328f02
   noticed (2.6.0) sha256=21d4aab5f56846811ae0478fbeca48e15ab4f967462cd359ad44df4d5fd602ed
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   ostruct (0.6.1) sha256=09a3fb7ecc1fa4039f25418cc05ae9c82bd520472c5c6a6f515f03e4988cb817
@@ -686,9 +720,11 @@ CHECKSUMS
   tailwindcss-rails (4.0.0) sha256=19c871a71eaf24477a480e07fb4481e4293fe33290096305a96f2f0d3ced053a
   tailwindcss-ruby (4.0.3) sha256=dab0e505c8b1f7c12845da63705fadd7f2cb3f6ebbbe877538e26fc0b7710c5f
   tailwindcss-ruby (4.0.3-aarch64-linux-gnu) sha256=91bc29cf216ce9ed89f0015347b6974edfddd4d192d9de6a3b60112869f83cfb
+  tailwindcss-ruby (4.0.3-aarch64-linux-musl) sha256=352bdf728c60da26691b7d3b338d7bddd910876d0701e5eb84fd0ffbd56e04d9
   tailwindcss-ruby (4.0.3-arm64-darwin) sha256=a182b81b31a155e5d6becc94198c823ccd1a0e93c01f484d933f25e1938ea430
   tailwindcss-ruby (4.0.3-x86_64-darwin) sha256=ec48bb45609f4e3080990f7c9985b94709b1fe3de95320e7c174e2d9c17b5cef
   tailwindcss-ruby (4.0.3-x86_64-linux-gnu) sha256=faf682bf0a505409df27b999394bd1a012efdcd92ca1a5a16cca2a1d423961de
+  tailwindcss-ruby (4.0.3-x86_64-linux-musl) sha256=f6d9c7c03be73e303358843fe9588cba87c75f2e0ad74f4d6836fef885f34e11
   thor (1.3.2) sha256=eef0293b9e24158ccad7ab383ae83534b7ad4ed99c09f96f1a6b036550abbeda
   thruster (0.1.10) sha256=80cbeaa660312e24c779048e2c4a73d973a4a99b4252492f0649fbfb63e2efa6
   thruster (0.1.10-aarch64-linux) sha256=70f446efa6d3b4839a18773de032aed8a43e4856bbc1c043ef396e4ccb1524e6
