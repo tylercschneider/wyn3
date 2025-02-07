@@ -43,7 +43,7 @@ RUN apt-get update -qq && \
 #     rm -rf /tmp/node-build-master
 
 # Install application gems
-COPY Gemfile Gemfile.jumpstart Gemfile.lock ./.ruby-version ./
+COPY Gemfile Gemfile.jumpstart Gemfile.lock ./.ruby-version vendor ./
 COPY ./lib/jumpstart/ ./lib/jumpstart/
 COPY ./config/jumpstart.yml* ./config/jumpstart.yml
 RUN bundle install && \
@@ -67,19 +67,18 @@ RUN SECRET_KEY_BASE_DUMMY=1 ./bin/rails assets:precompile
 # Final stage for app image
 FROM base
 
-# Copy built artifacts: gems, application
-COPY --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
-COPY --from=build /rails /rails
-
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
-    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash && \
-    chown -R rails:rails db log storage tmp
+    useradd rails --uid 1000 --gid 1000 --create-home --shell /bin/bash
 USER 1000:1000
+
+# Copy built artifacts: gems, application
+COPY --chown=rails:rails --from=build "${BUNDLE_PATH}" "${BUNDLE_PATH}"
+COPY --chown=rails:rails --from=build /rails /rails
 
 # Entrypoint prepares the database.
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
-# Start the server by default, this can be overwritten at runtime
-EXPOSE 3000
+# Start server via Thruster by default, this can be overwritten at runtime
+EXPOSE 80
 CMD ["./bin/thrust", "./bin/rails", "server"]
