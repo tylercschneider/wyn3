@@ -205,43 +205,47 @@ class ApplicationClientTest < ActiveSupport::TestCase
   end
 
   class BasicAuthTest < ActiveSupport::TestCase
-    class BasicAuthClient < ApplicationClient
-      BASE_URI = "https://example.org"
+    setup do
+      @basic_auth_client = Class.new(ApplicationClient) do
+        self::BASE_URI = "https://example.org"
 
-      def basic_auth
-        {username: "user", password: "pass"}
+        def basic_auth
+          {username: "user", password: "pass"}
+        end
       end
     end
 
     test "basic auth" do
       stub_request(:get, "https://example.org/")
-      BasicAuthClient.new.send :get, "/"
+      @basic_auth_client.new.send :get, "/"
       assert_requested(:get, "https://example.org/", headers: {"Authorization" => "Basic #{Base64.strict_encode64("user:pass")}"})
     end
   end
 
   class CustomClientTest < ActiveSupport::TestCase
-    class TestApiClient < ApplicationClient
-      BASE_URI = "https://test.example.org"
+    setup do
+      @test_api_client = Class.new(ApplicationClient) do
+        self::BASE_URI = "https://test.example.org"
 
-      def root
-        get "/"
-      end
-
-      def content_type
-        "application/xml"
-      end
-
-      def all_pages
-        with_pagination("/pages", query: {per_page: 100}) do |response|
-          response.link_header[:next]
+        def root
+          get "/"
         end
-      end
 
-      def all_projects
-        with_pagination("/projects", query: {per_page: 100}) do |response|
-          next_page = response.parsed_body.pagination.next_page
-          {page: next_page} if next_page
+        def content_type
+          "application/xml"
+        end
+
+        def all_pages
+          with_pagination("/pages", query: {per_page: 100}) do |response|
+            response.link_header[:next]
+          end
+        end
+
+        def all_projects
+          with_pagination("/projects", query: {per_page: 100}) do |response|
+            next_page = response.parsed_body.pagination.next_page
+            {page: next_page} if next_page
+          end
         end
       end
     end
@@ -250,7 +254,7 @@ class ApplicationClientTest < ActiveSupport::TestCase
       stub_request(:get, "https://test.example.org/pages?per_page=100").to_return(headers: {"Link" => "<https://test.example.org/pages?page=2>; rel=\"next\""})
       stub_request(:get, "https://test.example.org/pages?per_page=100&page=2")
       assert_nothing_raised do
-        TestApiClient.new(token: "test").all_pages
+        @test_api_client.new(token: "test").all_pages
       end
     end
 
@@ -258,28 +262,28 @@ class ApplicationClientTest < ActiveSupport::TestCase
       stub_request(:get, "https://test.example.org/projects?per_page=100").to_return(body: {pagination: {next_page: 2}}.to_json, headers: {content_type: "application/json"})
       stub_request(:get, "https://test.example.org/projects?per_page=100&page=2").to_return(body: {pagination: {prev_page: 1}}.to_json, headers: {content_type: "application/json"})
       assert_nothing_raised do
-        TestApiClient.new(token: "test").all_projects
+        @test_api_client.new(token: "test").all_projects
       end
     end
 
     test "get" do
       stub_request(:get, "https://test.example.org/")
       assert_nothing_raised do
-        TestApiClient.new(token: "test").root
+        @test_api_client.new(token: "test").root
       end
     end
 
     test "content type" do
       stub_request(:get, "https://test.example.org/").with(headers: {"Accept" => "application/xml"})
       assert_nothing_raised do
-        TestApiClient.new(token: "test").root
+        @test_api_client.new(token: "test").root
       end
     end
 
     test "other error" do
       stub_request(:get, "https://test.example.org/").to_return(status: 418)
-      assert_raises TestApiClient::Error do
-        TestApiClient.new(token: "test").root
+      assert_raises @test_api_client::Error do
+        @test_api_client.new(token: "test").root
       end
     end
   end
