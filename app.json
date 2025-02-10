@@ -1,7 +1,8 @@
 {
   "name": "Jumpstart Pro",
-  "description": "A Ruby on Rails template for SaaS apps and more",
+  "description": "A Ruby on Rails template for SaaS apps and more.",
   "website": "https://jumpstartrails.com",
+  "logo": "https://jumpstartpro.b-cdn.net/mark.svg",
   "scripts": {
     "postdeploy": "bundle exec rails db:migrate"
   },
@@ -17,7 +18,23 @@
       "description": "The Rails environment to run: production or staging",
       "value": "production"
     },
-    "SENSIBLE_DEFAULTS": "enabled"
+    "SENSIBLE_DEFAULTS": "enabled",
+    "QUEUE_DATABASE_URL": {
+      "description": "If you're using Solid Queue, configure a database and set this config var.",
+      "required": false
+    },
+    "CACHE_DATABASE_URL": {
+      "description": "If you're using Solid Cache, configure a database and set this config var.",
+      "required": false
+    },
+    "CABLE_DATABASE_URL": {
+      "description": "If you're using Solid Cable, configure a database and set this config var.",
+      "required": false
+    },
+    "REDIS_URL": {
+      "description": "If you're using Redis, configure a database and set this config var.",
+      "required": false
+    }
   },
   "formation": {
     "web": {
@@ -27,9 +44,8 @@
   },
   "image": "heroku/ruby",
   "addons": [
-    "heroku-postgresql:mini",
-    "heroku-redis:mini",
-    "scheduler:standard"
+    "heroku-postgresql",
+    "scheduler"
   ],
   "buildpacks": [
     { "url": "https://github.com/heroku/heroku-buildpack-apt.git" },
@@ -48,7 +64,5 @@
         "test": "bundle exec rails test"
       }
     }
-  },
-  "stack": "heroku-22"
+  }
 }
-
