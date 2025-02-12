@@ -287,4 +287,34 @@ class ApplicationClientTest < ActiveSupport::TestCase
       end
     end
   end
+
+  class CustomResponseTest < ActiveSupport::TestCase
+    setup do
+      @custom_response_client = Class.new(ApplicationClient) do
+        self::BASE_URI = "https://example.org"
+        self::Response::PARSER["application/json"] = ->(response) { JSON.parse(response.body) }
+      end
+    end
+
+    test "custom json object class" do
+      stub_request(:get, "https://example.org/").to_return(body: {foo: :bar}.to_json, headers: {content_type: "application/json"})
+      response = @custom_response_client.new.send :get, "/"
+      assert_requested(:get, "https://example.org/")
+      assert_instance_of Hash, response.parsed_body
+    end
+  end
+
+  class FallbackParserTest < ActiveSupport::TestCase
+    setup do
+      @fallback_client = Class.new(ApplicationClient) do
+        self::BASE_URI = "https://example.org"
+      end
+    end
+
+    test "no content type" do
+      stub_request(:get, "https://example.org/").to_return(body: {foo: :bar}.to_json)
+      response = @fallback_client.new.send :get, "/"
+      assert_nil response.content_type
+    end
+  end
 end

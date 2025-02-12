@@ -263,12 +263,11 @@ class ApplicationClient
     # To parse JSON as a Hash instead:
     #
     #   class MyClient < ApplicationClient
-    #     Response::JSON_OBJECT_CLASS = nil
+    #     Response::PARSER["application/json"] = ->(response) { JSON.parse(response.body) }
     #   end
 
-    JSON_OBJECT_CLASS = ActiveSupport::InheritableOptions
     PARSER = {
-      "application/json" => ->(response) { JSON.parse(response.body, object_class: JSON_OBJECT_CLASS) },
+      "application/json" => ->(response) { JSON.parse(response.body, object_class: ActiveSupport::InheritableOptions) },
       "application/xml" => ->(response) { Nokogiri::XML(response.body) }
     }
     FALLBACK_PARSER = ->(response) { response.body }
@@ -314,7 +313,7 @@ class ApplicationClient
     #
     # Returns:
     #   "application/json"
-    def content_type = headers[:content_type].split(";").first
+    def content_type = headers[:content_type]&.split(";")&.first
 
     def parsed_body
       @parsed_body ||= self.class::PARSER.fetch(content_type, FALLBACK_PARSER).call(self)
