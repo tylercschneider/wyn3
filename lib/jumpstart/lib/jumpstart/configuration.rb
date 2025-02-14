@@ -311,11 +311,11 @@ module Jumpstart
     def register_with_account? = !personal_accounts?
 
     def personal_accounts?
-      ["both", "personal"].include? @account_types
+      ["both", "personal"].include? account_types
     end
 
     def team_accounts?
-      ["both", "team"].include? @account_types
+      ["both", "team"].include? account_types
     end
 
     def apns? = cast_to_boolean(@apns || false)

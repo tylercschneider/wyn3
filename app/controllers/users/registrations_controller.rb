@@ -10,7 +10,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     # Registering to accept an invitation should display the invitation on sign up
     if params[:invite] && (invite = AccountInvitation.find_by(token: params[:invite]))
       @account_invitation = invite
-      resource.skip_default_account = true
 
     # Build and display account fields in registration form if needed
     elsif Jumpstart.config.register_with_account?
@@ -29,8 +28,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     refer(resource) if defined? Refer
 
-    # If user registered through an invitation, automatically accept it after signing in
     if @account_invitation
+      # Remove any default team accounts to make the invited account the default.
+      current_user.accounts.where(personal: false).destroy_all
       @account_invitation.accept!(current_user)
 
       # Clear redirect to account invitation since it's already been accepted

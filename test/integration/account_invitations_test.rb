@@ -47,8 +47,11 @@ class Jumpstart::AccountInvitationsTest < ActionDispatch::IntegrationTest
       post user_registration_path(invite: @account_invitation.token), params: {user: {name: "Invited User", email: "new@inviteduser.com", password: "password", password_confirmation: "password", terms_of_service: "1"}}
     end
     assert_redirected_to root_path
-    assert_equal 1, User.last.accounts.count
-    assert_equal @account, User.last.accounts.first
+
+    user = User.order(created_at: :asc).last
+    # Depending on configuration, may have a personal account
+    assert_equal ((Jumpstart.config.account_types == "team") ? 1 : 2), user.accounts.count
+    assert_includes User.last.accounts, @account
     assert_raises ActiveRecord::RecordNotFound do
       @account_invitation.reload
     end

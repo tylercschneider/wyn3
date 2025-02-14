@@ -47,18 +47,14 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
 
   test "registration with account" do
     Jumpstart.config.stub(:register_with_account?, true) do
-      assert_difference "Account.count" do
+      # Depending on configuration, may have a personal account
+      assert_difference "Account.count", ((Jumpstart.config.account_types == "team") ? 1 : 2) do
         post api_v1_users_url, params: {user: {email: "api-user@example.com", name: "API User", password: "password", password_confirmation: "password", terms_of_service: "1", owned_accounts_attributes: [{name: "Test Account"}]}}, headers: {HTTP_USER_AGENT: "Turbo Native iOS"}
         assert_response :success
       end
 
-      user = User.last
-      # Should not have created a personal account
-      assert_nil user.personal_account
-      # Account should use name from request
-      assert_equal "Test Account", user.accounts.last.name
-      # User should be an admin on their account
-      assert user.account_users.last.admin
+      account = User.order(created_at: :asc).last.accounts.find_by!(name: "Test Account")
+      assert account.account_users.first.admin
     end
   end
 end
