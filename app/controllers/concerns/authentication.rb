@@ -4,6 +4,10 @@ module Authentication
   included do
     before_action :configure_permitted_parameters, if: :devise_controller?
 
+    before_action if: -> { devise_controller? && hotwire_native_app? } do
+      request.env["warden"].params["hotwire_native_form"] = true
+    end
+
     delegate :account, to: Current, prefix: :current
     helper_method :current_account
 
