@@ -2,6 +2,7 @@
 services:
   - type: web
     name: rails
+    plan: free
     env: ruby
     region: oregon # the region must be consistent across all services for the internal keys to be read
     buildCommand: "./bin/render-build.sh"
@@ -52,6 +53,6 @@ services:
 
 databases:
   - name: postgres
+    plan: free
     region: oregon # the region must be consistent across all services for the internal keys to be read
     ipAllowList: [] # only allow internal connections
-
