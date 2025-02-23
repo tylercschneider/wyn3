@@ -7,7 +7,7 @@ class ApiToken < ApplicationRecord
 
   belongs_to :user
 
-  scope :sorted, -> { order("last_used_at DESC NULLS LAST, created_at DESC") }
+  scope :sorted, -> { order(arel_table[:last_used_at].desc.nulls_last, created_at: :desc) }
 
   validates :name, presence: true
 
