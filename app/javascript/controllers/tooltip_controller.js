@@ -8,7 +8,8 @@ export default class extends Controller {
   static values = {
     content: String,
     placement: String,
-    offset: 6
+    offset: 6,
+    allowHtml: true
   }
 
   connect() {
@@ -26,7 +27,11 @@ export default class extends Controller {
     this.tooltip = document.createElement("div")
     this.tooltip.dataset.tooltipTarget = "content"
     this.tooltip.classList.add("tooltip")
-    this.tooltip.textContent = this.contentValue
+    if (this.allowHtmlValue) {
+      this.tooltip.innerHTML= this.contentValue
+    } else {
+      this.tooltip.textContent = this.contentValue
+    }
 
     this.arrow = document.createElement("div")
     this.arrow.classList.add("arrow")
