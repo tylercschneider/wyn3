@@ -91,7 +91,7 @@ module Jumpstart
       "Mailgun" => :mailgun,
       "Mailjet" => :mailjet,
       "Mandrill" => :mandrill,
-      "OhMySMTP" => :ohmysmtp,
+      "Mailpace (OhMySMTP)" => :ohmysmtp,
       "Postmark" => :postmark,
       "Sendgrid" => :sendgrid,
       "SendinBlue" => :sendinblue,
