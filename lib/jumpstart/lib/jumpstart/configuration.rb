@@ -319,11 +319,11 @@ module Jumpstart
     end
 
     def personal_accounts_only?
-      "personal" == account_types
+      account_types == "personal"
     end
 
     def team_accounts_only?
-      "team" == account_types
+      account_types == "team"
     end
 
     def apns? = cast_to_boolean(@apns || false)
