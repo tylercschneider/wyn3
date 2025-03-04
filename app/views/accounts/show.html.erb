@@ -39,7 +39,7 @@
               <% user = account_user.user %>
               <tr class="border-t border-gray-100 dark:border-gray-800">
                 <td class="p-3 font-medium">
-                  <%= image_tag avatar_url_for(user), class: "hidden lg:inline-block h-6 rounded-full mr-2" %>
+                  <%= image_tag avatar_url_for(user), class: "hidden lg:inline-block size-6 rounded-full mr-2" %>
                   <%= user.name || user.email %>
                 </td>
                 <td class="p-3 text-sm font-medium text-gray-700 dark:text-gray-300"><%= account_user_roles(@account, account_user).join(", ") %></td>

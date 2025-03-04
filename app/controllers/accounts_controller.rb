@@ -3,6 +3,7 @@ class AccountsController < Accounts::BaseController
   before_action :set_account, only: [:show, :edit, :update, :destroy, :switch]
   before_action :require_account_admin, only: [:edit, :update, :destroy]
   before_action :prevent_personal_account_deletion, only: [:destroy]
+  before_action :ensure_team_accounts_enabled, except: [:index, :show]
 
   # GET /accounts
   def index
@@ -102,5 +103,9 @@ class AccountsController < Accounts::BaseController
     if @account.personal?
       redirect_to account_path(@account), alert: t(".personal.cannot_delete")
     end
+  end
+
+  def ensure_team_accounts_enabled
+    redirect_to accounts_path unless Jumpstart.config.team_accounts?
   end
 end

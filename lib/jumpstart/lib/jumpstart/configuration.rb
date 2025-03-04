@@ -318,6 +318,14 @@ module Jumpstart
       ["both", "team"].include? account_types
     end
 
+    def personal_accounts_only?
+      "personal" == account_types
+    end
+
+    def team_accounts_only?
+      "team" == account_types
+    end
+
     def apns? = cast_to_boolean(@apns || false)
 
     def fcm? = cast_to_boolean(@fcm || false)

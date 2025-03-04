@@ -9,11 +9,9 @@
       <div class="sm:flex items-center justify-between mb-3">
         <h1 class="flex-1 h3"><%= t(".title") %></h1>
 
-        <% if @accounts.exists? %>
-          <div>
-            <%= link_to t(".create"), new_account_path, class: "btn btn-primary" %>
-          </div>
-        <% end %>
+        <div>
+          <%= link_to t(".create"), new_account_path, class: "btn btn-primary" if Jumpstart.config.team_accounts? %>
+        </div>
       </div>
 
       <table class="w-full">
