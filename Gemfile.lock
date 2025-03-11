@@ -142,8 +142,9 @@ GEM
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    devise-i18n (1.12.1)
+    devise-i18n (1.13.0)
       devise (>= 4.9.0)
+      rails-i18n
     dotenv (3.1.7)
     drb (2.2.1)
     ed25519 (1.3.0)
@@ -285,7 +286,7 @@ GEM
       childprocess (>= 0.6.3, < 6)
       iniparse (~> 1.4)
       rexml (>= 3.3.9)
-    pagy (9.3.3)
+    pagy (9.3.4)
     parallel (1.26.3)
     parser (3.3.7.1)
       ast (~> 2.4.1)
@@ -323,7 +324,7 @@ GEM
       activesupport (>= 3.0.0)
     raabro (1.4.0)
     racc (1.8.1)
-    rack (3.1.11)
+    rack (3.1.12)
     rack-session (2.1.0)
       base64 (>= 0.1.0)
       rack (>= 3.0.0)
@@ -352,6 +353,9 @@ GEM
     rails-html-sanitizer (1.6.2)
       loofah (~> 2.21)
       nokogiri (>= 1.15.7, != 1.16.7, != 1.16.6, != 1.16.5, != 1.16.4, != 1.16.3, != 1.16.2, != 1.16.1, != 1.16.0.rc1, != 1.16.0)
+    rails-i18n (8.0.1)
+      i18n (>= 0.7, < 2)
+      railties (>= 8.0.0, < 9)
     railties (8.0.1)
       actionpack (= 8.0.1)
       activesupport (= 8.0.1)
@@ -449,19 +453,19 @@ GEM
     tailwindcss-rails (4.2.0)
       railties (>= 7.0.0)
       tailwindcss-ruby (~> 4.0)
-    tailwindcss-ruby (4.0.9)
-    tailwindcss-ruby (4.0.9-aarch64-linux-gnu)
-    tailwindcss-ruby (4.0.9-aarch64-linux-musl)
-    tailwindcss-ruby (4.0.9-arm64-darwin)
-    tailwindcss-ruby (4.0.9-x86_64-darwin)
-    tailwindcss-ruby (4.0.9-x86_64-linux-gnu)
-    tailwindcss-ruby (4.0.9-x86_64-linux-musl)
+    tailwindcss-ruby (4.0.12)
+    tailwindcss-ruby (4.0.12-aarch64-linux-gnu)
+    tailwindcss-ruby (4.0.12-aarch64-linux-musl)
+    tailwindcss-ruby (4.0.12-arm64-darwin)
+    tailwindcss-ruby (4.0.12-x86_64-darwin)
+    tailwindcss-ruby (4.0.12-x86_64-linux-gnu)
+    tailwindcss-ruby (4.0.12-x86_64-linux-musl)
     thor (1.3.2)
-    thruster (0.1.11)
-    thruster (0.1.11-aarch64-linux)
-    thruster (0.1.11-arm64-darwin)
-    thruster (0.1.11-x86_64-darwin)
-    thruster (0.1.11-x86_64-linux)
+    thruster (0.1.12)
+    thruster (0.1.12-aarch64-linux)
+    thruster (0.1.12-arm64-darwin)
+    thruster (0.1.12-x86_64-darwin)
+    thruster (0.1.12-x86_64-linux)
     timeout (0.4.3)
     ttfunk (1.8.0)
       bigdecimal (~> 3.1)
@@ -482,7 +486,7 @@ GEM
       activemodel (>= 6.0.0)
       bindex (>= 0.4.0)
       railties (>= 6.0.0)
-    webmock (3.25.0)
+    webmock (3.25.1)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
@@ -593,7 +597,7 @@ CHECKSUMS
   date (3.4.1) sha256=bf268e14ef7158009bfeaec40b5fa3c7271906e88b196d958a89d4b408abe64f
   debug (1.10.0) sha256=11e28ca74875979e612444104f3972bd5ffb9e79179907d7ad46dba44bd2e7a4
   devise (4.9.3)
-  devise-i18n (1.12.1) sha256=b0d789b5773d761436409232bbffeb09bd0cb60340620b94602f90bcf1f1377f
+  devise-i18n (1.13.0) sha256=306753c8ba4c687bdab82bc71daeab566b2286fb3f52311b88e54556f45f2f2e
   dotenv (3.1.7) sha256=c670df478675d23889e657beaca6fb423228f75ce9f052a0690c0d0daa333cf3
   drb (2.2.1) sha256=e9d472bf785f558b96b25358bae115646da0dbfd45107ad858b0bc0d935cb340
   ed25519 (1.3.0) sha256=514a5584f84d39daac568a17ec93a4e7261e140c52c562ed8c382c18456e627d
@@ -665,7 +669,7 @@ CHECKSUMS
   orm_adapter (0.5.0) sha256=aa5d0be5d540cbb46d3a93e88061f4ece6a25f6e97d6a47122beb84fe595e9b9
   ostruct (0.6.1) sha256=09a3fb7ecc1fa4039f25418cc05ae9c82bd520472c5c6a6f515f03e4988cb817
   overcommit (0.67.1) sha256=c71a842dd65f9fe6e4d288979f005af974ea4622126f276740ab0a8820b001c5
-  pagy (9.3.3) sha256=4831418eb4ec7cc5658ea57de559cc3a960286db36f98d4c1c65e19db0e2bb60
+  pagy (9.3.4) sha256=b058e064bd02237e76d591e90fadc02c795426dd51f90d0c51089558bf3ab5f7
   parallel (1.26.3) sha256=d86babb7a2b814be9f4b81587bf0b6ce2da7d45969fab24d8ae4bf2bb4d4c7ef
   parser (3.3.7.1) sha256=7dbe61618025519024ac72402a6677ead02099587a5538e84371b76659e6aca1
   pay (8.3.0) sha256=4b4a6db9811881318469093770a416589e219c0c480eca30fcea0f493b1221a0
@@ -684,13 +688,14 @@ CHECKSUMS
   pundit (2.5.0) sha256=4fb6b8ad3fbfe6c34e4be172a1eac03dfcb36c29d6a1214574517af5a605beda
   raabro (1.4.0) sha256=d4fa9ff5172391edb92b242eed8be802d1934b1464061ae5e70d80962c5da882
   racc (1.8.1) sha256=4a7f6929691dbec8b5209a0b373bc2614882b55fc5d2e447a21aaa691303d62f
-  rack (3.1.11) sha256=2b1111a754890d57e7bccefe3a8be28c0f9c02b43433b5a1276c07773e16e8f7
+  rack (3.1.12) sha256=00d83055c89273eb13679ab562767b8826955aa6c4371d7d161deb975c50c540
   rack-session (2.1.0) sha256=437c3916535b58ef71c816ce4a2dee0a01c8a52ae6077dc2b6cd19085760a290
   rack-test (2.2.0) sha256=005a36692c306ac0b4a9350355ee080fd09ddef1148a5f8b2ac636c720f5c463
   rackup (2.2.1) sha256=f737191fd5c5b348b7f0a4412a3b86383f88c43e13b8217b63d4c8d90b9e798d
   rails (8.0.1) sha256=c86f4cd7834a67c1e5d04a77d35c88a5f56a20e2022ec416fa52c1af2cdc9491
   rails-dom-testing (2.2.0) sha256=e515712e48df1f687a1d7c380fd7b07b8558faa26464474da64183a7426fa93b
   rails-html-sanitizer (1.6.2) sha256=35fce2ca8242da8775c83b6ba9c1bcaad6751d9eb73c1abaa8403475ab89a560
+  rails-i18n (8.0.1) sha256=15303195450bdac9a80636cf14c7e5ada2f43907cc60fcd19bbb3f81ab45be0d
   railties (8.0.1) sha256=8f653c6b1b0721b553045bd0deda1f22074b9ddc2209526e6f7285fcf607ac51
   rainbow (3.1.1) sha256=039491aa3a89f42efa1d6dec2fc4e62ede96eb6acd95e52f1ad581182b79bc6a
   rake (13.2.1) sha256=46cb38dae65d7d74b6020a4ac9d48afed8eb8149c040eccf0523bec91907059d
@@ -722,19 +727,19 @@ CHECKSUMS
   stimulus-rails (1.3.4) sha256=765676ffa1f33af64ce026d26b48e8ffb2e0b94e0f50e9119e11d6107d67cb06
   stringio (3.1.5) sha256=bca92461515a131535743bc81d5559fa1de7d80cff9a654d6c0af6f9f27e35c8
   tailwindcss-rails (4.2.0) sha256=f0c4b5da8ca11304c883a2c8a3d4cc7cbb6ef797717fc77a1295911753eaa2d1
-  tailwindcss-ruby (4.0.9) sha256=d942204812efbed706b9ab0d183563e653ed76f6b92c7037c668628b93bc6065
-  tailwindcss-ruby (4.0.9-aarch64-linux-gnu) sha256=0ee2e63a2d13389d6d048ae8626d1241b8bf10c5328ec3a023db26ae3fd0e6ee
-  tailwindcss-ruby (4.0.9-aarch64-linux-musl) sha256=3f9bd2da333bebe09f2ad1e793580a9ce6c528a4a80f0426635623ccd9353360
-  tailwindcss-ruby (4.0.9-arm64-darwin) sha256=42590164f5e8be306849ad68b81f767bd1fc4979c48313dbece7acf8f41c400f
-  tailwindcss-ruby (4.0.9-x86_64-darwin) sha256=e042c28d9f097d20e0fab57412b1fb5e1e2442405f69377f0502dcc5fc0467ef
-  tailwindcss-ruby (4.0.9-x86_64-linux-gnu) sha256=942d00507409171472b72a8b908c5c45029881fb3411ba3c6ade6c84c9c60c87
-  tailwindcss-ruby (4.0.9-x86_64-linux-musl) sha256=e9ac9d8e94e952e36aff6612d232c1f1f4d0fcc059d5802b24bfd8141009cfcd
+  tailwindcss-ruby (4.0.12) sha256=1ab62c9526b5bd8d5625ca6f2303ce5d31e8b3251adb691eb6fbb4cde0c535df
+  tailwindcss-ruby (4.0.12-aarch64-linux-gnu) sha256=352b1bcacaf6934da64b133148d2b6401d997fd73c572524afd7a45e59770648
+  tailwindcss-ruby (4.0.12-aarch64-linux-musl) sha256=b1f00c42a45af256c7fc11edf84912f1ad671f0035670ce842899e27916961c6
+  tailwindcss-ruby (4.0.12-arm64-darwin) sha256=9881d26c189840d3e838cff4d055cc3e4d59298dc1a868d39da98e04f333f947
+  tailwindcss-ruby (4.0.12-x86_64-darwin) sha256=10725aef593fad495fc0a408c86570892738a80b0642154c9eecbf78be7bf4c8
+  tailwindcss-ruby (4.0.12-x86_64-linux-gnu) sha256=0412b7de7b45aec331302bcae7c67f49eda76cade3dbeff48db0eb2498c4bebb
+  tailwindcss-ruby (4.0.12-x86_64-linux-musl) sha256=e850aa1b8cda932e78521bbb6f31480a7f39dc52c3bfcad602182ec340077ffd
   thor (1.3.2) sha256=eef0293b9e24158ccad7ab383ae83534b7ad4ed99c09f96f1a6b036550abbeda
-  thruster (0.1.11) sha256=ee21374777c4da0aa24e19c17269e80c35e4ab361899d5bfc7965c0615ae6fee
-  thruster (0.1.11-aarch64-linux) sha256=1f53747ad2875a56e9b54a467913598e2fe4ccbcdac3a14303df92238ff43436
-  thruster (0.1.11-arm64-darwin) sha256=b77e7033a3d941f2b39f092ef9a4e6d8992590e037c32d30e8572bd15efd19f4
-  thruster (0.1.11-x86_64-darwin) sha256=6187bb129f7da967913120ae73108f903f2d114be4f2788ed58858bc56fa337e
-  thruster (0.1.11-x86_64-linux) sha256=74b734e16b948e476354bcd1ebfe722d564313c99db364ea5d0b7081e0fa9956
+  thruster (0.1.12) sha256=a6271224fbb4bbcfb9fe6231591656724d73d0a0c774bc6f35b0a3bc88413bb2
+  thruster (0.1.12-aarch64-linux) sha256=c70dad353ed75d0cece9070b553e2ca3f27ecc16ac209e06b7e7076a9c7da8a2
+  thruster (0.1.12-arm64-darwin) sha256=c05126962184946c3d2b40977c09912dbda68cffd2a18d8610cda468bdb75665
+  thruster (0.1.12-x86_64-darwin) sha256=bdcb84dbdb620c46e0d26c7035a5e1a40a851a028b666355c0748735302cf121
+  thruster (0.1.12-x86_64-linux) sha256=cb2427f6c0661c9637406863172543de05672b7f7ae2ee04a1874322f2f5425f
   timeout (0.4.3) sha256=9509f079b2b55fe4236d79633bd75e34c1c1e7e3fb4b56cb5fda61f80a0fe30e
   ttfunk (1.8.0) sha256=a7cbc7e489cc46e979dde04d34b5b9e4f5c8f1ee5fc6b1a7be39b829919d20ca
   turbo-rails (2.0.13) sha256=c40ac0a3ccd57c129925c8ac524a5dfd1e17fad080906e2d32135721a8bba22f
@@ -745,7 +750,7 @@ CHECKSUMS
   useragent (0.16.11) sha256=700e6413ad4bb954bb63547fa098dddf7b0ebe75b40cc6f93b8d54255b173844
   warden (1.2.9) sha256=46684f885d35a69dbb883deabf85a222c8e427a957804719e143005df7a1efd0
   web-console (4.2.1) sha256=e7bcf37a10ea2b4ec4281649d1cee461b32232d0a447e82c786e6841fd22fe20
-  webmock (3.25.0) sha256=573c23fc4887008c830f22da588db339ca38b6d59856fd57f5a068959474198e
+  webmock (3.25.1) sha256=ab9d5d9353bcbe6322c83e1c60a7103988efc7b67cd72ffb9012629c3d396323
   websocket (1.2.11) sha256=b7e7a74e2410b5e85c25858b26b3322f29161e300935f70a0e0d3c35e0462737
   websocket-driver (0.7.7) sha256=056d99f2cd545712cfb1291650fde7478e4f2661dc1db6a0fa3b966231a146b4
   websocket-extensions (0.1.5) sha256=1c6ba63092cda343eb53fc657110c71c754c56484aad42578495227d717a8241
