@@ -2,16 +2,17 @@ require "test_helper"
 
 class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
   setup do
-    @account = accounts(:company)
     @admin = users(:one)
-    @regular_user = users(:two)
     @plan = plans(:personal)
     @card_token = "tok_visa"
   end
 
   class AdminUsers < Jumpstart::SubscriptionsTest
+    # Applies to personal and team accounts
+
     setup do
       sign_in @admin
+      @account = @admin.personal_account
       Jumpstart::Multitenancy.stub :selected, [] do
         switch_account(@account)
       end
@@ -55,26 +56,36 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
   end
 
   class RegularUsers < Jumpstart::SubscriptionsTest
+    # Regular users on a team account
+
     setup do
+      @regular_user = users(:two)
       sign_in @regular_user
-      Jumpstart::Multitenancy.stub :selected, [] do
-        switch_account(@account)
+      @account = accounts(:company)
+      Jumpstart.config.stub(:account_types, "both") do
+        Jumpstart::Multitenancy.stub :selected, [] do
+          switch_account(@account)
+        end
       end
     end
 
     test "cannot navigate to new_subscription page" do
-      Jumpstart.config.stub(:payments_enabled?, true) do
-        get new_subscription_path(plan: @plan)
-        assert_redirected_to root_path
-        assert_equal I18n.t("must_be_an_admin"), flash[:alert]
+      Jumpstart.config.stub(:account_types, "both") do
+        Jumpstart.config.stub(:payments_enabled?, true) do
+          get new_subscription_path(plan: @plan)
+          assert_redirected_to root_path
+          assert_equal I18n.t("must_be_an_admin"), flash[:alert]
+        end
       end
     end
 
     test "cannot subscribe" do
-      Jumpstart.config.stub(:payments_enabled?, true) do
-        post subscriptions_path, params: {}
-        assert_redirected_to root_path
-        assert_equal I18n.t("must_be_an_admin"), flash[:alert]
+      Jumpstart.config.stub(:account_types, "both") do
+        Jumpstart.config.stub(:payments_enabled?, true) do
+          post subscriptions_path, params: {}
+          assert_redirected_to root_path
+          assert_equal I18n.t("must_be_an_admin"), flash[:alert]
+        end
       end
     end
 

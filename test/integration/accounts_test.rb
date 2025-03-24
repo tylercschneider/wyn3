@@ -13,24 +13,30 @@ class Jumpstart::AccountsTest < ActionDispatch::IntegrationTest
     end
 
     test "can edit account" do
-      get edit_account_path(@account)
-      assert_response :success
-      assert_select "button", I18n.t("helpers.submit.update", model: Account.model_name.human)
+      Jumpstart.config.stub(:account_types, "both") do
+        get edit_account_path(@account)
+        assert_response :success
+        assert_select "button", I18n.t("helpers.submit.update", model: Account.model_name.human)
+      end
     end
 
     test "can update account" do
-      put account_path(@account), params: {account: {name: "Test Account 2"}}
-      assert_redirected_to account_path(@account)
-      follow_redirect!
-      assert_select "h1", "Test Account 2"
+      Jumpstart.config.stub(:account_types, "both") do
+        put account_path(@account), params: {account: {name: "Test Account 2"}}
+        assert_redirected_to account_path(@account)
+        follow_redirect!
+        assert_select "h1", "Test Account 2"
+      end
     end
 
     test "can delete account" do
-      assert_difference "Account.count", -1 do
-        delete account_path(@account)
+      Jumpstart.config.stub(:account_types, "both") do
+        assert_difference "Account.count", -1 do
+          delete account_path(@account)
+        end
+        assert_redirected_to accounts_path
+        assert_equal flash[:notice], I18n.t("accounts.destroyed")
       end
-      assert_redirected_to accounts_path
-      assert_equal flash[:notice], I18n.t("accounts.destroyed")
     end
 
     test "cannot delete personal account" do
