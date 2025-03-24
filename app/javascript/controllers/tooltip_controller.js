@@ -46,6 +46,11 @@ export default class extends Controller {
         autoPlacement({
           allowedPlacements: (this.placementValue ? [this.placementValue] : undefined),
         }),
+        shift({
+          mainAxis: true,
+          crossAxis: true,
+          padding: 2, 
+        }),
         offset(this.offsetValue),
         arrow({element: this.arrow}),
       ]

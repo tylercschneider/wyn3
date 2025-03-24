@@ -1,6 +1,7 @@
 .tooltip {
   display: none;
   width: max-content;
+  max-width: 50vw; /* This is to prevent the tooltip from being too wide on mobile */
   position: absolute;
   top: 0;
   left: 0;
