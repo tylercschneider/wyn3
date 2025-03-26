@@ -11,6 +11,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     if params[:invite] && (invite = AccountInvitation.find_by(token: params[:invite]))
       @account_invitation = invite
 
+      # Use name/email from the invite if not already provided. Email defaults to "" so it must use a presence check.
+      resource.name ||= invite.name
+      resource.email = resource.email.presence || invite.email
+
     # Build and display account fields in registration form if needed
     elsif Jumpstart.config.register_with_account?
       account = resource.owned_accounts.first || resource.owned_accounts.new
