@@ -2,7 +2,7 @@
 // <div data-controller="tooltip" data-tooltip-content-value="Hello world"></div>
 
 import { Controller } from "@hotwired/stimulus"
-import { autoUpdate, autoPlacement, computePosition, offset, arrow } from "@floating-ui/dom"
+import { autoUpdate, autoPlacement, computePosition, offset, arrow, shift } from "@floating-ui/dom"
 
 export default class extends Controller {
   static values = {
@@ -49,7 +49,7 @@ export default class extends Controller {
         shift({
           mainAxis: true,
           crossAxis: true,
-          padding: 2, 
+          padding: 2,
         }),
         offset(this.offsetValue),
         arrow({element: this.arrow}),
