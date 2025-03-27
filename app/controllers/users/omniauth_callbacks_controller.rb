@@ -28,6 +28,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #
   # After connecting an OAuth account while logged in
   # def after_connect_redirect_path(connected_account)
-  #   user_connected_accounts_path
+  #   request.env['omniauth.origin'] || user_connected_accounts_path
   # end
 end
