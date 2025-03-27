@@ -47,7 +47,7 @@ module Jumpstart
         elsif user_signed_in?
           run_connected_callback(connected_account)
           success_message!(kind: auth.provider)
-          redirect_to after_connect_redirect_path
+          redirect_to after_connect_redirect_path(connected_account)
         else
           sign_in_and_redirect connected_account.owner, event: :authentication
           run_connected_callback(connected_account)
@@ -75,7 +75,7 @@ module Jumpstart
         connected_account = current_user.connected_accounts.create(connected_account_params)
         run_connected_callback(connected_account)
 
-        redirect_to after_connect_redirect_path
+        redirect_to after_connect_redirect_path(connected_account)
         success_message!(kind: auth.provider)
       end
 
@@ -108,7 +108,7 @@ module Jumpstart
         @connected_account ||= ConnectedAccount.for_auth(auth).first
       end
 
-      def after_connect_redirect_path
+      def after_connect_redirect_path(connected_account)
         user_connected_accounts_path
       end
 
