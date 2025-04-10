@@ -3,13 +3,13 @@ class Pay::ChargeResource < Madmin::Resource
 
   # Attributes
   attribute :id, form: false
-  attribute :processor_id
-  attribute :amount
-  attribute :amount_refunded
+  attribute :processor_id, index: true
+  attribute :amount, index: true
+  attribute :amount_refunded, index: true
   attribute :created_at, form: false
   attribute :updated_at, form: false
   attribute :application_fee_amount
-  attribute :currency
+  attribute :currency, index: true
   attribute :metadata
   attribute :stripe_account
   attribute :type
