@@ -1,6 +1,6 @@
 ---
 description: Follow general Rails 8.0 conventions and patterns
-globs: **/*.rb app/**/*.erb
+globs: **/*.rb,app/**/*.erb
 ---
 
 # General Rails 8.0 Conventions
