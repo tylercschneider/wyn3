@@ -20,8 +20,9 @@ class LoginSystemTest < ApplicationSystemTestCase
   end
 
   test "two factor success with otp password" do
-    login_with_email_and_password users(:twofactor).email, "password"
-    submit_otp users(:twofactor).current_otp
+    user = users(:twofactor)
+    login_with_email_and_password user.email, "password"
+    submit_otp user.current_otp
     assert_selector "p", text: I18n.t("devise.sessions.signed_in")
   end
 
@@ -61,6 +62,7 @@ class LoginSystemTest < ApplicationSystemTestCase
   end
 
   def submit_otp(otp)
+    assert_selector "h1", text: I18n.t("users.two_factor.header")
     fill_in "otp_attempt", with: otp
     find('input[name="commit"]').click
   end
