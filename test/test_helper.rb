@@ -16,6 +16,9 @@ if defined?(SolidQueue)
   SolidQueue.logger.level = Logger::WARN
 end
 
+# Generate a random password so Chrome doesn't warn about passwords in data breaches
+UNIQUE_PASSWORD = Devise.friendly_token
+
 module ActiveSupport
   class TestCase
     # Run tests in parallel with specified workers

@@ -2,7 +2,7 @@ one:
   email: one@example.com
   first_name: User
   last_name: One
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -12,7 +12,7 @@ two:
   email: two@example.com
   first_name: User
   last_name: Two
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -22,7 +22,7 @@ admin:
   email: admin@example.com
   first_name: Admin
   last_name: User
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -33,7 +33,7 @@ invited:
   email: invited@example.com
   first_name: Invited
   last_name: User
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -43,7 +43,7 @@ noaccount:
   email: noaccount@example.com
   first_name: No Account
   last_name: User
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -53,7 +53,7 @@ twofactor:
   email: twofactor@example.com
   first_name: TwoFactor
   last_name: User
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -71,7 +71,7 @@ user_without_billing_address:
   email: noaddress@example.com
   first_name: User
   last_name: NoAddress
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -81,7 +81,7 @@ fake_processor:
   email: fake@example.com
   first_name: Fake
   last_name: Processor
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"
@@ -91,7 +91,7 @@ subscribed:
   email: subscribed@example.com
   first_name: Subscribed
   last_name: User
-  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+  encrypted_password: <%= Devise::Encryptor.digest(User, UNIQUE_PASSWORD) %>
   accepted_terms_at: <%= Time.current %>
   accepted_privacy_at: <%= Time.current %>
   time_zone: "Central Time (US & Canada)"

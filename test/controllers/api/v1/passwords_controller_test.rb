@@ -8,7 +8,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
 
   test "changes password on success" do
     user = users(:one)
-    patch api_v1_password_url, params: {user: {current_password: "password", password: "new_password", password_confirmation: "new_password"}}, headers: {Authorization: "token #{user.api_tokens.first.token}"}
+    patch api_v1_password_url, params: {user: {current_password: UNIQUE_PASSWORD, password: "new_password", password_confirmation: "new_password"}}, headers: {Authorization: "token #{user.api_tokens.first.token}"}
     assert_response :success
     user.reload
     assert user.valid_password?("new_password")
@@ -23,7 +23,7 @@ class PasswordsControllerTest < ActionDispatch::IntegrationTest
 
   test "errors if password confirmation doesn't match" do
     user = users(:one)
-    patch api_v1_password_url, params: {user: {current_password: "password", password: "new_password", password_confirmation: "wrong_password"}}, headers: {Authorization: "token #{user.api_tokens.first.token}"}
+    patch api_v1_password_url, params: {user: {current_password: UNIQUE_PASSWORD, password: "new_password", password_confirmation: "wrong_password"}}, headers: {Authorization: "token #{user.api_tokens.first.token}"}
     assert_response :unprocessable_entity
     assert_not_nil json_response.dig("error")
   end

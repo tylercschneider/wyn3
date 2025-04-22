@@ -1,46 +1,43 @@
 require "application_system_test_case"
 
 class LoginSystemTest < ApplicationSystemTestCase
-  setup do
-  end
-
   test "can login" do
-    login_with_email_and_password users(:one).email, "password"
+    login_with_email_and_password users(:one).email, UNIQUE_PASSWORD
     assert_selector "p", text: I18n.t("devise.sessions.signed_in")
   end
 
   test "handles invalid email" do
-    login_with_email_and_password "missing@example.org", "password"
+    login_with_email_and_password "missing@example.org", UNIQUE_PASSWORD
     assert_selector "p", text: I18n.t("devise.failure.invalid", authentication_keys: "Email")
   end
 
   test "two factor required" do
-    login_with_email_and_password users(:twofactor).email, "password"
+    login_with_email_and_password users(:twofactor).email, UNIQUE_PASSWORD
     assert_selector "h1", text: I18n.t("users.two_factor.header")
   end
 
   test "two factor success with otp password" do
     user = users(:twofactor)
-    login_with_email_and_password user.email, "password"
+    login_with_email_and_password user.email, UNIQUE_PASSWORD
     submit_otp user.current_otp
     assert_selector "p", text: I18n.t("devise.sessions.signed_in")
   end
 
   test "two factor success with otp backup code" do
     user = users(:twofactor)
-    login_with_email_and_password user.email, "password"
+    login_with_email_and_password user.email, UNIQUE_PASSWORD
     submit_otp user.otp_backup_codes[0]
     assert_selector "p", text: I18n.t("devise.sessions.signed_in")
   end
 
   test "two factor fails with bad input" do
-    login_with_email_and_password users(:twofactor).email, "password"
+    login_with_email_and_password users(:twofactor).email, UNIQUE_PASSWORD
     submit_otp "invalid"
     assert_selector "p", text: I18n.t("users.sessions.create.incorrect_verification_code")
   end
 
   test "two factor always enforced for separate user logins" do
-    login_with_email_and_password users(:twofactor).email, "password"
+    login_with_email_and_password users(:twofactor).email, UNIQUE_PASSWORD
     submit_otp "invalid"
     assert_selector "p", text: I18n.t("users.sessions.create.incorrect_verification_code")
 
@@ -55,7 +52,6 @@ class LoginSystemTest < ApplicationSystemTestCase
 
   def login_with_email_and_password(email, password)
     visit new_user_session_path
-
     fill_in "user[email]", with: email
     fill_in "user[password]", with: password
     find('input[name="commit"]').click
