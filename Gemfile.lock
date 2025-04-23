@@ -292,8 +292,8 @@ GEM
     parser (3.3.8.0)
       ast (~> 2.4.1)
       racc
-    pay (9.0.1)
-      rails (>= 6.0.0)
+    pay (10.0.2)
+      rails (>= 7.0.0)
     pdf-core (0.10.0)
     pg (1.5.9)
     platform_agent (1.0.1)
@@ -544,7 +544,7 @@ DEPENDENCIES
   noticed (~> 2.2)
   overcommit
   pagy (~> 9.0)
-  pay (~> 9.0)
+  pay (~> 10.0)
   pg
   prefixed_ids (~> 1.2)
   pretender (~> 0.4)
@@ -678,7 +678,7 @@ CHECKSUMS
   pagy (9.3.4) sha256=b058e064bd02237e76d591e90fadc02c795426dd51f90d0c51089558bf3ab5f7
   parallel (1.27.0) sha256=4ac151e1806b755fb4e2dc2332cbf0e54f2e24ba821ff2d3dcf86bf6dc4ae130
   parser (3.3.8.0) sha256=2476364142b307fa5a1b1ece44f260728be23858a9c71078e956131a75453c45
-  pay (9.0.1) sha256=26c79ba9c9a365ef57aef02783216fb0977a932143eacd3c53a87f4ebca527b3
+  pay (10.0.2) sha256=15b01a200b02c60f2003e0f1982f07f966fd21711c8c82294e4f98f4ba096937
   pdf-core (0.10.0) sha256=0a5d101e2063c01e3f941e1ee47cbb97f1adfc1395b58372f4f65f1300f3ce91
   pg (1.5.9) sha256=761efbdf73b66516f0c26fcbe6515dc7500c3f0aa1a1b853feae245433c64fdc
   platform_agent (1.0.1) sha256=25521aa44d483c067a74900bc1d5ed5244a993850ee4f935736058488373d74c

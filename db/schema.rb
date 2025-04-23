@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_18_192532) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension "pg_catalog.plpgsql"
 
   create_table "account_invitations", force: :cascade do |t|
     t.bigint "account_id", null: false
@@ -108,7 +108,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
     t.bigint "user_id", null: false
     t.string "token"
     t.string "name"
-    t.jsonb "metadata", default: {}
+    t.jsonb "metadata"
     t.boolean "transient", default: false
     t.datetime "last_used_at", precision: nil
     t.datetime "expires_at", precision: nil
@@ -146,9 +146,9 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
     t.string "record_type"
     t.bigint "record_id"
     t.jsonb "params"
+    t.integer "notifications_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "notifications_count"
     t.index ["account_id"], name: "index_noticed_events_on_account_id"
     t.index ["record_type", "record_id"], name: "index_noticed_events_on_record"
   end
@@ -205,6 +205,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
     t.bigint "customer_id"
     t.string "stripe_account"
     t.string "type"
+    t.jsonb "object"
     t.index ["customer_id", "processor_id"], name: "index_pay_charges_on_customer_id_and_processor_id", unique: true
   end
 
@@ -220,6 +221,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
     t.datetime "updated_at", null: false
     t.string "stripe_account"
     t.string "type"
+    t.jsonb "object"
     t.index ["owner_type", "owner_id", "deleted_at"], name: "customer_owner_processor_index"
     t.index ["processor", "processor_id"], name: "index_pay_customers_on_processor_and_processor_id"
   end
@@ -273,6 +275,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
     t.string "payment_method_id"
     t.string "stripe_account"
     t.string "type"
+    t.jsonb "object"
     t.index ["customer_id", "processor_id"], name: "index_pay_subscriptions_on_customer_id_and_processor_id", unique: true
     t.index ["metered"], name: "index_pay_subscriptions_on_metered"
     t.index ["pause_starts_at"], name: "index_pay_subscriptions_on_pause_starts_at"
@@ -290,7 +293,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_09_212429) do
     t.string "name", null: false
     t.integer "amount", default: 0, null: false
     t.string "interval", null: false
-    t.jsonb "details", default: {}, null: false
+    t.jsonb "details"
     t.datetime "created_at", precision: nil, null: false
     t.datetime "updated_at", precision: nil, null: false
     t.integer "trial_period_days", default: 0

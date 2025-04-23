@@ -4,7 +4,7 @@ class Subscriptions::UpcomingsController < ApplicationController
   before_action :set_subscription
 
   def show
-    @invoice = @subscription.upcoming_invoice
+    @invoice = @subscription.preview_invoice
   end
 
   private
