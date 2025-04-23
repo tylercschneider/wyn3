@@ -5,6 +5,8 @@ class Subscriptions::UpcomingsController < ApplicationController
 
   def show
     @invoice = @subscription.preview_invoice
+  rescue Stripe::InvalidRequestError => e
+    redirect_to subscriptions_path, alert: e.message
   end
 
   private
