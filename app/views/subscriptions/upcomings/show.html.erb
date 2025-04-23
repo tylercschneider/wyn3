@@ -24,8 +24,8 @@
         <tr class="border-b border-gray-200">
           <td class="p-3"><%= line_item.description %></td>
           <td class="p-3 text-right"><%= line_item.quantity %></td>
-          <td class="p-3 text-right"><%= Pay::Currency.format line_item.unit_amount_excluding_tax, currency: line_item.price.currency %></td>
-          <td class="p-3 text-right"><%= Pay::Currency.format line_item.amount_excluding_tax, currency: line_item.price.currency %></td>
+          <td class="p-3 text-right"><%= Pay::Currency.format line_item.pricing.unit_amount_decimal, currency: line_item.currency %></td>
+          <td class="p-3 text-right"><%= Pay::Currency.format line_item.amount, currency: line_item.currency %></td>
         </tr>
       <% end %>
 
@@ -36,7 +36,7 @@
 
       <tr>
         <td class="py-1 px-3 text-right font-semibold" colspan="3">Tax</td>
-        <td class="py-1 px-3 text-right"><%= Pay::Currency.format @invoice.tax, currency: @invoice.currency %></td>
+        <td class="py-1 px-3 text-right"><%= Pay::Currency.format (@invoice.total - @invoice.total_excluding_tax), currency: @invoice.currency %></td>
       </tr>
 
       <tr>
