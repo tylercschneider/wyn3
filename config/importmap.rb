@@ -15,7 +15,7 @@ pin "@rails/activestorage", to: "activestorage.esm.js"
 pin "trix" # @2.1.13
 
 # Vendor libraries
-pin "@hotwired/hotwire-native-bridge", to: "@hotwired--hotwire-native-bridge.js" # @1.0.0
+pin "@hotwired/hotwire-native-bridge", to: "@hotwired--hotwire-native-bridge.js" # @1.2.1
 pin "clipboard" # @2.0.11
 pin "local-time", to: "local-time.es2017-esm.js"
 pin "tailwindcss-stimulus-components" # @6.1.3
