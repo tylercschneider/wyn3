@@ -3,6 +3,7 @@ class AccountResource < Madmin::Resource
 
   # Attributes
   attribute :id, form: false
+  attribute :owner
   attribute :name
   attribute :personal
   attribute :created_at, form: false
@@ -19,7 +20,6 @@ class AccountResource < Madmin::Resource
   attribute :charges, form: false
   attribute :subscriptions, form: false
   attribute :payment_processor, form: false
-  attribute :owner, form: false
   attribute :account_invitations, form: false
   attribute :account_users, form: false
   attribute :users, form: false

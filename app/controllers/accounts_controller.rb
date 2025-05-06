@@ -26,7 +26,6 @@ class AccountsController < Accounts::BaseController
   # POST /accounts
   def create
     @account = Account.new(account_params.merge(owner: current_user))
-    @account.account_users.new(user: current_user, admin: true)
 
     if @account.save
       # Add any after-create functionality here

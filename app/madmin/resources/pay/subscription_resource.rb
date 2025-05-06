@@ -22,10 +22,6 @@ class Pay::SubscriptionResource < Madmin::Resource
   attribute :pause_resumes_at
   attribute :stripe_account
   attribute :type
-  attribute :prorate, index: false
-  attribute :paddle_update_url
-  attribute :paddle_cancel_url
-  attribute :subscription_items
 
   # Associations
   attribute :customer

@@ -19,10 +19,7 @@ module User::Accounts
       return account
     end
 
-    account = accounts.new(owner: self, name: name, personal: Jumpstart.config.personal_accounts?)
-    account.account_users.new(user: self, admin: true)
-    account.save!
-    account
+    owned_accounts.create!(name: name, personal: Jumpstart.config.personal_accounts?)
   end
 
   def sync_personal_account_name

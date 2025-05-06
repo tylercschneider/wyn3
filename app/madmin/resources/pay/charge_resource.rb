@@ -21,19 +21,8 @@ class Pay::ChargeResource < Madmin::Resource
   attribute :email
   attribute :username
   attribute :bank
-  attribute :amount_captured
-  attribute :invoice_id
-  attribute :payment_intent_id
-  attribute :period_start
-  attribute :period_end
-  attribute :line_items
   attribute :subtotal
   attribute :tax
-  attribute :discounts
-  attribute :total_discount_amounts
-  attribute :total_tax_amounts
-  attribute :credit_notes
-  attribute :refunds
 
   # Associations
   attribute :customer
