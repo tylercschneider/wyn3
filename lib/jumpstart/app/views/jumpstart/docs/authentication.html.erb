@@ -6,6 +6,7 @@
 <%= h2_with_anchor "Authentication with Devise" %>
 
 <p>Jumpstart Pro uses Devise for user registration and authentication. This library is well tested and receives regular security updates allowing you to focus on your business.</p>
+<p>By default, Devise requires a user's email to be confirmed within 7 days to continue accessing the app. This can be changed in <code>config/initializers/devise.rb</code> under <code>config.allow_unconfirmed_access_for</code>.</p>
 <p>If you would like to collect other information on registration, you can add the fields to the devise views in <code>app/views/devise</code> and permit the additional params in <code>application_controller.rb</code>.</p>
 
 <%= h2_with_anchor "Social Login / OAuth with Omniauth Providers" %>
