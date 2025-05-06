@@ -1,6 +1,6 @@
 ---
 description: Follow JavaScript and Stimulus controller standards when creating or modifying JS files
-globs: app/javascript/**/*.js
+globs: ["app/javascript/**/*.js"]
 ---
 
 # JavaScript and Stimulus Controller Standards

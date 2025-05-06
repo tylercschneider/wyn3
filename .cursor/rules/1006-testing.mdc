@@ -1,6 +1,6 @@
 ---
 description: Follow testing standards when creating or modifying tests
-globs: test/**/*.rb
+globs: ["test/**/*.rb"]
 ---
 
 # Testing Standards

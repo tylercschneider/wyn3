@@ -1,6 +1,6 @@
 ---
 description: Follow service object standards when creating or modifying service classes
-globs: app/services/**/*.rb
+globs: ["app/services/**/*.rb"]
 ---
 
 # Service Object Standards

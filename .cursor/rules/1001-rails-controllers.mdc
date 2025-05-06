@@ -1,6 +1,6 @@
 ---
 description: Follow Rails 8.0 controller standards and patterns when creating or editing controllers
-globs: app/controllers/**/*.rb
+globs: ["app/controllers/**/*.rb"]
 ---
 
 # Rails Controller Standards

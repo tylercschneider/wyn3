@@ -1,6 +1,6 @@
 ---
 description: Use ALWAYS when asked to CREATE A RULE or UPDATE A RULE or taught a lesson from the user that should be retained as a new rule for Cursor
-globs: .cursor/rules/*.mdc
+globs: [".cursor/rules/*.mdc"]
 ---
 # Cursor Rules Format
 ## Core Structure
@@ -111,4 +111,3 @@ Common glob patterns for different rule types:
   - Keep file as short and to the point as possible BUT NEVER at the expense of sacrificing rule impact and usefulness for the AI Agent.
   - the front matter can ONLY have the fields description and globs.
 </critical>
-

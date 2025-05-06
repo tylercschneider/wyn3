@@ -1,6 +1,6 @@
 ---
 description: Follow Rails 8.0 model standards and patterns when creating or modifying models
-globs: app/models/**/*.rb
+globs: ["app/models/**/*.rb"]
 ---
 
 # Rails Model Standards
