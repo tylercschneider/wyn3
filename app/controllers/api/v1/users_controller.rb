@@ -8,7 +8,6 @@ class Api::V1::UsersController < Api::BaseController
     # If registering with an account, add the AccountUser with admin role
     if Jumpstart.config.register_with_account?
       account = user.owned_accounts.first_or_initialize
-      account.account_users.new(user: user, admin: true)
     end
 
     if user.save
