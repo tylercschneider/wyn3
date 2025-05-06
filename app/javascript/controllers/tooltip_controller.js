@@ -28,7 +28,7 @@ export default class extends Controller {
     this.tooltip.dataset.tooltipTarget = "content"
     this.tooltip.classList.add("tooltip")
     if (this.allowHtmlValue) {
-      this.tooltip.innerHTML= this.contentValue
+      this.tooltip.innerHTML = this.contentValue
     } else {
       this.tooltip.textContent = this.contentValue
     }
