@@ -87,5 +87,23 @@ Rails.application.configure do
   # Skip DNS rebinding protection for the default health check endpoint.
   # config.host_authorization = { exclude: ->(request) { request.path == "/up" } }
 
-  config.action_mailer.smtp_settings = Jumpstart.config.smtp_settings
+  # Configure production email provider
+  case Jumpstart.config.email_provider
+  when "mailpace"
+    config.action_mailer.delivery_method = :mailpace
+    config.action_mailer.mailpace_settings = {api_token: Rails.application.credentials.dig(:mailpace, :api_token)}
+  when "mailgun"
+    config.action_mailer.delivery_method = :mailgun
+    config.action_mailer.mailgun_settings = {
+      api_key: Rails.application.credentials.dig(:mailgun, :api_key),
+      domain: Jumpstart.config.domain
+      # api_host: 'api.eu.mailgun.net'  # Uncomment this line for EU region domains
+      # timeout: 20 # Default depends on rest-client, whose default is 60s. Added in 1.2.3.
+    }
+  when "postmark"
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = {api_token: Rails.application.credentials.dig(:postmark, :api_token)}
+  else
+    config.action_mailer.smtp_settings = Jumpstart.config.smtp_settings
+  end
 end

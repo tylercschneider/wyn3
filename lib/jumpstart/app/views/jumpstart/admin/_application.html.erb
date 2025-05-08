@@ -25,7 +25,7 @@
 
 <div class="form-group">
   <label>Transactional Email Service</label>
-  <%= f.select :email_provider, Jumpstart::Configuration::MAIL_PROVIDERS, { include_blank: "None" }, { class: "form-control" } %>
+  <%= f.select :email_provider, Jumpstart::Configuration::MAIL_PROVIDERS, { include_blank: "I'll configure my own" }, { class: "form-control" } %>
   <p class="form-hint">This will only be configured for production use.</p>
 </div>
 

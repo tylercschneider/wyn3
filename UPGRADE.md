@@ -2,6 +2,28 @@
 
 This file includes notes on major changes that might affect your application and require changes from you to update.
 
+### May 8, 2025
+
+* Mailgun, Mailpace, and Postmark now send emails via gems. This is beneficial for a couple reasons:
+
+1. DigitalOcean now blocks outbound SMTP by default. While it can be enabled by support, this works around that limitation by using API calls instead.
+2. Sending emails via API is faster than SMTP.
+
+This requires updating your credentials to specify API keys for these services:
+
+```yaml
+mailpace:
+  api_token: "x"
+
+mailgun:
+  api_key: "x"
+
+postmark:
+  api_token: "x"
+```
+
+You'll also need to run `bundle` to install the gem for the related mail service.
+
 ### December 23, 2024
 
 * Upgrade to TailwindCSS v4 & import maps

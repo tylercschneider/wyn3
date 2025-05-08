@@ -49,6 +49,11 @@ gem "omniauth-github" if omniauth_providers.include?("github")
 gem "omniauth-google-oauth2" if omniauth_providers.include?("google-oauth2")
 gem "omniauth-microsoft_graph" if omniauth_providers.include?("microsoft_graph")
 
+# Mail
+gem "mailgun-ruby" if Jumpstart.config.email_provider == "mailgun"
+gem "mailpace-rails" if Jumpstart.config.email_provider == "mailpace"
+gem "postmark-rails" if Jumpstart.config.email_provider == "postmark"
+
 # Integrations
 gem "airbrake" if Jumpstart.config.airbrake?
 gem "appsignal" if Jumpstart.config.appsignal?
