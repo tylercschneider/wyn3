@@ -1,21 +1,14 @@
 # Configures Noticed to be scoped by account
+ActiveSupport.on_load :noticed_event do
+  belongs_to :account
 
-module EventExtension
-  extend ActiveSupport::Concern
+  # Set account association from params
+  def self.with(params)
+    account = params.delete(:account) || Current.account
+    record = params.delete(:record)
 
-  included do
-    belongs_to :account
-  end
-
-  class_methods do
-    # Set account association from params
-    def with(params)
-      account = params.delete(:account) || Current.account
-      record = params.delete(:record)
-
-      # Instantiate Noticed::Event with account:belongs_to
-      new(account: account, params: params, record: record)
-    end
+    # Instantiate Noticed::Event with account:belongs_to
+    new(account: account, params: params, record: record)
   end
 
   def recipient_attributes_for(recipient)
@@ -23,16 +16,7 @@ module EventExtension
   end
 end
 
-module NotificationExtension
-  extend ActiveSupport::Concern
-
-  included do
-    belongs_to :account
-    delegate :message, to: :event
-  end
-end
-
-Rails.configuration.to_prepare do
-  Noticed::Event.include EventExtension
-  Noticed::Notification.include NotificationExtension
+ActiveSupport.on_load :noticed_notification do
+  belongs_to :account
+  delegate :message, to: :event
 end
