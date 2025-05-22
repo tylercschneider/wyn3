@@ -6,7 +6,9 @@
 //     data: {
 //       turbo_confirm: "Are you sure?",
 //       turbo_confirm_description: "This will delete your record. Enter the record name to confirm.",
-//       turbo_confirm_text: "record name"
+//       turbo_confirm_text: "record name", # require the user to type this before confirming
+//       turbo_confirm_accept: "Yes, delete it",
+//       turbo_confirm_reject: "No, keep it"
 //     }
 //   } %>
 
@@ -16,6 +18,9 @@ function insertConfirmModal(message, element, button) {
   // button is nil if using link_to with data-turbo-confirm
   let confirmText = button?.dataset?.turboConfirmText || element.dataset.turboConfirmText
   let description = button?.dataset?.turboConfirmDescription || element.dataset.turboConfirmDescription || ""
+  let accept = button?.dataset?.turboConfirmAccept || element.dataset.turboConfirmAccept || "Confirm"
+  let reject = button?.dataset?.turboConfirmReject || element.dataset.turboConfirmReject || "Cancel"
+
   if (confirmText) {
     confirmInput = `<input type="text" class="mt-4 form-control" data-behavior="confirm-text" />`
   }
@@ -31,8 +36,8 @@ function insertConfirmModal(message, element, button) {
           ${confirmInput}
 
           <div class="flex justify-end items-center flex-wrap gap-2 mt-4">
-            <button value="cancel" class="btn btn-secondary">Cancel</button>
-            <button value="confirm" class="btn btn-danger">Confirm</button>
+            <button value="cancel" class="btn btn-secondary">${reject}</button>
+            <button value="confirm" class="btn btn-danger">${accept}</button>
           </div>
         </div>
       </form>
