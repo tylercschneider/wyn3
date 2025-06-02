@@ -75,7 +75,7 @@ class MetaTags
       <%= tag.meta property: "og:description", content: description %>
       <%= tag.meta property: "og:image", content: image_url %>
       <%= tag.meta name: "twitter:card", content: twitter_type %>
-      <%= tag.meta name: "twitter:site", content: twitter_site if twitter_site %>
+      <%= tag.meta(name: "twitter:site", content: twitter_site) if twitter_site %>
       <%= tag.meta name: "twitter:title", content: full_title %>
       <%= tag.meta name: "twitter:description", content: description %>
       <%= tag.meta name: "twitter:image", content: image_url %>
