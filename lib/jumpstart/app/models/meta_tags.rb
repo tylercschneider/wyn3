@@ -3,11 +3,11 @@ class MetaTags
   #
   # To set meta tags in a view:
   #
-  #   <%= Current.meta_tags.set(title: "Example", description: "This is a page.") %>
+  #   <% Current.meta_tags.set(title: "Example", description: "This is a page.") %>
   #
   # Meta tags can also be set from an object like a database record:
   #
-  #   <%= Current.meta_tags.set_from(@blog_post) %>
+  #   <% Current.meta_tags.set_from(@blog_post) %>
   #
   # This will call `to_meta_tags` on the object which should return a Hash of title, description, etc.
   #
