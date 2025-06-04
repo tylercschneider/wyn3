@@ -3,11 +3,11 @@ class MetaTags
   #
   # To set meta tags in a view:
   #
-  #   <%= Current.meta_tags.set(title: "Example", description: "This is a page.") %>
+  #   <% Current.meta_tags.set(title: "Example", description: "This is a page.") %>
   #
   # Meta tags can also be set from an object like a database record:
   #
-  #   <%= Current.meta_tags.set_from(@blog_post) %>
+  #   <% Current.meta_tags.set_from(@blog_post) %>
   #
   # This will call `to_meta_tags` on the object which should return a Hash of title, description, etc.
   #
@@ -28,6 +28,7 @@ class MetaTags
   class_attribute :default_title
   class_attribute :default_description
   class_attribute :default_image, default: "https://placehold.co/1200x630.png"
+  class_attribute :default_twitter_site
 
   # Page details
   attribute :site, default: Jumpstart.config.application_name
@@ -39,7 +40,7 @@ class MetaTags
   attribute :current_url
   attribute :og_type, default: "website" # website | profile | article | video.movie
   attribute :twitter_type, default: "summary" # summary | summary_large_image
-  attribute :twitter_site # @username
+  attribute :twitter_site, default: -> { default_twitter_site } # @username
 
   # General meta tags
   attribute :theme_color, default: "#ffffff"
@@ -75,7 +76,7 @@ class MetaTags
       <%= tag.meta property: "og:description", content: description %>
       <%= tag.meta property: "og:image", content: image_url %>
       <%= tag.meta name: "twitter:card", content: twitter_type %>
-      <%= tag.meta name: "twitter:url", content: current_url %>
+      <%= tag.meta(name: "twitter:site", content: twitter_site) if twitter_site %>
       <%= tag.meta name: "twitter:title", content: full_title %>
       <%= tag.meta name: "twitter:description", content: description %>
       <%= tag.meta name: "twitter:image", content: image_url %>

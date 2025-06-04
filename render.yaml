@@ -3,7 +3,7 @@ services:
   - type: web
     name: rails
     plan: free
-    env: ruby
+    runtime: ruby
     region: oregon # the region must be consistent across all services for the internal keys to be read
     buildCommand: "./bin/render-build.sh"
     startCommand: bundle exec rails s
