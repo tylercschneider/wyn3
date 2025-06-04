@@ -12,7 +12,7 @@ pin "@hotwired/turbo-rails", to: "turbo.min.js"
 pin "@rails/actiontext", to: "actiontext.esm.js"
 pin "@rails/actioncable", to: "actioncable.esm.js"
 pin "@rails/activestorage", to: "activestorage.esm.js"
-pin "trix" # @2.1.13
+pin "trix"
 
 # Vendor libraries
 pin "@hotwired/hotwire-native-bridge", to: "@hotwired--hotwire-native-bridge.js" # @1.2.1
