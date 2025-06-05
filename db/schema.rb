@@ -146,9 +146,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_18_192532) do
     t.string "record_type"
     t.bigint "record_id"
     t.jsonb "params"
-    t.integer "notifications_count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "notifications_count"
     t.index ["account_id"], name: "index_noticed_events_on_account_id"
     t.index ["record_type", "record_id"], name: "index_noticed_events_on_record"
   end
@@ -312,6 +312,15 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_18_192532) do
     t.string "contact_url"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.bigint "account_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["account_id"], name: "index_posts_on_account_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -364,4 +373,5 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_18_192532) do
   add_foreign_key "pay_charges", "pay_customers", column: "customer_id"
   add_foreign_key "pay_payment_methods", "pay_customers", column: "customer_id"
   add_foreign_key "pay_subscriptions", "pay_customers", column: "customer_id"
+  add_foreign_key "posts", "accounts"
 end
