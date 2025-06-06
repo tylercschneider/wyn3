@@ -25,7 +25,6 @@ Rails.application.routes.draw do
     get :about
     get :terms
     get :privacy
-    get :pricing
     get :reset_app
   end
 

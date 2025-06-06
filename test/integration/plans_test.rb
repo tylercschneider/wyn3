@@ -21,7 +21,7 @@ class Jumpstart::PlansTest < ActionDispatch::IntegrationTest
     get "/pricing"
 
     assert_select "a[href=?]", "mailto:user@example.com"
-    assert_select "a", text: I18n.t("subscriptions.plan.contact_us")
-    assert_select "span", text: I18n.t("subscriptions.plan.contact_us_price")
+    assert_select "a", text: I18n.t("billing.subscriptions.plan.contact_us")
+    assert_select "span", text: I18n.t("billing.subscriptions.plan.contact_us_price")
   end
 end

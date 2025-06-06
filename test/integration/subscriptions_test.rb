@@ -18,9 +18,9 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
       end
     end
 
-    test "can view subscriptions_path" do
+    test "can view billing" do
       Jumpstart.config.stub(:payments_enabled?, true) do
-        get subscriptions_path
+        get billing_path
         assert_response :success
       end
     end
@@ -28,7 +28,7 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
     test "can successfully update a billing email" do
       Jumpstart.config.stub(:payments_enabled?, true) do
         @account.update!(billing_email: nil)
-        patch billing_settings_subscriptions_path, params: {account: {billing_email: "accounting@example.com"}}
+        patch billing_path, params: {account: {billing_email: "accounting@example.com"}}
 
         assert_response :redirect
         assert_not_nil @account.reload.billing_email
@@ -39,15 +39,15 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
       Jumpstart.config.stub(:payments_enabled?, true) do
         @account.set_payment_processor :fake_processor, allow_fake: true
         @account.payment_processor.subscribe
-        get new_subscription_path(plan: @plan)
-        assert_redirected_to subscriptions_path
-        assert_equal I18n.t("subscriptions.already_subscribed"), flash[:alert]
+        get checkout_path(plan: @plan)
+        assert_redirected_to billing_path
+        assert_equal I18n.t("checkouts.already_subscribed"), flash[:alert]
       end
     end
 
     test "can successfully update a extra billing info" do
       Jumpstart.config.stub(:payments_enabled?, true) do
-        patch billing_settings_subscriptions_path, params: {account: {extra_billing_info: "VAT_ID"}}
+        patch billing_path, params: {account: {extra_billing_info: "VAT_ID"}}
 
         assert_response :redirect
         assert_equal "VAT_ID", @account.reload.extra_billing_info
@@ -72,7 +72,7 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
     test "cannot navigate to new_subscription page" do
       Jumpstart.config.stub(:account_types, "both") do
         Jumpstart.config.stub(:payments_enabled?, true) do
-          get new_subscription_path(plan: @plan)
+          get checkout_path(plan: @plan)
           assert_redirected_to root_path
           assert_equal I18n.t("must_be_an_admin"), flash[:alert]
         end
@@ -82,7 +82,7 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
     test "cannot subscribe" do
       Jumpstart.config.stub(:account_types, "both") do
         Jumpstart.config.stub(:payments_enabled?, true) do
-          post subscriptions_path, params: {}
+          post checkout_path, params: {}
           assert_redirected_to root_path
           assert_equal I18n.t("must_be_an_admin"), flash[:alert]
         end
@@ -93,7 +93,7 @@ class Jumpstart::SubscriptionsTest < ActionDispatch::IntegrationTest
       @account.set_payment_processor :fake_processor, allow_fake: true
       subscription = @account.payment_processor.subscribe
       Jumpstart.config.stub(:payments_enabled?, true) do
-        delete subscription_cancel_path(subscription)
+        delete billing_subscription_cancel_path(subscription)
         assert_redirected_to root_path
         assert_equal I18n.t("must_be_an_admin"), flash[:alert]
       end
