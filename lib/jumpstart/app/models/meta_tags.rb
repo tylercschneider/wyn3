@@ -27,7 +27,7 @@ class MetaTags
 
   class_attribute :default_title
   class_attribute :default_description
-  class_attribute :default_image, default: "https://placehold.co/1200x630.png"
+  class_attribute :default_image, default: "opengraph.png"
   class_attribute :default_twitter_site
 
   # Page details
