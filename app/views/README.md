@@ -3,7 +3,7 @@
 To customize views, copy the views from the Jumpstart gem into your application.
 
 ```bash
-cp -R lib/jumpstart/app/views/subscriptions app/views/subscriptions
+cp -R lib/jumpstart/app/views/billing/subscriptions app/views/billing/subscriptions
 ```
 
 This will override the views from Jumpstart so that you won't run into git conflicts when merging future updates.
