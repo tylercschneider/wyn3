@@ -17,18 +17,20 @@ services:
         fromDatabase:
           name: postgres
           property: connectionString
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: redis
-          property: connectionString
+      # Uncomment the following config if you want to use Redis
+      # - key: REDIS_URL
+      #   fromService:
+      #     type: redis
+      #     name: redis
+      #     property: connectionString
 
-  - type: redis
-    name: redis
-    region: oregon # the region must be consistent across all services for the internal keys to be read
-    ipAllowList: [] # only allow internal connections
-    plan: free # optional (defaults to starter)
-    maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
+  # Uncomment the following blueprint if you want to use Redis
+  # - type: redis
+  #   name: redis
+  #   region: oregon # the region must be consistent across all services for the internal keys to be read
+  #   ipAllowList: [] # only allow internal connections
+  #   plan: free # optional (defaults to starter)
+  #   maxmemoryPolicy: noeviction # optional (defaults to allkeys-lru)
 
   # Uncomment the following blueprint if you want to enable a background worker
   # - type: worker
