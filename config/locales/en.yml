@@ -190,10 +190,6 @@ en:
       profile: "Profile"
       sign_out: "Sign out"
 
-  checkout:
-    returns:
-      success: "Thanks for your payment."
-
   dashboard:
     show:
       title: "Dashboard"
@@ -222,6 +218,14 @@ en:
       back: "Go back"
       confirm_button: "Confirm Payment"
 
+  pricing:
+    no_plans_html: "There are no pricing plans configured. %{link}."
+    show:
+      heading: "Pricing Plans"
+      subhead: "Simple, straightforward pricing to get your online business up and running"
+      monthly: "Monthly"
+      yearly: "Yearly"
+
   scaffold:
     edit:
       title: "Edit %{model}"
@@ -231,12 +235,6 @@ en:
     view: "View"
 
   static:
-    no_plans_html: "There are no pricing plans configured. %{link}."
-    pricing:
-      heading: "Pricing Plans"
-      subhead: "Simple, straightforward pricing to get your online business up and running"
-      monthly: "Monthly"
-      yearly: "Yearly"
     about:
       title: "About Us"
     privacy:
@@ -244,122 +242,24 @@ en:
     terms:
       title: "Terms Of Service"
 
-  subscriptions:
-    created: "Thanks for subscribing!"
-    resumed: "Your subscription has been resumed."
-    billing_settings_updated: "Billing settings have been updated successfully."
-    already_subscribed: "You are already subscribed."
+  billing:
+    updated: "Billing settings have been updated successfully."
 
-    plan:
-      contact_us: "Contact Us"
-      contact_us_price: "Let's Talk"
-      change_plan: "Change Plan"
-      current_plan: "Current plan"
-      get_started: "Get Started"
-      start_trial: "Start Trial"
-      processing: "Processing..."
-
-    index:
+    show:
       title: "Billing"
       contact_admin: "Contact an admin to change the %{account} subscription."
       subscriptions: "Current plan"
       not_subscribed: "You are not currently subscribed."
       choose_plan: "Choose a plan"
 
-    new:
-      title: "Checkout"
-      account: "Account"
-      billing_address: "Billing Address"
-      payment_method: "Payment Method"
-      change: "Change"
-      subscribe: "Subscribe"
-      start_trial: "Start trial"
-      processing: "Processing..."
-      help: "Need any help?"
-      contact_html: "Don't hesitate to %{link}."
-      renews_html: "Automatically renews<br/>after 1 %{interval}"
-      contact_support: "contact support"
-      contact_subject: "I have a question about %{product}"
-      testimonial: "%{product} has made my life so much easier. I can't recommend it enough."
-      subtotal: "Subtotal"
-      tax: "Tax"
-      total: "Total due today"
-
-    edit:
-      trial_ends: "Your trial ends in %{days}."
-      title: "Change Your Plan"
-      description: "Simple, straightforward pricing to get your online business up and running"
-      monthly: "Monthly"
-      yearly: "Yearly"
-      current_plan: "Current Plan"
-      processing: "Processing..."
-
-    update:
-      success: "Your plan has been updated successfully."
-
-    subscription:
-      cancel_plan: "Cancel plan"
-      canceled_on_trial: "After your trial ends on %{date}, this plan will be canceled automatically."
-      title: "Current Plans"
-      free_trial: "Free Trial"
-      free_trial_ends: "Your trial ends on %{date}."
-      trial: "After your trial ends on %{date}, this plan will continue automatically."
-      resume: "Resume plan"
-      change_plan: "Change plan"
-      pause: "Pause plan"
-      canceled: "Canceled"
-      incomplete: "Incomplete"
-      confirm_payment: "Confirm payment"
-      ends_at: "Your plan will be canceled on %{date}."
-      paused_at: "Your plan will be paused on %{date}."
-      paused: "Your plan is paused."
-      view_usage: "View usage"
-      view_upcoming_invoice: "View upcoming invoice"
-      past_due: "Past due"
-      unpaid: "Unpaid"
-      update_payment_method: "Update payment method"
-      failed_payment: "Your latest payment has failed. Update your payment method to continue this plan."
-
-    payment_methods:
-      new:
-        billing: "Billing"
-        payment_details: "Payment Details"
-        past_due: "Your payment method was declined. Please add another payment method to continue."
-
-      create:
-        updated: "Your payment method was updated successfully."
-
-      forms:
-        braintree:
-          button: "Update Card"
-        fake_processor:
-          message: "You have free access and don't need to add a payment method."
-        stripe:
-          credit_or_debit_card: "Credit or Debit Card"
-          button: "Update Card"
-
-    billing_address:
-      billing_address: "Billing Address"
-      add_billing_address: "Add billing address"
-      created: "Your billing address was added successfully."
-      update_billing_address: "Update billing address"
-      updated: "Your billing address was updated successfully."
-      no_billing_address: "You have no billing address on file."
-      destroyed: "Your billing address has been removed successfully."
-      edit: "Edit"
-
-    billing_addresses:
-      show:
-        tax_may_apply: "Tax may apply."
-
-    billing_info:
+    info:
       extra_billing_info: "Extra Billing Information"
       additional_information: "Add any additional information to all of your receipts such as your VAT ID, full business name, and address."
       save_info: "Save information"
       saving: "Saving..."
       add_info: "Add information"
 
-    billing_email:
+    email:
       billing_email: "Billing Email"
       description: "Send receipts to a specific email address along with the account owner."
       save: "Save"
@@ -374,64 +274,155 @@ en:
       view: "View"
       empty: "No billing history."
 
-    pauses:
-      show:
-        title: "Pause your plan"
-        description: "You can pause your subscription and resume at a later time."
-        note: "The pause takes effect on the first day of your next billing cycle. You will not be charged while your account is paused."
-        back: "Back to Billing"
-        button: "Pause plan"
-        processing: "Pausing..."
+    subscriptions:
+      created: "Thanks for subscribing!"
+      resumed: "Your subscription has been resumed."
+
+      plan:
+        contact_us: "Contact Us"
+        contact_us_price: "Let's Talk"
+        change_plan: "Change Plan"
+        current_plan: "Current plan"
+        get_started: "Get Started"
+        start_trial: "Start Trial"
+        processing: "Processing..."
+
+      edit:
+        trial_ends: "Your trial ends in %{days}."
+        title: "Change Your Plan"
+        description: "Simple, straightforward pricing to get your online business up and running"
+        monthly: "Monthly"
+        yearly: "Yearly"
+        current_plan: "Current Plan"
+        processing: "Processing..."
 
       update:
-        resumed: "Your subscription has been paused."
+        success: "Your plan has been updated successfully."
 
-    resumes:
-      show:
-        title: "Resume your plan"
-        resume: "This plan will no longer be canceled and will automatically renew."
-        back: "Back to Billing"
-        button: "Resume plan"
-        processing: "Resuming..."
+      subscription:
+        cancel_plan: "Cancel plan"
+        canceled_on_trial: "After your trial ends on %{date}, this plan will be canceled automatically."
+        title: "Current Plans"
+        free_trial: "Free Trial"
+        free_trial_ends: "Your trial ends on %{date}."
+        trial: "After your trial ends on %{date}, this plan will continue automatically."
+        resume: "Resume plan"
+        change_plan: "Change plan"
+        pause: "Pause plan"
+        canceled: "Canceled"
+        incomplete: "Incomplete"
+        confirm_payment: "Confirm payment"
+        ends_at: "Your plan will be canceled on %{date}."
+        paused_at: "Your plan will be paused on %{date}."
+        paused: "Your plan is paused."
+        view_usage: "View usage"
+        view_upcoming_invoice: "View upcoming invoice"
+        past_due: "Past due"
+        unpaid: "Unpaid"
+        update_payment_method: "Update payment method"
+        failed_payment: "Your latest payment has failed. Update your payment method to continue this plan."
 
-      update:
-        resumed: "Your subscription has been resumed."
+      payment_methods:
+        new:
+          billing: "Billing"
+          payment_details: "Payment Details"
+          past_due: "Your payment method was declined. Please add another payment method to continue."
 
-    summary:
-      quantity: "Quantity: %{quantity} at %{price} %{unit}"
-      per_unit: "per %{unit}"
-      each: "each"
+        create:
+          updated: "Your payment method was updated successfully."
 
-    cancels:
-      show:
-        title: "Cancel your plan"
-        description: "You can cancel anytime, but you'll lose access to %{product}."
-        help_html: "Need to talk to someone? %{link} -- we'd love to help."
-        contact_us: "Contact us"
-        subject: "Question about %{product}"
-        active_until: "Your plan will be canceled, but is still available until the end of your billing period."
-        resume: "If you change your mind, you can resume your subscription."
-        button: "Cancel plan"
-        back: "Back to Billing"
-        processing: "Cancelling..."
+        forms:
+          braintree:
+            button: "Update Card"
+          fake_processor:
+            message: "You have free access and don't need to add a payment method."
+          stripe:
+            credit_or_debit_card: "Credit or Debit Card"
+            button: "Update Card"
 
-      destroy:
-        resumed: "Your subscription has been canceled."
+      pauses:
+        show:
+          title: "Pause your plan"
+          description: "You can pause your subscription and resume at a later time."
+          note: "The pause takes effect on the first day of your next billing cycle. You will not be charged while your account is paused."
+          back: "Back to Billing"
+          button: "Pause plan"
+          processing: "Pausing..."
 
-    upcomings:
-      show:
-        title: "Upcoming Invoice"
-        description: "The current costs for your usage this billing period."
-        line_items:
-          description: "Description"
-          quantity: "Quantity"
-          unit_price: "Unit Price"
-          total: "Total"
-        back: "Back to Billing"
+        update:
+          resumed: "Your subscription has been paused."
 
-    forms:
-      stripe:
-        credit_or_debit_card: "Credit or debit card"
+      resumes:
+        show:
+          title: "Resume your plan"
+          resume: "This plan will no longer be canceled and will automatically renew."
+          back: "Back to Billing"
+          button: "Resume plan"
+          processing: "Resuming..."
+
+        update:
+          resumed: "Your subscription has been resumed."
+
+      summary:
+        quantity: "Quantity: %{quantity} at %{price} %{unit}"
+        per_unit: "per %{unit}"
+        each: "each"
+
+      cancels:
+        show:
+          title: "Cancel your plan"
+          description: "You can cancel anytime, but you'll lose access to %{product}."
+          help_html: "Need to talk to someone? %{link} -- we'd love to help."
+          contact_us: "Contact us"
+          subject: "Question about %{product}"
+          active_until: "Your plan will be canceled, but is still available until the end of your billing period."
+          resume: "If you change your mind, you can resume your subscription."
+          button: "Cancel plan"
+          back: "Back to Billing"
+          processing: "Cancelling..."
+
+        destroy:
+          resumed: "Your subscription has been canceled."
+
+      upcomings:
+        show:
+          title: "Upcoming Invoice"
+          description: "The current costs for your usage this billing period."
+          line_items:
+            description: "Description"
+            quantity: "Quantity"
+            unit_price: "Unit Price"
+            total: "Total"
+          back: "Back to Billing"
+
+      forms:
+        stripe:
+          credit_or_debit_card: "Credit or debit card"
+
+  checkouts:
+    already_subscribed: "You are already subscribed."
+    testimonial: "%{product} has made my life so much easier. I can't recommend it enough."
+    show:
+      title: "Checkout"
+      account: "Account"
+      billing_address: "Billing Address"
+      payment_method: "Payment Method"
+      change: "Change"
+      subscribe: "Subscribe"
+      start_trial: "Start trial"
+      processing: "Processing..."
+      help: "Need any help?"
+      contact_html: "Don't hesitate to %{link}."
+      renews_html: "Automatically renews<br/>after 1 %{interval}"
+      contact_support: "contact support"
+      contact_subject: "I have a question about %{product}"
+      subtotal: "Subtotal"
+      tax: "Tax"
+      total: "Total due today"
+
+  checkout:
+    returns:
+      success: "Thanks for your payment."
 
   account:
     passwords:

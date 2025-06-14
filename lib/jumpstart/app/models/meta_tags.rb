@@ -27,7 +27,7 @@ class MetaTags
 
   class_attribute :default_title
   class_attribute :default_description
-  class_attribute :default_image, default: "https://placehold.co/1200x630.png"
+  class_attribute :default_image, default: "opengraph.png"
   class_attribute :default_twitter_site
 
   # Page details
@@ -55,10 +55,14 @@ class MetaTags
   # Separator for title & site
   attribute :separator, default: "|"
 
-  alias_method :set, :assign_attributes
+  def set(new_attributes)
+    assign_attributes(new_attributes.compact_blank)
+    nil
+  end
 
   def set_from(object)
-    assign_attributes object.to_meta_tags
+    assign_attributes(object.to_meta_tags.compact_blank)
+    nil
   end
 
   def render_in(view_context)
