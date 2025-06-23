@@ -8,6 +8,9 @@ module Authentication
       request.env["warden"].params["hotwire_native_form"] = true
     end
 
+    # Use minimal layout for all devise views except registrations#edit
+    layout -> { (devise_controller? && !user_signed_in?) ? "minimal" : nil }
+
     delegate :account, to: Current, prefix: :current
     helper_method :current_account
 
