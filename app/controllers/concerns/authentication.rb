@@ -9,7 +9,7 @@ module Authentication
     end
 
     # Use minimal layout for all devise views except registrations#edit
-    layout -> { (devise_controller? && !user_signed_in?) ? "minimal" : nil }
+    layout -> { (devise_controller? && !user_signed_in?) ? "minimal" : nil } if respond_to?(:layout)
 
     delegate :account, to: Current, prefix: :current
     helper_method :current_account
