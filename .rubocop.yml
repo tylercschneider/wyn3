@@ -454,7 +454,7 @@ Lint/AssignmentInCondition:
   AllowSafeAssignment: true
   # Intentionally disable autocorrect to force us to intentionally decide
   # whether assignment is intended as opposed to comparison
-  AutoCorrect: false
+  AutoCorrect: disabled
 
 Lint/BigDecimalNew:
   Enabled: true
