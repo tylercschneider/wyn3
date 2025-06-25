@@ -3,7 +3,7 @@ require_dependency "jumpstart/application_controller"
 module Jumpstart
   class UsersController < ApplicationController
     def index
-      users = User.where(admin: [nil, false]).where(User.arel_table[:name].matches("%#{User.sanitize_sql_like(params[:q].to_s)}%"))
+      users = User.where(admin: [nil, false]).search(params[:q])
       render turbo_stream: helpers.async_combobox_options(users)
     end
 
