@@ -23,7 +23,7 @@ module Authentication
   def set_layout
     if turbo_frame_request?
       "turbo_rails/frame"
-    elsif (devise_controller? && !user_signed_in?)
+    elsif devise_controller? && !user_signed_in?
       "minimal"
     end
   end
