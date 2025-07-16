@@ -8,8 +8,7 @@ module Authentication
       request.env["warden"].params["hotwire_native_form"] = true
     end
 
-    # Use minimal layout for all devise views except registrations#edit
-    layout -> { (devise_controller? && !user_signed_in?) ? "minimal" : nil } if respond_to?(:layout)
+    layout :set_layout if respond_to?(:layout)
 
     delegate :account, to: Current, prefix: :current
     helper_method :current_account
@@ -19,6 +18,15 @@ module Authentication
   end
 
   protected
+
+  # Use minimal layout for all devise views except registrations#edit
+  def set_layout
+    if turbo_frame_request?
+      "turbo_rails/frame"
+    elsif (devise_controller? && !user_signed_in?)
+      "minimal"
+    end
+  end
 
   # To add extra fields to Devise registration, add the attribute names to `extra_keys`
   def configure_permitted_parameters
