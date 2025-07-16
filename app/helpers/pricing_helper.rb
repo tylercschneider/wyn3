@@ -1,6 +1,6 @@
 module PricingHelper
   def pricing_cta(plan)
-    (plan.trial_period_days? && current_account.pay_subscriptions.none?) ? t(".start_trial") : t(".get_started")
+    (plan.trial_period_days? && (!user_signed_in? || current_account&.pay_subscriptions&.none?)) ? t(".start_trial") : t(".get_started")
   end
 
   def pricing_link_to(plan, **opts)
