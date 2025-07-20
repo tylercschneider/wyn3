@@ -6,7 +6,7 @@ module User::Searchable
 
   class_methods do
     def search(query)
-      where(arel_table[:name].matches("%#{sanitize_sql_like(query)}%"))
+      where(arel_table[:name].matches("%#{sanitize_sql_like(query.to_s)}%"))
     end
   end
 end
