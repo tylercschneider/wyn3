@@ -1,4 +1,4 @@
-<%%= content_for :title, "<%= plural_table_name.titleize %>" %>
+<%% Current.meta_tags.set(title: "<%= plural_table_name.titleize %>") %>
 <%%= turbo_stream_from :<%= plural_table_name %> %>
 
 <div class="container px-4 mx-auto my-8">

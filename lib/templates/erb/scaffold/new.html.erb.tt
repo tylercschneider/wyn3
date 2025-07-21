@@ -1,4 +1,4 @@
-<%%= content_for :title, t("scaffold.new.title", model: "<%= singular_table_name.titleize %>") %>
+<%% Current.meta_tags.set(title: t("scaffold.new.title", model: "<%= singular_table_name.titleize %>")) %>
 
 <div class="container px-4 mx-auto my-8">
   <div class="flex items-center justify-between mb-4">
