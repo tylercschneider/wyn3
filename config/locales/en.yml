@@ -40,6 +40,7 @@ en:
   something_went_wrong: "Something went wrong"
   unauthorized: "You are not authorized to perform this action."
   reveal: "Reveal"
+  try_again_later: "Try again later."
 
   account_invitations_mailer:
     invite:
