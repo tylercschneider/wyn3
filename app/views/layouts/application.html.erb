@@ -11,7 +11,7 @@
     </header>
 
     <main>
-      <%= yield %>
+      <%= content_for?(:content) ? yield(:content) : yield %>
     </main>
 
     <%= render "footer" unless hotwire_native_app? %>
