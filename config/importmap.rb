@@ -20,7 +20,7 @@ pin "clipboard" # @2.0.11
 pin "local-time", to: "local-time.es2017-esm.js"
 pin "tailwindcss-stimulus-components" # @6.1.3
 pin "tributejs" # @5.1.3
-pin "@floating-ui/dom", to: "@floating-ui--dom.js" # @1.7.2
-pin "@floating-ui/core", to: "@floating-ui--core.js" # @1.7.2
+pin "@floating-ui/dom", to: "@floating-ui--dom.js" # @1.7.3
+pin "@floating-ui/core", to: "@floating-ui--core.js" # @1.7.3
 pin "@floating-ui/utils", to: "@floating-ui--utils.js" # @0.2.10
 pin "@floating-ui/utils/dom", to: "@floating-ui--utils--dom.js"
