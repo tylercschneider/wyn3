@@ -62,7 +62,6 @@ tags:
     - `--drop-shadow-*` : Drop shadow filter utilities like `drop-shadow-md`
     - `--blur-*` : Blur filter utilities like `blur-md`
     - `--perspective-*` : Perspective utilities like `perspective-near`
-    - `--aspect-*` : Aspect ratio utilities like `aspect-video`
     - `--ease-*` : Transition timing function utilities like `ease-out`
     - `--animate-*` : Animation utilities like `animate-spin`
   
