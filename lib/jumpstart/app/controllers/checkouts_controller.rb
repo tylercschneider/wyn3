@@ -39,7 +39,7 @@ class CheckoutsController < ApplicationController
     redirect_to pay.payment_path(e.payment.id)
   rescue Pay::Error => e
     flash[:alert] = e.message
-    render :new, status: :unprocessable_entity
+    render :new, status: :unprocessable_content
   end
 
   private

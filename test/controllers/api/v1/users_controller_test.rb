@@ -3,7 +3,7 @@ require "test_helper"
 class UsersControllerTest < ActionDispatch::IntegrationTest
   test "returns errors if invalid params submitted" do
     post api_v1_users_url, params: {}
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
     assert response.parsed_body["errors"]
     assert_equal [I18n.t("errors.messages.blank")], response.parsed_body["errors"]["email"]
   end

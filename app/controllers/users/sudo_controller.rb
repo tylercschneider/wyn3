@@ -8,7 +8,7 @@ class Users::SudoController < ApplicationController
       redirect_to URI.parse(params[:redirect_to]).path
     else
       flash[:alert] = I18n.t("users.sudo.invalid_password")
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 end
