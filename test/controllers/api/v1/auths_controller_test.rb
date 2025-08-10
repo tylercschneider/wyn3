@@ -22,7 +22,7 @@ class AuthsControllerTest < ActionDispatch::IntegrationTest
     user.enable_two_factor!
     user.set_otp_secret!
     post api_v1_auth_url, params: {email: user.email, password: UNIQUE_PASSWORD}
-    assert_response :unprocessable_entity
+    assert_response :unprocessable_content
   end
 
   test "returns unauthorized if OTP attempt is required but incorrect" do

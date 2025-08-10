@@ -7,7 +7,7 @@ class Api::V1::PasswordsController < Api::BaseController
     else
       render json: {
         error: current_user.errors.full_messages.to_sentence
-      }, status: :unprocessable_entity
+      }, status: :unprocessable_content
     end
   end
 
