@@ -13,7 +13,7 @@ class Accounts::AccountInvitationsController < Accounts::BaseController
     if @account_invitation.save_and_send_invite
       redirect_to @account, notice: t(".sent", email: @account_invitation.email)
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -24,7 +24,7 @@ class Accounts::AccountInvitationsController < Accounts::BaseController
     if @account_invitation.update(invitation_params)
       redirect_to @account, notice: t(".updated")
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 

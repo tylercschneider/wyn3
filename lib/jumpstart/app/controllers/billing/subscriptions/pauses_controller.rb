@@ -11,7 +11,7 @@ class Billing::Subscriptions::PausesController < ApplicationController
     redirect_to billing_path
   rescue Pay::Error => e
     flash[:alert] = e.message
-    render :show, status: :unprocessable_entity
+    render :show, status: :unprocessable_content
   end
 
   private

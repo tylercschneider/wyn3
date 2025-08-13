@@ -13,7 +13,7 @@ class Account::PasswordsController < ApplicationController
       bypass_sign_in current_user
       redirect_to account_password_path, notice: t(".updated")
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 

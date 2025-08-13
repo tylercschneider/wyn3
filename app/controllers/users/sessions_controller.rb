@@ -24,7 +24,7 @@ class Users::SessionsController < Devise::SessionsController
     if resource.valid_password?(sign_in_params[:password])
       session[:remember_me] = Devise::TRUE_VALUES.include?(sign_in_params[:remember_me])
       session[:otp_user_id] = resource.id
-      render :otp, status: :unprocessable_entity
+      render :otp, status: :unprocessable_content
     else
       # Let Devise handle invalid passwords
     end
@@ -41,7 +41,7 @@ class Users::SessionsController < Devise::SessionsController
       respond_with resource, location: after_sign_in_path_for(resource)
     else
       flash.now[:alert] = t(".incorrect_verification_code")
-      render :otp, status: :unprocessable_entity
+      render :otp, status: :unprocessable_content
     end
   end
 

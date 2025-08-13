@@ -28,7 +28,7 @@ class Billing::SubscriptionsController < ApplicationController
   rescue Pay::Error => e
     edit # Reload plans
     flash[:alert] = e.message
-    render :edit, status: :unprocessable_entity
+    render :edit, status: :unprocessable_content
   end
 
   private
