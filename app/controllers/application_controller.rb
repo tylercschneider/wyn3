@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   include Authentication
   include Authorization
   include DeviceFormat
-  include Pagy::Backend
+  include Pagy::Method
   include SetCurrentRequestDetails
   include SetLocale
   include Sortable

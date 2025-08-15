@@ -1,6 +1,3 @@
-require "pagy"
-require "pagy/extras/trim"
-
 module Jumpstart
   class Engine < ::Rails::Engine
     isolate_namespace Jumpstart

@@ -26,9 +26,9 @@
     </div>
   <%% end %>
 
-  <%% if @pagy.pages > 1 %>
+  <%% if @pagy.last > 1 %>
     <div class="my-6 text-center">
-      <%%== pagy_nav(@pagy) %>
+      <%%== @pagy.series_nav %>
     </div>
   <%% end %>
 </div>
