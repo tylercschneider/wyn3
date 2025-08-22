@@ -424,6 +424,8 @@ button[aria-label="Notifications"] svg {
 }
 
 .account-menu {
+  padding: 12px 6px;
+
   .name {
     font-size: 14px;
     max-width: 7rem;
