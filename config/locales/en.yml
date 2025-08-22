@@ -161,6 +161,8 @@ en:
       about: "About"
       privacy: "Privacy"
       terms: "Terms"
+    account_menu:
+      create_account: "Create an account"
     account_navbar:
       profile: "Profile"
       password: "Password"
