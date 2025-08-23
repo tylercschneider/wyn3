@@ -65,23 +65,24 @@ services:
   #     - key: RAILS_MASTER_KEY
   #       sync: false
 
+# Render's "free" databases are deleted after 30 days unless upgraded and only one per workspace. Instead, default to the smallest paid size.
 databases:
   - name: primary
-    plan: free
+    plan: basic-256mb
     region: oregon # the region must be consistent across all services for the internal keys to be read
     ipAllowList: [] # only allow internal connections
 
   - name: solid_cable
-    plan: free
+    plan: basic-256mb
     region: oregon # the region must be consistent across all services for the internal keys to be read
     ipAllowList: [] # only allow internal connections
 
   - name: solid_cache
-    plan: free
+    plan: basic-256mb
     region: oregon # the region must be consistent across all services for the internal keys to be read
     ipAllowList: [] # only allow internal connections
 
   - name: solid_queue
-    plan: free
+    plan: basic-256mb
     region: oregon # the region must be consistent across all services for the internal keys to be read
     ipAllowList: [] # only allow internal connections
