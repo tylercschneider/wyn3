@@ -8,7 +8,8 @@ class Announcement < ApplicationRecord
 
   validates :kind, :title, :description, presence: true
 
-  attribute :published_at, default: -> { Time.current }
+  attribute :published_at
+  to_param :title
 
   def self.unread?(user)
     most_recent_announcement = published.maximum(:published_at)
