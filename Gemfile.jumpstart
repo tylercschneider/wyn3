@@ -26,11 +26,6 @@ group :development, :test do
   gem "mailbin", "~> 1.0"
 end
 
-group :development do
-  # A fully configurable and extendable Git hook manager
-  gem "overcommit", require: false
-end
-
 group :test do
   # Test HTTP requests [https://github.com/bblimke/webmock]
   gem "webmock"
