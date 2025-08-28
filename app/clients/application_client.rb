@@ -29,7 +29,7 @@ class ApplicationClient
 
   class Unauthorized < Error; end
 
-  class UnprocessableEntity < Error; end
+  class UnprocessableContent < Error; end
 
   class RateLimit < Error; end
 
@@ -45,6 +45,15 @@ class ApplicationClient
   def self.inherited(client)
     response = client.const_set(:Response, Class.new(Response))
     response.const_set(:PARSER, Response::PARSER.dup)
+
+    client.const_set(:Error, Class.new(Error))
+    client.const_set(:MovedPermanently, Class.new(MovedPermanently))
+    client.const_set(:Forbidden, Class.new(Forbidden))
+    client.const_set(:Unauthorized, Class.new(Unauthorized))
+    client.const_set(:UnprocessableContent, Class.new(UnprocessableContent))
+    client.const_set(:RateLimit, Class.new(RateLimit))
+    client.const_set(:NotFound, Class.new(NotFound))
+    client.const_set(:InternalError, Class.new(InternalError))
   end
 
   # Initializes an API client
@@ -222,21 +231,21 @@ class ApplicationClient
     when "200", "201", "202", "203", "204"
       response
     when "301"
-      raise MovedPermanently, response.body
+      raise self.class::MovedPermanently, response.body
     when "401"
-      raise Unauthorized, response.body
+      raise self.class::Unauthorized, response.body
     when "403"
-      raise Forbidden, response.body
+      raise self.class::Forbidden, response.body
     when "404"
-      raise NotFound, response.body
+      raise self.class::NotFound, response.body
     when "422"
-      raise UnprocessableEntity, response.body
+      raise self.class::UnprocessableContent, response.body
     when "429"
-      raise RateLimit, response.body
+      raise self.class::RateLimit, response.body
     when "500"
-      raise InternalError, response.body
+      raise self.class::InternalError, response.body
     else
-      raise Error, "#{response.code} - #{response.body}"
+      raise self.class::Error, "#{response.code} - #{response.body}"
     end
   end
 
