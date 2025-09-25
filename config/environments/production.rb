@@ -116,6 +116,9 @@ Rails.application.configure do
   when "postmark"
     config.action_mailer.delivery_method = :postmark
     config.action_mailer.postmark_settings = {api_token: Rails.application.credentials.dig(:postmark, :api_token)}
+  when "resend"
+    config.action_mailer.delivery_method = :resend
+    Resend.api_key = Rails.application.credentials.dig(:resend, :api_key)
   else
     config.action_mailer.smtp_settings = Jumpstart.config.smtp_settings
   end

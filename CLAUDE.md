@@ -67,7 +67,7 @@ end
 - **Processor-agnostic**: Stripe, Paddle, Braintree, PayPal, Lemon Squeezy support
 - **Per-seat billing**: Team accounts with usage-based pricing
 - **Subscription management**: In `app/models/account/billing.rb`
-- **Email delivery**: Mailgun, Mailpace, and Postmark use API gems instead of SMTP
+- **Email delivery**: Mailgun, Mailpace, Postmark, and Resend use API gems instead of SMTP
 - **API client errors**: Raise `UnprocessableContent` for 422 responses (rfc9110)
 
 ## Technology Stack
