@@ -17,8 +17,8 @@ class AccountResource < Madmin::Resource
 
   # Associations
   attribute :pay_customers, form: false
-  attribute :charges, form: false
-  attribute :subscriptions, form: false
+  attribute :pay_charges, form: false
+  attribute :pay_subscriptions, form: false
   attribute :payment_processor, form: false
   attribute :account_invitations, form: false
   attribute :account_users, form: false

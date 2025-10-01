@@ -30,7 +30,7 @@ class Api::V1::AuthsController < Api::BaseController
     elsif !user.otp_required_for_login?
       true
     elsif params[:otp_attempt].blank?
-      render json: {error: :otp_attempt_required}, status: :unprocessable_entity
+      render json: {error: :otp_attempt_required}, status: :unprocessable_content
     elsif user.verify_and_consume_otp!(params[:otp_attempt])
       true
     else

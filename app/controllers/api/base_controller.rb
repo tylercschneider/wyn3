@@ -7,7 +7,7 @@ class Api::BaseController < ActionController::API
   include ActiveStorage::SetCurrent
   include Authentication
   include Authorization
-  include Pagy::Backend
+  include Pagy::Method
   include SetCurrentRequestDetails
   include SetLocale
   include Sortable

@@ -4,13 +4,10 @@ module AccountsHelper
 
     if account.personal? && account.owner?(current_user)
       image_tag(avatar_url_for(current_user, options), class: [classes, size], alt: account.name)
-
     elsif account.avatar.attached? && account.avatar.variable?
       image_tag(account.avatar.variant(resize_to_fit: [image_size, image_size]), class: [classes, size], alt: account.name)
-
     else
-      content = tag.span(account.name.to_s.first, class: "initials")
-      tag.span(content, class: ["avatar", classes, size])
+      image_tag(ui_avatar_url(name: account.name), class: [classes, size], alt: account.name)
     end
   end
 

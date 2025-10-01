@@ -2,6 +2,10 @@
 
 This file includes notes on major changes that might affect your application and require changes from you to update.
 
+### August 28, 2025
+
+API clients now raise `UnprocessableContent` instead of `UnprocessableEntity` errors when a 422 is received to match rfc9110.
+
 ### May 8, 2025
 
 * Mailgun, Mailpace, and Postmark now send emails via gems. This is beneficial for a couple reasons:

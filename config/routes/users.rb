@@ -27,6 +27,7 @@ end
 resources :agreements, module: :users
 resources :notifications, only: [:index, :show] do
   collection do
+    get :nav
     patch :mark_as_read
   end
 end

@@ -36,7 +36,7 @@ class Api::V1::UsersController < Api::BaseController
       render json: {
         errors: user.errors,
         error: user.errors.full_messages.to_sentence
-      }, status: :unprocessable_entity
+      }, status: :unprocessable_content
     end
   end
 

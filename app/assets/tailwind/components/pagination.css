@@ -1,4 +1,4 @@
-nav.pagy.nav {
+nav.pagy {
   display: inline-flex;
   align-items: center;
   justify-content: start;
@@ -28,16 +28,16 @@ nav.pagy.nav {
       color: var(--text-primary-hover);
     }
 
-    &[aria-current="page"].current {
-      background: var(--bg-primary);
-      border: 1px solid var(--bg-primary);
-      color: var(--text-on-primary);
-      margin-left: -1px;
-    }
-
     &:not([href]) {
       background: var(--base-bg-lowest);
       color: var(--base-text-tertiary);
+      margin-left: -1px;
+    }
+
+    &[aria-current="page"] {
+      background: var(--bg-primary);
+      border: 1px solid var(--bg-primary);
+      color: var(--text-on-primary);
       margin-left: -1px;
     }
   }

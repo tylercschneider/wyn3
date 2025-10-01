@@ -44,7 +44,7 @@ class AccountsController < Accounts::BaseController
         switch
       end
     else
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
@@ -53,7 +53,7 @@ class AccountsController < Accounts::BaseController
     if @account.update(account_params)
       redirect_to @account, notice: t(".updated")
     else
-      render :edit, status: :unprocessable_entity
+      render :edit, status: :unprocessable_content
     end
   end
 

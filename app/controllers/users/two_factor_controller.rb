@@ -19,7 +19,7 @@ class Users::TwoFactorController < ApplicationController
       redirect_to edit_account_password_path, notice: t(".enabled")
     else
       flash.now[:alert] = t("users.sessions.create.incorrect_verification_code")
-      render :verify, status: :unprocessable_entity
+      render :verify, status: :unprocessable_content
     end
   end
 

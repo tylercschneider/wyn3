@@ -1,7 +1,5 @@
 module Jumpstart
   module ApplicationHelper
-    include Pagy::Frontend
-
     # Generates button tags for Turbo disable with
     # Preserve opacity-25 opacity-75 during purge
     def button_text(text = nil, disable_with: t("processing"), &block)

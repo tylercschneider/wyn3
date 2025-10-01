@@ -2,30 +2,19 @@ class ApiClientGenerator < Rails::Generators::NamedBase
   Endpoint = Data.define(:name, :verb) do
     def self.parse(attribute)
       return attribute if attribute.is_a? Endpoint
-
       name, verb, _ = attribute.split(":")
       new(name, verb || "get")
     end
 
-    def index?
-      name.start_with? "list"
-    end
+    def index? = name.start_with? "list"
 
-    def show?
-      verb == "get"
-    end
+    def show? = verb == "get"
 
-    def create?
-      verb == "post"
-    end
+    def create? = verb == "post"
 
-    def update?
-      ["patch", "put"].include? verb
-    end
+    def update? = ["patch", "put"].include? verb
 
-    def destroy?
-      verb == "delete"
-    end
+    def destroy? = verb == "delete"
   end
 
   source_root File.expand_path("templates", __dir__)
@@ -48,7 +37,5 @@ class ApiClientGenerator < Rails::Generators::NamedBase
     end
   end
 
-  def url
-    options[:url]
-  end
+  def url = options[:url]
 end

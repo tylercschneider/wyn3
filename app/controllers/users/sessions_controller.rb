@@ -4,7 +4,7 @@ class Users::SessionsController < Devise::SessionsController
   # We need to intercept the Sessions#create action for processing OTP
   prepend_before_action :authenticate_with_two_factor, only: [:create]
 
-  rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to new_user_session_path, alert: "Try again later." }
+  rate_limit to: 10, within: 3.minutes, only: :create, with: -> { redirect_to new_user_session_path, alert: I18n.t("try_again_later") }
 
   def authenticate_with_two_factor
     if sign_in_params[:email]
@@ -24,7 +24,7 @@ class Users::SessionsController < Devise::SessionsController
     if resource.valid_password?(sign_in_params[:password])
       session[:remember_me] = Devise::TRUE_VALUES.include?(sign_in_params[:remember_me])
       session[:otp_user_id] = resource.id
-      render :otp, status: :unprocessable_entity
+      render :otp, status: :unprocessable_content
     else
       # Let Devise handle invalid passwords
     end
@@ -41,7 +41,7 @@ class Users::SessionsController < Devise::SessionsController
       respond_with resource, location: after_sign_in_path_for(resource)
     else
       flash.now[:alert] = t(".incorrect_verification_code")
-      render :otp, status: :unprocessable_entity
+      render :otp, status: :unprocessable_content
     end
   end
 

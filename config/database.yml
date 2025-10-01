@@ -114,7 +114,7 @@ staging:
 # URL environment variable explicitly:
 #
 #   production:
-#     url: <%= ENV["MY_APP_DATABASE_URL"] %>
+#     url: <%= ENV["DATABASE_URL"] %>
 #
 # Read https://guides.rubyonrails.org/configuring.html#configuring-a-database
 # for a full overview on how database connection configuration can be specified.
@@ -125,17 +125,20 @@ production:
     database: jumpstart_production
     username: jumpstart
     password: <%= ENV["POSTGRES_PASSWORD"] %>
+    # Or set DATABASE_URL to override
 
   cache:
     <<: *primary_production
     database: jumpstart_production_cache
     migrations_paths: db/cache_migrate
     # Or set CACHE_DATABASE_URL to override
+
   queue:
     <<: *primary_production
     database: jumpstart_production_queue
     migrations_paths: db/queue_migrate
     # Or set QUEUE_DATABASE_URL to override
+
   cable:
     <<: *primary_production
     database: jumpstart_production_cable
