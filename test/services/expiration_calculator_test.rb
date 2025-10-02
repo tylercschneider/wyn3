@@ -1,15 +1,14 @@
-require 'test_helper'
+require "test_helper"
 
 class ExpirationCalculatorTest < ActiveSupport::TestCase
-
-  def test_calculate_number_of_days_to_consume  
+  def test_calculate_number_of_days_to_consume
     number_of_days_to_consume = 5
     assert_equal number_of_days_to_consume, ExpirationCalculator.calculate_number_of_days_to_consume(consume_rate: 2, units_of_item: 10)
   end
 
   def test_must_expire_after_date
-    expire_after_date = Date.new(2024,1,11)
-    assert_equal expire_after_date, ExpirationCalculator.must_expire_after_date(from: Date.new(2024,1,1), num_of_days: 10)
+    expire_after_date = Date.new(2024, 1, 11)
+    assert_equal expire_after_date, ExpirationCalculator.must_expire_after_date(from: Date.new(2024, 1, 1), num_of_days: 10)
   end
 
   def test_must_expire_after_date_no_from_specified
