@@ -1,0 +1,16 @@
+<%= form_with url: consumption_date_calculator_path,
+            method: :post,
+            data: { turbo_stream: true }, 
+            scope: :consumption_date_calculator do |f| %>
+  <%= f.label :quantity, "Quantity" %>
+  <%= f.number_field :quantity %>
+  <%= f.label :quantity, "Consumption Rate" %>
+  <%= f.number_field :consumption_rate %>
+  <%= f.submit "Calculate",
+          class: "inline-flex items-center rounded-2xl bg-blue-600 text-white px-4 py-2
+                   hover:bg-blue-700 transition shadow-sm" %>
+<% end %>
+
+<turbo-frame id="calculation_result">
+  <%= render "result", result: nil, form: @form %>
+</turbo-frame>

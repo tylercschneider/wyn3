@@ -45,6 +45,9 @@ Rails.application.routes.draw do
   # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
   # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
 
+  resource :consumption_date_calculator, only: [:show, :create], controller: "consumption_date_calculator"
+
+
   # Public marketing homepage
   root to: "static#index"
 end
