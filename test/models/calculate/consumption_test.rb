@@ -6,15 +6,15 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
     assert_equal days_to_consume, Calculate::Consumption.days_to_consume(consume_rate: 2, units_of_item: 10)
   end
 
-  def test_consumed_by_date
-    consumed_by_date = Date.new(2024, 1, 11)
-    assert_equal consumed_by_date, Calculate::Consumption.consumed_by_date(start_date: Date.new(2024, 1, 1), num_of_days: 10)
+  def test_future_date
+    future_date = Date.new(2024, 1, 11)
+    assert_equal future_date, Calculate::Consumption.future_date(start_date: Date.new(2024, 1, 1), num_of_days: 10)
   end
 
-  def test_consumed_by_date_with_no_start_date_specified
+  def test_future_date_with_no_start_date_specified
     travel_to Time.zone.parse("2025-10-02 09:00:00") do
-      consumed_by_date = Date.new(2025, 10, 12)
-      assert_equal consumed_by_date, Calculate::Consumption.consumed_by_date(num_of_days: 10)
+      future_date = Date.new(2025, 10, 12)
+      assert_equal future_date, Calculate::Consumption.future_date(num_of_days: 10)
     end
   end
 
