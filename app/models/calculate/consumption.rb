@@ -3,7 +3,7 @@ class Calculate::Consumption
     units_of_item / consume_rate
   end
 
-  def self.must_expire_after_date(num_of_days:, from: nil)
+  def self.consumed_by_date(num_of_days:, from: nil)
     base = (from || Date.current).to_date
     base + num_of_days
   end
