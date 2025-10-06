@@ -1,9 +1,9 @@
 require "test_helper"
 
 class Calculate::ConsumptionTest < ActiveSupport::TestCase
-  def test_calculate_number_of_days_to_consume
-    number_of_days_to_consume = 5
-    assert_equal number_of_days_to_consume, Calculate::Consumption.calculate_number_of_days_to_consume(consume_rate: 2, units_of_item: 10)
+  def test_days_to_consume
+    days_to_consume = 5
+    assert_equal days_to_consume, Calculate::Consumption.days_to_consume(consume_rate: 2, units_of_item: 10)
   end
 
   def test_consumed_by_date

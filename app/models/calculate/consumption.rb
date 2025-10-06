@@ -6,7 +6,7 @@ class Calculate::Consumption
     "yearly" => 360
   }.freeze
 
-  def self.calculate_number_of_days_to_consume(consume_rate:, units_of_item:)
+  def self.days_to_consume(consume_rate:, units_of_item:)
     units_of_item / consume_rate
   end
 
