@@ -18,4 +18,8 @@ class Calculate::Consumption
   def self.rate(consumption_period:, quantity_consumed:)
     quantity_consumed / CONSUMPTION_PERIOD[consumption_period]
   end
+
+  def self.consumed_by_date
+    Date.new(2024, 1, 11)
+  end
 end
