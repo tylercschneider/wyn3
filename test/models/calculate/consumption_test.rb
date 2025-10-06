@@ -19,7 +19,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
   end
 
   def test_consumption_rate
-    consumption_rate = 10
+    consumption_rate = 20
     assert_equal consumption_rate, Calculate::Consumption.rate(
       consumption_period: "daily",
       quantity_consumed: 20

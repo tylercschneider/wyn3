@@ -9,6 +9,9 @@ class Calculate::Consumption
   end
 
   def self.rate(consumption_period:, quantity_consumed:)
-    10
+    consumption_period_lookup = {"daily" => 1}
+    consumption_period_number = consumption_period_lookup[consumption_period]
+
+    quantity_consumed / consumption_period_number
   end
 end
