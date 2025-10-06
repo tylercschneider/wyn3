@@ -1,16 +1,56 @@
-<%= form_with url: consumption_date_calculator_path,
-            method: :post,
-            data: { turbo_stream: true }, 
-            scope: :consumption_date_calculator do |f| %>
-  <%= f.label :quantity, "Quantity" %>
-  <%= f.number_field :quantity %>
-  <%= f.label :quantity, "Consumption Rate" %>
-  <%= f.number_field :consumption_rate %>
-  <%= f.submit "Calculate",
-          class: "inline-flex items-center rounded-2xl bg-blue-600 text-white px-4 py-2
-                   hover:bg-blue-700 transition shadow-sm" %>
-<% end %>
+<div class="min-h-full">
+  <div class="py-10">
+    <main>
+      <div class="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+        <%= form_with url: consumption_date_calculator_path,
+                    method: :post,
+                    data: { turbo_stream: true }, 
+                    scope: :consumption_date_calculator do |f| %>
+          <div class="form-group">
+            <%= f.label :start_date, "Start date", class: "block text-sm font-medium mb-1" %>
+            <%= f.date_field :start_date,
+                  value: (@form&.dig(:start_date) || Date.current),
+                  min: Date.current,                 # optional
+                  class: "block w-full rounded-lg border px-3 py-2
+                          focus:ring-2 focus:ring-blue-500 focus:border-blue-500
+                          dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100" %>
+          </div>
+          <div class="form-group">
+            <%= f.label :quantity, "Quantity" %>
+            <%= f.text_field :quantity, class: "form-control" %>
+          </div>
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:bg-zinc-900 dark:border-zinc-700">
+            <h3 class="text-lg font-semibold mb-4">
+              Estimated Consumption Rate
+            </h3>
+            <div class="form-group">
+              <%= f.label :quantity_consumed, "Quantity Consumed" %>
+              <%= f.text_field :quantity_consumed, class: "form-control" %>
+            </div>
+            <div class="form-group">
+              <%= f.label :consumption_period, "Consumption Period" %>
+              <%= f.select :consumption_period,
+                options_for_select([
+                  ["per day", "per_day"],
+                  ["per week", "per_week"],
+                  ["per month", "per_month"],
+                  ["per quarter", "per_quarter"],
+                  ["per year", "per_year"],
+                  ["per decade", "per_decade"],
 
-<turbo-frame id="calculation_result">
-  <%= render "result", result: nil, form: @form %>
-</turbo-frame>
+                ], selected: "" || "per_day"),
+                class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Calculate", class: "inline-flex items-center rounded-2xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition shadow-sm"%>
+          </div>
+        <% end %>
+
+        <turbo-frame id="calculation_result">
+          <%= render "result", result: nil, form: @form %>
+        </turbo-frame>
+      </div>
+    </main>
+  </div>
+</div>

@@ -47,7 +47,6 @@ Rails.application.routes.draw do
 
   resource :consumption_date_calculator, only: [:show, :create], controller: "consumption_date_calculator"
 
-
   # Public marketing homepage
   root to: "static#index"
 end

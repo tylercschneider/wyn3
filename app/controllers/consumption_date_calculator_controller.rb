@@ -13,7 +13,7 @@ class ConsumptionDateCalculatorController < ApplicationController
         render turbo_stream: turbo_stream.replace(
           "calculation_result",
           partial: "consumption_date_calculator/result",
-          locals: { result: @result, form: @form }
+          locals: {result: @result, form: @form}
         )
       end
 
@@ -44,6 +44,6 @@ class ConsumptionDateCalculatorController < ApplicationController
 
   def calculator_params
     params.require(:consumption_date_calculator)
-          .permit(:quantity, :consumption_rate)
+    .permit(:quantity, :consumption_rate)
   end
 end
