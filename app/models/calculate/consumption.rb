@@ -1,4 +1,9 @@
 class Calculate::Consumption
+  CONSUMPTION_PERIOD = {
+    "daily" => 1,
+    "weekly" => 7
+  }
+
   def self.calculate_number_of_days_to_consume(consume_rate:, units_of_item:)
     units_of_item / consume_rate
   end
@@ -9,12 +14,6 @@ class Calculate::Consumption
   end
 
   def self.rate(consumption_period:, quantity_consumed:)
-    consumption_period_lookup = {
-      "daily" => 1,
-      "weekly" => 7
-    }
-    consumption_period_number = consumption_period_lookup[consumption_period]
-
-    quantity_consumed / consumption_period_number
+    quantity_consumed / CONSUMPTION_PERIOD[consumption_period]
   end
 end
