@@ -1,8 +1,8 @@
 ---
 application_name: WYN
-business_name: My Company, LLC
+business_name: DYB, L.L.C.
 business_address: 
-domain: example.com
+domain: 
 support_email: support@example.com
 default_from_email: My App <no-reply@example.com>
 background_job_processor: 
