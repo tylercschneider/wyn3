@@ -43,4 +43,13 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
       quantity_consumed: 30
     )
   end
+
+  def test_consumption_rate_handles_yearly
+    consumption_rate = 1
+
+    assert_equal consumption_rate, Calculate::Consumption.rate(
+      consumption_period: "yearly",
+      quantity_consumed: 360
+    )
+  end
 end

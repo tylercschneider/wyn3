@@ -2,7 +2,8 @@ class Calculate::Consumption
   CONSUMPTION_PERIOD = {
     "daily" => 1,
     "weekly" => 7,
-    "monthly" => 30
+    "monthly" => 30,
+    "yearly" => 360
   }.freeze
 
   def self.calculate_number_of_days_to_consume(consume_rate:, units_of_item:)
