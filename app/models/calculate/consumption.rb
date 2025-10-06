@@ -3,8 +3,8 @@ class Calculate::Consumption
     units_of_item / consume_rate
   end
 
-  def self.consumed_by_date(num_of_days:, from: nil)
-    base = (from || Date.current).to_date
+  def self.consumed_by_date(num_of_days:, start_date: nil)
+    base = (start_date || Date.current).to_date
     base + num_of_days
   end
 end

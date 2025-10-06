@@ -8,7 +8,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
 
   def test_consumed_by_date
     expire_after_date = Date.new(2024, 1, 11)
-    assert_equal expire_after_date, Calculate::Consumption.consumed_by_date(from: Date.new(2024, 1, 1), num_of_days: 10)
+    assert_equal expire_after_date, Calculate::Consumption.consumed_by_date(start_date: Date.new(2024, 1, 1), num_of_days: 10)
   end
 
   def test_consumed_by_date_no_start_date_specified
