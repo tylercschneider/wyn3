@@ -54,7 +54,12 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
   end
 
   def test_consumed_by_date
-    consumed_by_date = Date.new(2024, 1, 11)
-    assert_equal consumed_by_date, Calculate::Consumption.consumed_by_date
+    consumed_by_date = Date.new(2024, 1, 30)
+    assert_equal consumed_by_date, Calculate::Consumption.consumed_by_date(
+      start_date: Date.new(2024, 1, 10),
+      units_of_item: 80,
+      quantity_consumed: 4,
+      consumption_period: "daily"
+    )
   end
 end
