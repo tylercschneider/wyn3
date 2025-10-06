@@ -44,6 +44,6 @@ class ConsumptionDateCalculatorController < ApplicationController
 
   def calculator_params
     params.require(:consumption_date_calculator)
-  .permit(:quantity, :consumption_rate)
+      .permit(:quantity, :consumption_rate)
   end
 end
