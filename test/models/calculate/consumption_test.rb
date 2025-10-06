@@ -11,10 +11,18 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
     assert_equal consumed_by_date, Calculate::Consumption.consumed_by_date(start_date: Date.new(2024, 1, 1), num_of_days: 10)
   end
 
-  def test_consumed_by_date_no_start_date_specified
+  def test_consumed_by_date_with_no_start_date_specified
     travel_to Time.zone.parse("2025-10-02 09:00:00") do
       consumed_by_date = Date.new(2025, 10, 12)
       assert_equal consumed_by_date, Calculate::Consumption.consumed_by_date(num_of_days: 10)
     end
+  end
+
+  def test_consumption_rate
+    consumption_rate = 10
+    assert_equal consumption_rate, Calculate::Consumption.rate(
+      consumption_period: "daily",
+      quantity_consumed: 20
+    )
   end
 end

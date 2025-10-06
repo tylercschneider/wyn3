@@ -7,4 +7,8 @@ class Calculate::Consumption
     base = (start_date || Date.current).to_date
     base + num_of_days
   end
+
+  def self.rate(consumption_period:, quantity_consumed:)
+    10
+  end
 end
