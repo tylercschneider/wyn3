@@ -6,7 +6,12 @@ class ConsumptionDateCalculatorController < ApplicationController
 
   def create
     @form = calculator_params.to_h
-    @result = rand(2000)
+    @result = Calculate::Consumption.consumed_by_date(
+      start_date: @form[:start_date],
+      units_of_item: @form[:units_of_item].to_i,
+      quantity_consumed: @form[:quantity_consumed].to_i,
+      consumption_period: @form[:consumption_period]
+    )
 
     respond_to do |format|
       format.turbo_stream do
@@ -33,17 +38,15 @@ class ConsumptionDateCalculatorController < ApplicationController
 
   def default_form_params
     {
-      quantity: nil,
-      units: "",
-      rate_amount: nil,
-      rate_period: "per_day",
-      start_date: Date.current,
-      inclusive: "1"
+      units_of_item: nil,
+      quantity_consumed: nil,
+      consumption_period: "per_day",
+      start_date: Date.current
     }
   end
 
   def calculator_params
     params.require(:consumption_date_calculator)
-      .permit(:quantity, :consumption_rate)
+      .permit(:start_date, :units_of_item, :quantity_consumed, :consumption_period)
   end
 end

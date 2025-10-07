@@ -21,7 +21,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
   def test_consumption_rate
     consumption_rate = 20
     assert_equal consumption_rate, Calculate::Consumption.rate(
-      consumption_period: "daily",
+      consumption_period: "per_day",
       quantity_consumed: 20
     )
   end
@@ -30,7 +30,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
     consumption_rate = 4
 
     assert_equal consumption_rate, Calculate::Consumption.rate(
-      consumption_period: "weekly",
+      consumption_period: "per_week",
       quantity_consumed: 28
     )
   end
@@ -39,7 +39,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
     consumption_rate = 1
 
     assert_equal consumption_rate, Calculate::Consumption.rate(
-      consumption_period: "monthly",
+      consumption_period: "per_month",
       quantity_consumed: 30
     )
   end
@@ -48,7 +48,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
     consumption_rate = 1
 
     assert_equal consumption_rate, Calculate::Consumption.rate(
-      consumption_period: "yearly",
+      consumption_period: "per_year",
       quantity_consumed: 360
     )
   end
@@ -59,7 +59,7 @@ class Calculate::ConsumptionTest < ActiveSupport::TestCase
       start_date: Date.new(2024, 1, 10),
       units_of_item: 80,
       quantity_consumed: 4,
-      consumption_period: "daily"
+      consumption_period: "per_day"
     )
   end
 end

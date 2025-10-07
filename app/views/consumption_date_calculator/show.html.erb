@@ -6,6 +6,7 @@
                     method: :post,
                     data: { turbo_stream: true },
                     scope: :consumption_date_calculator do |f| %>
+
           <div class="form-group">
             <%= f.label :start_date, "Start date", class: "block text-sm font-medium mb-1" %>
             <%= f.date_field :start_date,
@@ -15,10 +16,12 @@
                           focus:ring-2 focus:ring-blue-500 focus:border-blue-500
                           dark:bg-zinc-900 dark:border-zinc-700 dark:text-zinc-100" %>
           </div>
+
           <div class="form-group">
-            <%= f.label :quantity, "Quantity" %>
-            <%= f.text_field :quantity, class: "form-control" %>
+            <%= f.label :units_of_item, "Quantity" %>
+            <%= f.text_field :units_of_item, class: "form-control" %>
           </div>
+
           <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm dark:bg-zinc-900 dark:border-zinc-700">
             <h3 class="text-lg font-semibold mb-4">
               Estimated Consumption Rate
@@ -27,6 +30,7 @@
               <%= f.label :quantity_consumed, "Quantity Consumed" %>
               <%= f.text_field :quantity_consumed, class: "form-control" %>
             </div>
+
             <div class="form-group">
               <%= f.label :consumption_period, "Consumption Period" %>
               <%= f.select :consumption_period,
@@ -42,6 +46,7 @@
                 class: "form-control" %>
             </div>
           </div>
+
           <div class="form-group">
             <%= f.submit "Calculate", class: "inline-flex items-center rounded-2xl bg-blue-600 text-white px-4 py-2 hover:bg-blue-700 transition shadow-sm" %>
           </div>

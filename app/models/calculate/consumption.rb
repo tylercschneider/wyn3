@@ -1,9 +1,9 @@
 class Calculate::Consumption
   CONSUMPTION_PERIOD = {
-    "daily" => 1,
-    "weekly" => 7,
-    "monthly" => 30,
-    "yearly" => 360
+    "per_day" => 1,
+    "per_week" => 7,
+    "per_month" => 30,
+    "per_year" => 360
   }.freeze
 
   def self.days_to_consume(consume_rate:, units_of_item:)
@@ -16,7 +16,7 @@ class Calculate::Consumption
   end
 
   def self.rate(consumption_period:, quantity_consumed:)
-    quantity_consumed / CONSUMPTION_PERIOD[consumption_period]
+    quantity_consumed.to_f / CONSUMPTION_PERIOD[consumption_period]
   end
 
   def self.consumed_by_date(
